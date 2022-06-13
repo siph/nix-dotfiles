@@ -22,4 +22,10 @@
   home.packages = with pkgs; [
 
   ];
+
+  programs.git = {
+    enable = true;
+    userName = "siph";
+    userEmail = "dawkins.chris.dev@gmail.com";
+  };
 }
