@@ -26,18 +26,6 @@
       homeDirectory = "/home/${username}";
       stateVersion = "22.05";
     };
-#    homeManagerConfigurations = {
-#      chris = home-manager.lib.homeManagerConfiguration {
-#	inherit system pkgs;
-#	username = "chris";
-#	homeDirectory = "/home/chris";
-#	configuration = {
-#	  imports = [
-#	    ./users/chris/home.nix
-#	  ];
-#	};
-#      };
-#    };
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
