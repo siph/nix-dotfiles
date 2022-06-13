@@ -86,12 +86,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    git
-    stow
+  #  git
     wget
     firefox
     neovim
-    kitty
   ];
 
   # List services that you want to enable:
