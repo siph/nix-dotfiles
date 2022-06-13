@@ -11,11 +11,14 @@
 
   home = {
    packages = with pkgs; [
-
+     neofetch
    ];
   };
 
   programs = {
+    kitty = {
+      enable = true;
+    };
     zsh = {
       enable = true;
       shellAliases = {
