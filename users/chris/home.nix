@@ -51,9 +51,9 @@
     };
     # Terminal
     kitty = {
-      # BROKEN ON FEDORA INSTALL
-      # enable = true;
-      # theme = "GruvboxMaterialDarkHard";
+      # Must use: https://github.com/guibou/nixGL on fedora install because (I assume) of old video card.
+      enable = true;
+      theme = "Gruvbox Dark Hard";
       font = {
         name = "JetBrainsMonoExtraBold Nerd Font";
         size = 9;
