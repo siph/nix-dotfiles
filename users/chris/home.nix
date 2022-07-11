@@ -19,10 +19,34 @@
     kitty = {
       enable = true;
     };
+    # Shell
     zsh = {
       enable = true;
-      shellAliases = {
-        ls = "lsd -l";
+      enableAutosuggestions = true;
+      enableCompletion = true;
+      enableSyntaxHighlighting = true;
+      envExtra = "
+        export EDITOR='lvim'
+        export BROWSER='firefox'
+        export MANPAGER='lvim +Man!'
+        export TERM='xterm-256color'
+      ";
+      initExtra = "
+        export PATH=~/.local/bin:$PATH
+        alias vim='lvim'
+
+        # Misc
+        zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+        bindkey -v
+        # Colors
+        autoload -Uz colors && colors
+      ";
+    };
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = {
+
       };
     };
     git = {
@@ -32,10 +56,11 @@
     };
     neovim = {
       enable = true;
-      vimAlias = true;
+      # vimAlias = true;
     };
     lsd = {
       enable = true;
+      enableAliases = true;
     };
   };
 
