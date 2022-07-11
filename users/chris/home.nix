@@ -16,9 +16,6 @@
   };
 
   programs = {
-    kitty = {
-      enable = true;
-    };
     # Shell
     zsh = {
       enable = true;
@@ -48,6 +45,27 @@
       settings = {
 
       };
+    };
+    # Terminal
+    kitty = {
+      enable = true;
+      # theme = "GruvboxMaterialDarkHard";
+      font = {
+        name = "JetBrainsMonoExtraBold Nerd Font";
+        size = 9;
+      };
+      settings = {
+        enable_audio_bell = false;
+        visual_bell_duration = 0;
+        window_alert_on_bell = false;
+        background_opacity = "0.85";
+      };
+    };
+    tmux = {
+      enable = true;
+      extraConfig = "
+
+      ";
     };
     git = {
       enable = true;
