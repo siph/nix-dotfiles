@@ -34,6 +34,7 @@
       initExtra = "
         export PATH=~/.local/bin:$PATH
         alias vim='lvim'
+        alias cat='bat'
 
         # Misc
         zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
@@ -46,7 +47,11 @@
       enable = true;
       enableZshIntegration = true;
       settings = {
-
+        # Because there is a node_modules folder in ~ starship displays the node version when ~
+        # Disabling because it's annoying and idk about js anyway.
+        nodejs = {
+          disabled = true;
+        };
       };
     };
     # Terminal
@@ -150,9 +155,13 @@
       enable = true;
       # vimAlias = true;
     };
+    # GNU replacement tools
     lsd = {
       enable = true;
       enableAliases = true;
+    };
+    bat = {
+      enable = true;
     };
   };
 
