@@ -9,8 +9,11 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  fonts.fontconfig.enable = true;
+
   home = {
    packages = with pkgs; [
+     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
      neofetch
    ];
   };
@@ -48,7 +51,8 @@
     };
     # Terminal
     kitty = {
-      enable = true;
+      # BROKEN ON FEDORA INSTALL
+      # enable = true;
       # theme = "GruvboxMaterialDarkHard";
       font = {
         name = "JetBrainsMonoExtraBold Nerd Font";
