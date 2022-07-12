@@ -1,4 +1,5 @@
 #!/bin/sh
 pushd ~/.nix-dotfiles
-home-manager switch --flake .#chris
+export NIXPKGS_ALLOW_UNFREE=1
+home-manager switch --impure --flake .#chris
 popd
