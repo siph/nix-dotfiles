@@ -30,9 +30,14 @@
         export BROWSER='firefox'
         export MANPAGER='lvim +Man!'
         export TERM='xterm-256color'
+
+        # temporary paths
+        export PATH=~/.local/bin:$PATH
+        export PATH=~/Downloads/dwarfs-0.6.1-Linux/bin:$PATH
+        export PATH=~/Downloads/dwarfs-0.6.1-Linux/sbin:$PATH
+        export PATH=~/Downloads/dwarfs-0.6.1-Linux/share:$PATH
       ";
       initExtra = "
-        export PATH=~/.local/bin:$PATH
         alias vim='lvim'
         alias cat='bat'
 
