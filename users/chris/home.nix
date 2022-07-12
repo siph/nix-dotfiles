@@ -17,6 +17,7 @@
      ripgrep
      glow
      neofetch
+     jetbrains.idea-ultimate
    ];
   };
 

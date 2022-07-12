@@ -14,7 +14,9 @@
 
     pkgs = import nixpkgs {
       inherit system;
-      config = { allowUnfree = true; };
+      config = {
+        allowUnfree = true;
+      };
     };
 
     lib = nixpkgs.lib;
