@@ -14,10 +14,11 @@
   home = {
    packages = with pkgs; [
      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-     ripgrep
+     duf
      glow
-     neofetch
      jetbrains.idea-ultimate
+     neofetch
+     ripgrep
    ];
   };
 
