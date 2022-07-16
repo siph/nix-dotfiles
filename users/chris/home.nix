@@ -18,6 +18,7 @@
      fd
      glow
      jetbrains.idea-ultimate
+     ncdu_2
      neofetch
      ripgrep
      tdesktop
