@@ -15,10 +15,13 @@
    packages = with pkgs; [
      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
      duf
+     fd
      glow
      jetbrains.idea-ultimate
      neofetch
      ripgrep
+     tdesktop
+     vlc
    ];
   };
 
