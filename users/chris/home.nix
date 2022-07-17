@@ -34,9 +34,9 @@
       enableCompletion = true;
       enableSyntaxHighlighting = true;
       envExtra = "
-        export EDITOR='lvim'
+        export EDITOR='nvim'
         export BROWSER='firefox'
-        export MANPAGER='lvim +Man!'
+        export MANPAGER='nvim +Man!'
         export TERM='xterm-256color'
 
         # temporary paths
@@ -44,9 +44,10 @@
         export PATH=~/Downloads/dwarfs-0.6.1-Linux/bin:$PATH
         export PATH=~/Downloads/dwarfs-0.6.1-Linux/sbin:$PATH
         export PATH=~/Downloads/dwarfs-0.6.1-Linux/share:$PATH
+        export PATH=~/repos/vimconfig/result/bin:$PATH
       ";
       initExtra = "
-        alias vim='lvim'
+        alias vim='nvim'
         alias cat='bat'
 
         # Misc
@@ -163,10 +164,6 @@
       enable = true;
       userName = "siph";
       userEmail = "dawkins.chris.dev@gmail.com";
-    };
-    neovim = {
-      enable = true;
-      # vimAlias = true;
     };
     # GNU replacement tools
     lsd = {
