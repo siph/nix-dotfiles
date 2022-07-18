@@ -162,6 +162,12 @@
     };
     bottom = {
       enable = true;
+      settings = {
+        flags = {
+          color = "gruvbox";
+          group_processes = true;
+        };
+      };
     };
     git = {
       enable = true;
