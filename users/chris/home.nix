@@ -17,6 +17,7 @@
      duf
      fd
      glow
+     httpie
      jetbrains.idea-ultimate
      ncdu_2
      neofetch
