@@ -14,6 +14,8 @@
   home = {
    packages = with pkgs; [
      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+     broot
+     choose
      duf
      fd
      glow
@@ -21,6 +23,7 @@
      jetbrains.idea-ultimate
      ncdu_2
      neofetch
+     procs
      ripgrep
      tdesktop
      vlc
@@ -161,6 +164,11 @@
         set-option -sa terminal-overrides ',xterm-256color:RGB'
       ";
     };
+    zellij = {
+      enable = true;
+      settings = {
+      };
+    };
     bottom = {
       enable = true;
       settings = {
@@ -174,6 +182,9 @@
       enable = true;
       userName = "siph";
       userEmail = "dawkins.chris.dev@gmail.com";
+      delta = {
+        enable = true;
+      };
     };
     # GNU replacement tools
     lsd = {
