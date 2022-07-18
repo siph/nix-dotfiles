@@ -160,6 +160,9 @@
         set-option -sa terminal-overrides ',xterm-256color:RGB'
       ";
     };
+    bottom = {
+      enable = true;
+    };
     git = {
       enable = true;
       userName = "siph";
