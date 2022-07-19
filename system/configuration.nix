@@ -34,7 +34,7 @@
       layout = "us";
       xkbVariant = "";
       enable = true;
-      displayManager.sddm.enable = true;
+      displayManager.lightdm.enable = true;
       desktopManager.plasma5.enable = true;
     };
     pipewire = {
