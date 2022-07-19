@@ -61,6 +61,9 @@
         autoload -Uz colors && colors
       ";
     };
+    bash = {
+      enable = true;
+    };
     starship = {
       enable = true;
       enableZshIntegration = true;
@@ -192,6 +195,11 @@
       enableAliases = true;
     };
     bat = {
+      enable = true;
+    };
+  };
+  targets = {
+    genericLinux = {
       enable = true;
     };
   };
