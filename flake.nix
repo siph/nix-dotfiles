@@ -5,10 +5,14 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-22.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }: 
-  let 
+  outputs = { nixpkgs, home-manager, hyprland, ... }:
+  let
     system = "x86_64-linux";
     username = "chris";
 
@@ -33,6 +37,8 @@
         inherit system;
 	modules = [
 	  ./system/configuration.nix
+	  hyprland.nixosModules.default
+	  { programs.hyprland.enable = true; }
 	];
       };
     };
