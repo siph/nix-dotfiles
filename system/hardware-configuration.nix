@@ -6,18 +6,18 @@
 {
   imports = [ ];
 
-  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/15b8c4a3-8217-4724-8489-cb6e86440a09";
+    { device = "/dev/disk/by-uuid/d57fad0c-9a72-4565-a8f9-e4a50a7e1c7c";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/059a004b-f6e5-42ab-8b2b-8b9985cc0145"; }
+    [ { device = "/dev/disk/by-uuid/e6f7f1b1-cddf-4834-91b5-3bca4187d62c"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
