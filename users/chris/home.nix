@@ -15,6 +15,7 @@
    packages = with pkgs; [
      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
      broot
+     cargo
      choose
      duf
      fd
@@ -25,6 +26,7 @@
      neofetch
      procs
      ripgrep
+     rustc
      tdesktop
      vlc
    ];
@@ -48,7 +50,7 @@
         export PATH=~/Downloads/dwarfs-0.6.1-Linux/bin:$PATH
         export PATH=~/Downloads/dwarfs-0.6.1-Linux/sbin:$PATH
         export PATH=~/Downloads/dwarfs-0.6.1-Linux/share:$PATH
-        export PATH=~/repos/vimconfig/result/bin:$PATH
+        export PATH=~/repos/neovim-flake/result/bin:$PATH
       ";
       initExtra = "
         alias vim='nvim'
