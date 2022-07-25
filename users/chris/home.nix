@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "chris";
@@ -12,24 +14,24 @@
   fonts.fontconfig.enable = true;
 
   home = {
-   packages = with pkgs; [
-     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-     broot
-     cargo
-     choose
-     duf
-     fd
-     glow
-     httpie
-     jetbrains.idea-ultimate
-     ncdu_2
-     neofetch
-     procs
-     ripgrep
-     rustc
-     tdesktop
-     vlc
-   ];
+    packages = with pkgs; [
+      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      broot
+      cargo
+      choose
+      duf
+      fd
+      glow
+      httpie
+      jetbrains.idea-ultimate
+      ncdu_2
+      neofetch
+      procs
+      ripgrep
+      rustc
+      tdesktop
+      vlc
+    ];
   };
 
   programs = {
@@ -190,6 +192,7 @@
       delta = {
         enable = true;
       };
+      lfs.enable = true;
     };
     # GNU replacement tools
     lsd = {
@@ -215,5 +218,4 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "22.05";
-
 }
