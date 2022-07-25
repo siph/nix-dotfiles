@@ -11,8 +11,12 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, hyprland, ... }:
-  let
+  outputs = {
+    nixpkgs,
+    home-manager,
+    hyprland,
+    ...
+  }: let
     system = "x86_64-linux";
     username = "chris";
 
@@ -24,7 +28,6 @@
     };
 
     lib = nixpkgs.lib;
-
   in {
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       configuration = import ./users/chris/home.nix;
@@ -35,11 +38,11 @@
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
-	modules = [
-	  ./system/configuration.nix
-	  hyprland.nixosModules.default
-	  { programs.hyprland.enable = true; }
-	];
+        modules = [
+          ./system/configuration.nix
+          hyprland.nixosModules.default
+          {programs.hyprland.enable = true;}
+        ];
       };
     };
   };
