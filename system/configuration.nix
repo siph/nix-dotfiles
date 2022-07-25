@@ -33,6 +33,7 @@
       enable = true;
       displayManager.lightdm.enable = true;
       #desktopManager.plasma5.enable = true;
+      windowManager.dwm.enable = true;
     };
     pipewire = {
       enable = true;
@@ -64,7 +65,9 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+  };
 
   nix = {
     package = pkgs.nixFlakes; # or versioned attributes like nixVersions.nix_2_8
@@ -74,6 +77,15 @@
   };
 
   environment.systemPackages = with pkgs; [
+    (dwm.overrideAttrs (oldAttrs: rec {
+      src = fetchFromGitLab {
+        owner = "xsiph";
+        repo = "dwm";
+        rev = "6d27f8a235150a234b5158908406af294b31cf55";
+        sha256 = "0oXZj+mHUPcCCniWk6uwIcvfpRQcKT05CAlk1KsnMAo=";
+      };
+    }))
+    dmenu
     vim
     git
     wget
