@@ -7,8 +7,14 @@
     ./hardware-configuration.nix
   ];
 
-  boot.loader.systemd-boot = {
-    enable = true;
+  boot = {
+    loader.systemd-boot.enable = true;
+    kernelParams = [
+      "radeon.si_support=0"
+      "amdgpu.si_support=1"
+      "radeon.cik_support=0"
+      "amdgpu.cik_support=1"
+    ];
   };
 
   networking = {
