@@ -185,6 +185,9 @@
         };
       };
     };
+    firefox = {
+      enable = true;
+    };
     git = {
       enable = true;
       userName = "siph";
