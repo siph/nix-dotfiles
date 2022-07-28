@@ -29,6 +29,7 @@
       procs
       ripgrep
       rustc
+      steam
       tdesktop
       vlc
     ];
@@ -185,9 +186,6 @@
         };
       };
     };
-    firefox = {
-      enable = true;
-    };
     git = {
       enable = true;
       userName = "siph";
@@ -196,6 +194,10 @@
         enable = true;
       };
       lfs.enable = true;
+    };
+    # Desktop Applications
+    firefox = {
+      enable = true;
     };
     # GNU replacement tools
     lsd = {

@@ -55,7 +55,11 @@
 
   hardware = {
     pulseaudio.enable = false;
-    opengl.enable = true;
+    opengl = {
+      enable = true;
+      # 32 Bit Libraries for Steam
+      driSupport32Bit = true;
+    };
   };
 
   sound.enable = true;
