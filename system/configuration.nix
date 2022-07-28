@@ -7,10 +7,8 @@
     ./hardware-configuration.nix
   ];
 
-  boot.loader.grub = {
+  boot.loader.systemd-boot = {
     enable = true;
-    device = "/dev/sda";
-    useOSProber = false;
   };
 
   networking = {
@@ -29,8 +27,7 @@
       xkbVariant = "";
       enable = true;
       displayManager.lightdm.enable = true;
-      #desktopManager.plasma5.enable = true;
-      desktopManager.gnome.enable = true;
+      desktopManager.plasma5.enable = true;
       windowManager.dwm.enable = true;
     };
     pipewire = {
@@ -87,6 +84,7 @@
         sha256 = "0oXZj+mHUPcCCniWk6uwIcvfpRQcKT05CAlk1KsnMAo=";
       };
     }))
+    openvpn
     dmenu
     vim
     git
