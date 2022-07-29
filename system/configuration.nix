@@ -32,7 +32,10 @@
       layout = "us";
       xkbVariant = "";
       enable = true;
-      displayManager.lightdm.enable = true;
+      displayManager = {
+        startx.enable = true;
+        lightdm.enable = true;
+      };
       desktopManager.plasma5.enable = true;
       windowManager.dwm.enable = true;
     };
@@ -96,10 +99,12 @@
         sha256 = "0oXZj+mHUPcCCniWk6uwIcvfpRQcKT05CAlk1KsnMAo=";
       };
     }))
-    openvpn
     dmenu
-    vim
+    feh
     git
+    openvpn
+    vim
+    xcompmgr
     wget
   ];
 
