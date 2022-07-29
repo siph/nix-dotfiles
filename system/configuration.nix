@@ -55,6 +55,7 @@
 
   hardware = {
     pulseaudio.enable = false;
+    bluetooth.enable = true;
     opengl = {
       enable = true;
       # 32 Bit Libraries for Steam
