@@ -51,6 +51,7 @@
     zsh = {
       enable = true;
     };
+    kdeconnect.enable = true;
   };
 
   hardware = {
