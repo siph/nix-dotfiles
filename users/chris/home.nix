@@ -18,7 +18,6 @@
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
       bluetuith
       broot
-      cargo
       choose
       duf
       fd
@@ -29,7 +28,6 @@
       neofetch
       procs
       ripgrep
-      rustc
       steam
       tdesktop
       vlc
