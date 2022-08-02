@@ -15,6 +15,7 @@
       "radeon.cik_support=0"
       "amdgpu.cik_support=1"
     ];
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   networking = {
