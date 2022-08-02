@@ -68,6 +68,8 @@
     };
   };
 
+  virtualisation.docker.enable = true;
+
   sound.enable = true;
   security.rtkit.enable = true;
 
@@ -76,7 +78,7 @@
     users.chris = {
       isNormalUser = true;
       description = "chris";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "docker"];
     };
   };
 
