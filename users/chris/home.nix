@@ -16,6 +16,7 @@
   home = {
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      bluetuith
       broot
       cargo
       choose
