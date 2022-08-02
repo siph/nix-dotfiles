@@ -94,6 +94,7 @@
         visual_bell_duration = 0;
         window_alert_on_bell = false;
         background_opacity = "0.85";
+        confirm_os_window_close = 0;
       };
     };
     tmux = {
