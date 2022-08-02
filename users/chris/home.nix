@@ -29,6 +29,7 @@
       procs
       ripgrep
       steam
+      tixati
       tdesktop
       vlc
     ];
