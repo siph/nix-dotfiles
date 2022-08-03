@@ -5,11 +5,22 @@
 }: {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "chris";
-  home.homeDirectory = "/home/chris";
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  home = {
+    username = "chris";
+    homeDirectory = "/home/chris";
+    file = {
+      ".ideavimrc".text = ''
+        let mapleader = " "
+        set clipboard+=unnamed        -- use system clipboard
+        set scrolloff = 15            -- keep 15 row buffer on screen edges
+        set relativenumber = true     -- show relative distance between rows
+        set hlsearch = false          -- remove highlighting after search
+        set number = true             -- show current line number
+        set NERDTree                  -- enable vim controls in file tree
+        set highlightedyank           -- briefly hightlight copied text
+      '';
+    };
+  };
 
   fonts.fontconfig.enable = true;
 
@@ -36,6 +47,8 @@
   };
 
   programs = {
+    # Let Home Manager install and manage itself.
+    home-manager.enable = true;
     # Shell
     zsh = {
       enable = true;
@@ -119,9 +132,6 @@
 
         # default statusbar color
         set-option -g status-style bg=colour237,fg=colour223 # bg=bg1, fg=fg1
-
-        # default shell
-        set-option -g default-shell /bin/zsh
 
         # default window title colors
         set-window-option -g window-status-style bg=colour214,fg=colour237 # bg=yellow, fg=bg1
