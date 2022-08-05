@@ -49,6 +49,15 @@
     openssh = {
       enable = true;
     };
+    openvpn = {
+      servers = {
+        dallasVPN = {
+          config = '' config /home/chris/vpn/vpn.ovpn '';
+          autoStart = true;
+          updateResolvConf = true;
+        };
+      };
+    };
   };
 
   programs = {
@@ -105,7 +114,6 @@
     dmenu
     feh
     git
-    openvpn
     vim
     xcompmgr
     wget
