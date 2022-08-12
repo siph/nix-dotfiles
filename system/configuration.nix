@@ -65,6 +65,10 @@
     zsh = {
       enable = true;
     };
+    java = {
+      enable = true;
+      package = pkgs.jdk11;
+    };
     kdeconnect.enable = true;
   };
 
