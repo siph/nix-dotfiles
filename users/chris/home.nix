@@ -74,6 +74,7 @@
       tixati
       tdesktop
       vlc
+      xsel
     ];
   };
 
