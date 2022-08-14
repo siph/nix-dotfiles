@@ -58,6 +58,7 @@
   home = {
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      ardour
       bluetuith
       broot
       choose

@@ -42,6 +42,7 @@
     };
     pipewire = {
       enable = true;
+      jack.enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
@@ -92,7 +93,7 @@
     users.chris = {
       isNormalUser = true;
       description = "chris";
-      extraGroups = ["networkmanager" "wheel" "docker"];
+      extraGroups = ["networkmanager" "wheel" "docker" "audio"];
     };
   };
 
