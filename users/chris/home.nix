@@ -66,6 +66,7 @@
       glow
       httpie
       jetbrains.idea-ultimate
+      mpv
       ncdu_2
       neofetch
       procs
