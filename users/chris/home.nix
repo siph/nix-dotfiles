@@ -72,10 +72,11 @@
       procs
       ripgrep
       steam
-      tixati
       tdesktop
+      tixati
       vlc
       xsel
+      yt-dlp
     ];
   };
 
