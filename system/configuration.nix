@@ -27,6 +27,32 @@
   time.timeZone = "America/Denver";
 
   i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    earlySetup = true;
+    colors = [
+      "1d2021" # Background
+      "fb4934" # Bright Red
+      "9d0006" # Faded Red
+      "83a598" # Bright Blue
+      "928374" # Grey
+      "076678" # Faded Blue
+      "928374" # Light Grey
+      "b57614" # Faded Yellow
+      "b8bb26" # Bright Green
+      "8f3f71" # Faded Green
+      "d3869b" # Bright Purple
+      "8f3f71" # Faded Purple
+      "8ec07c" # Bright Aqua
+      "427b58" # Faded Aqua
+      "af3a03" # Faded Orange
+      "f9f5d7" # White
+    ];
+    packages = with pkgs; [
+      terminus_font
+      powerline-fonts
+    ];
+    font = "ter-powerline-v14b";
+  };
 
   services = {
     xserver = {
