@@ -16,6 +16,9 @@
       };
     };
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [
+      "acpi_backlight=vendor"
+    ];
   };
 
   networking = {
@@ -115,6 +118,7 @@
   hardware = {
     pulseaudio.enable = false;
     bluetooth.enable = true;
+    acpilight.enable = true;
   };
 
   sound.enable = true;
@@ -125,7 +129,7 @@
     users.media = {
       isNormalUser = true;
       description = "media";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "video"];
     };
   };
 
