@@ -26,6 +26,48 @@
   time.timeZone = "America/Denver";
 
   i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    earlySetup = true;
+      #"1d2021" # Background
+      #"d3869b" # Bright Purple
+      #"8f3f71" # Faded Purple
+      #"af3a03" # Faded Orange
+      #"83a598" # Bright Blue
+      #"076678" # Faded Blue
+      #"b57614" # Faded Yellow
+      #"928374" # Light Grey
+      #"fb4934" # Bright Red
+      #"9d0006" # Faded Red
+      #"b8bb26" # Bright Green
+      #"8f3f71" # Faded Green
+      #"8ec07c" # Bright Aqua
+      #"427b58" # Faded Aqua
+      #"928374" # Grey
+      #"f9f5d7" # White
+    colors = [
+      "1d2021" # Background
+      "d3869b" # Bright Purple
+      "8f3f71" # Faded Purple
+      "af3a03" # Faded Orange
+      "83a598" # Bright Blue
+      "076678" # Faded Blue
+      "b57614" # Faded Yellow
+      "928374" # Light Grey
+      "fb4934" # Bright Red
+      "9d0006" # Faded Red
+      "b8bb26" # Bright Green
+      "8f3f71" # Faded Green
+      "8ec07c" # Bright Aqua
+      "427b58" # Faded Aqua
+      "928374" # Grey
+      "f9f5d7" # White
+    ];
+    packages = with pkgs; [
+      terminus_font
+      powerline-fonts
+    ];
+    font = "ter-powerline-v14b";
+  };
 
   services = {
     jellyfin = {
