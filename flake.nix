@@ -5,43 +5,49 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-22.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
     nixpkgs,
     home-manager,
-    hyprland,
     ...
   }: let
     system = "x86_64-linux";
-    username = "chris";
-
     pkgs = import nixpkgs {
       inherit system;
       config = {
         allowUnfree = true;
       };
     };
-
     lib = nixpkgs.lib;
   in {
-    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-      configuration = import ./users/chris/home.nix;
-      inherit system username;
-      homeDirectory = "/home/${username}";
-      stateVersion = "22.05";
+    homeConfigurations = {
+      chris = home-manager.lib.homeManagerConfiguration rec {
+        inherit system;
+        username = "chris";
+        configuration = import ./users/${username}/home.nix;
+        homeDirectory = "/home/${username}";
+        stateVersion = "22.05";
+      };
+      media = home-manager.lib.homeManagerConfiguration rec {
+        inherit system;
+        username = "media";
+        configuration = import ./users/${username}/home.nix;
+        homeDirectory = "/home/${username}";
+        stateVersion = "22.05";
+      };
     };
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
         modules = [
-          ./system/configuration.nix
-          hyprland.nixosModules.default
-          {programs.hyprland.enable = true;}
+          ./system/nixos/configuration.nix
+        ];
+      };
+      media = lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./system/media/configuration.nix
         ];
       };
     };
