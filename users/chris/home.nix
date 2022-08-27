@@ -33,13 +33,20 @@
       ".xinitrc" = {
         text = ''
           #!/usr/bin/env bash
-          "$HOME/.fehbg" &
-          xcompmgr &
-          xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
-          xset -dpms &
-          "$HOME/.clock" &
-          export _JAVA_AWT_WM_NONREPARENTING=1
-          exec dwm
+          session=''${1}
+
+          case $session in
+            dwm)  "$HOME/.fehbg" &
+                  xcompmgr &
+                  xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
+                  xset -dpms &
+                  "$HOME/.clock" &
+                  export _JAVA_AWT_WM_NONREPARENTING=1
+                  exec dwm ;;
+            kde)  export DESKTOP_SESSION=plasma
+                  xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
+                  exec startplasma-x11 ;;
+          esac
         '';
         executable = true;
       };

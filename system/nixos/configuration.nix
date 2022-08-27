@@ -77,7 +77,6 @@
       enable = true;
       displayManager = {
         startx.enable = true;
-        lightdm.enable = true;
       };
       desktopManager.plasma5.enable = true;
       windowManager.dwm.enable = true;
