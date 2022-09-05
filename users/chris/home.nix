@@ -74,6 +74,8 @@
       glow
       httpie
       jetbrains.idea-ultimate
+      kubectl
+      minikube
       mpv
       ncdu_2
       neofetch
