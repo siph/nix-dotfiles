@@ -69,6 +69,7 @@
       bluetuith
       broot
       choose
+      doctl
       duf
       fd
       glow
