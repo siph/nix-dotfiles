@@ -73,9 +73,11 @@
       doctl
       duf
       fd
+      ffmpeg
       glow
       httpie
       jetbrains.idea-ultimate
+      jq
       kubectl
       minikube
       mpv
