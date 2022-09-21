@@ -66,6 +66,7 @@
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
       ardour
+      ark
       bluetuith
       broot
       choose
@@ -85,6 +86,7 @@
       steam
       tdesktop
       tixati
+      unzip
       vlc
       xsel
       yt-dlp
