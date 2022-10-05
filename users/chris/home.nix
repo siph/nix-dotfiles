@@ -69,6 +69,7 @@
       ark
       bluetuith
       broot
+      cargo
       choose
       doctl
       duf
@@ -85,6 +86,7 @@
       neofetch
       procs
       ripgrep
+      rustc
       steam
       tdesktop
       tixati
