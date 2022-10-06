@@ -103,7 +103,7 @@
       enable = true;
       theme = "Gruvbox Dark Hard";
       font = {
-        name = "JetBrainsMonoExtraBold Nerd Font";
+        name = "JetBrains Mono NL ExtraBold Nerd Font Complete";
         size = 9;
       };
       settings = {
