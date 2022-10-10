@@ -75,6 +75,7 @@
       duf
       fd
       ffmpeg
+      gh
       glow
       httpie
       jetbrains.idea-ultimate
@@ -84,6 +85,7 @@
       mpv
       ncdu_2
       neofetch
+      nixpkgs-review
       procs
       ripgrep
       rustc
