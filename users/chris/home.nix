@@ -14,6 +14,7 @@
     ../../modules/programs/lsd
     ../../modules/programs/bash
     ../../modules/programs/firefox
+    ../../modules/programs/bat
   ];
   home = {
     username = "chris";
@@ -109,9 +110,6 @@
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
-    bat = {
-      enable = true;
-    };
   };
   targets = {
     genericLinux = {
