@@ -6,15 +6,7 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   imports = [
-    ../../modules/programs/git
-    ../../modules/programs/zsh
-    ../../modules/programs/tmux
-    ../../modules/programs/bottom
-    ../../modules/programs/starship
-    ../../modules/programs/lsd
-    ../../modules/programs/bash
-    ../../modules/programs/firefox
-    ../../modules/programs/bat
+    ../../modules/programs
   ];
   home = {
     username = "chris";
