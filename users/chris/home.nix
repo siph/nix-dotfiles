@@ -9,6 +9,7 @@
     ../../modules/programs/git
     ../../modules/programs/zsh
     ../../modules/programs/tmux
+    ../../modules/programs/bottom
   ];
   home = {
     username = "chris";
@@ -126,15 +127,6 @@
     zellij = {
       enable = true;
       settings = {
-      };
-    };
-    bottom = {
-      enable = true;
-      settings = {
-        flags = {
-          color = "gruvbox";
-          group_processes = true;
-        };
       };
     };
     # Desktop Applications
