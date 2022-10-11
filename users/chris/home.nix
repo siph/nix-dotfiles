@@ -11,6 +11,7 @@
     ../../modules/programs/tmux
     ../../modules/programs/bottom
     ../../modules/programs/starship
+    ../../modules/programs/lsd
   ];
   home = {
     username = "chris";
@@ -115,10 +116,6 @@
       enable = true;
     };
     # GNU replacement tools
-    lsd = {
-      enable = true;
-      enableAliases = true;
-    };
     bat = {
       enable = true;
     };
