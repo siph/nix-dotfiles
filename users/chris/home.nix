@@ -38,6 +38,7 @@
       steam
       tdesktop
       tixati
+      tldr
       unzip
       vlc
       xsel
