@@ -5,6 +5,9 @@
 }: {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
+  imports = [
+    ../../modules/programs/git
+  ];
   home = {
     username = "chris";
     homeDirectory = "/home/chris";
@@ -264,15 +267,6 @@
           group_processes = true;
         };
       };
-    };
-    git = {
-      enable = true;
-      userName = "siph";
-      userEmail = "dawkins.chris.dev@gmail.com";
-      delta = {
-        enable = true;
-      };
-      lfs.enable = true;
     };
     # Desktop Applications
     firefox = {
