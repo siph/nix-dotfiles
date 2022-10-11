@@ -12,6 +12,7 @@
     ../../modules/programs/bottom
     ../../modules/programs/starship
     ../../modules/programs/lsd
+    ../../modules/programs/bash
   ];
   home = {
     username = "chris";
@@ -107,15 +108,9 @@
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
-    # Shell
-    bash = {
-      enable = true;
-    };
-    # Desktop Applications
     firefox = {
       enable = true;
     };
-    # GNU replacement tools
     bat = {
       enable = true;
     };
