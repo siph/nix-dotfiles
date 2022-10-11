@@ -15,6 +15,40 @@
   home = {
     username = "chris";
     homeDirectory = "/home/chris";
+    packages = with pkgs; [
+      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      ardour
+      ark
+      bluetuith
+      broot
+      cargo
+      choose
+      doctl
+      duf
+      fd
+      ffmpeg
+      gh
+      glow
+      httpie
+      jetbrains.idea-ultimate
+      jq
+      kubectl
+      minikube
+      mpv
+      ncdu_2
+      neofetch
+      nixpkgs-review
+      procs
+      ripgrep
+      rustc
+      steam
+      tdesktop
+      tixati
+      unzip
+      vlc
+      xsel
+      yt-dlp
+    ];
     file = {
       ".ideavimrc".text = ''
         let mapleader = " "
@@ -69,55 +103,12 @@
 
   fonts.fontconfig.enable = true;
 
-  home = {
-    packages = with pkgs; [
-      (nerdfonts.override {fonts = ["JetBrainsMono"];})
-      ardour
-      ark
-      bluetuith
-      broot
-      cargo
-      choose
-      doctl
-      duf
-      fd
-      ffmpeg
-      gh
-      glow
-      httpie
-      jetbrains.idea-ultimate
-      jq
-      kubectl
-      minikube
-      mpv
-      ncdu_2
-      neofetch
-      nixpkgs-review
-      procs
-      ripgrep
-      rustc
-      steam
-      tdesktop
-      tixati
-      unzip
-      vlc
-      xsel
-      yt-dlp
-    ];
-  };
-
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
     # Shell
     bash = {
       enable = true;
-    };
-    # Terminal
-    zellij = {
-      enable = true;
-      settings = {
-      };
     };
     # Desktop Applications
     firefox = {
