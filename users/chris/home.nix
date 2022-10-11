@@ -10,6 +10,7 @@
     ../../modules/programs/zsh
     ../../modules/programs/tmux
     ../../modules/programs/bottom
+    ../../modules/programs/starship
   ];
   home = {
     username = "chris";
@@ -111,17 +112,6 @@
     # Shell
     bash = {
       enable = true;
-    };
-    starship = {
-      enable = true;
-      enableZshIntegration = true;
-      settings = {
-        # Because there is a node_modules folder in ~ starship displays the node version when ~
-        # Disabling because it's annoying and idk about js anyway.
-        nodejs = {
-          disabled = true;
-        };
-      };
     };
     # Terminal
     zellij = {
