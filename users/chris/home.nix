@@ -13,6 +13,7 @@
     ../../modules/programs/starship
     ../../modules/programs/lsd
     ../../modules/programs/bash
+    ../../modules/programs/firefox
   ];
   home = {
     username = "chris";
@@ -108,9 +109,6 @@
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
-    firefox = {
-      enable = true;
-    };
     bat = {
       enable = true;
     };
