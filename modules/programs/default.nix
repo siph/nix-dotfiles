@@ -7,6 +7,7 @@
     ./firefox
     ./git
     ./ideaVim
+    ./kitty
     ./lsd
     ./starship
     ./startx
