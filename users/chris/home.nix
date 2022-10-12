@@ -32,6 +32,7 @@
       ncdu_2
       neofetch
       nixpkgs-review
+      ouch
       procs
       ripgrep
       rustc
