@@ -23,6 +23,7 @@
       ffmpeg
       gh
       glow
+      hoard
       httpie
       jetbrains.idea-ultimate
       jq
