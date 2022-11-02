@@ -7,9 +7,9 @@
     ./applications/ideaVim
     ./applications/kitty
     ./applications/lsd
+    ./applications/shells
     ./applications/starship
     ./applications/tmux
-    ./applications/zsh
   ];
 
   home = rec {
