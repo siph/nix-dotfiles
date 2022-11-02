@@ -1,7 +1,6 @@
 { lib, pkgs, ... }:
 {
   imports = [
-    ./bash
     ./bat
     ./bottom
     ./firefox
@@ -9,9 +8,9 @@
     ./ideaVim
     ./kitty
     ./lsd
+    ./shells
     ./starship
     ./startx
     ./tmux
-    ./zsh
   ];
 }
