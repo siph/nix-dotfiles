@@ -26,9 +26,7 @@
     # This will additionally add your inputs to the system's legacy channels
     # Making legacy nix commands consistent as well, awesome!
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-  };
 
-  nix = {
     settings = {
       # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
@@ -40,36 +38,124 @@
   # FIXME: Add the rest of your current configuration
 
   # TODO: Set your hostname
-  networking.hostName = "your-hostname";
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+  };
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
-  boot.loader.systemd-boot.enable = true;
+  boot = {
+    loader.systemd-boot.enable = true;
+    kernelParams = [
+      "radeon.si_support=0"
+      "amdgpu.si_support=1"
+      "radeon.cik_support=0"
+      "amdgpu.cik_support=1"
+    ];
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
 
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
-  users.users = {
-    # FIXME: Replace with your username
-    your-username = {
-      # TODO: You can set an initial password for your user.
-      # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
-      # Be sure to change it (using passwd) after rebooting!
-      # initialPassword = "correcthorsebatterystaple";
-      isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-      ];
-      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = [ "wheel" ];
+  time.timeZone = "America/Denver";
+
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    earlySetup = true;
+    colors = [
+      "1d2021" # Background
+      "d3869b" # Bright Purple
+      "8f3f71" # Faded Purple
+      "af3a03" # Faded Orange
+      "83a598" # Bright Blue
+      "076678" # Faded Blue
+      "b57614" # Faded Yellow
+      "928374" # Light Grey
+      "fb4934" # Bright Red
+      "9d0006" # Faded Red
+      "b8bb26" # Bright Green
+      "8f3f71" # Faded Green
+      "8ec07c" # Bright Aqua
+      "427b58" # Faded Aqua
+      "928374" # Grey
+      "f9f5d7" # White
+    ];
+    packages = with pkgs; [
+      terminus_font
+      powerline-fonts
+    ];
+    font = "ter-powerline-v14b";
+  };
+
+  services = {
+    xserver = {
+      layout = "us";
+      xkbVariant = "";
+      enable = true;
+      displayManager = {
+        startx.enable = true;
+      };
+      desktopManager.plasma5.enable = true;
+      windowManager.dwm.enable = true;
+    };
+    pipewire = {
+      enable = true;
+      jack.enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
+    openssh = {
+      enable = true;
+      permitRootLogin = "no";
+      passwordAuthentication = false;
+    };
+    openvpn = {
+      servers = {
+        dallasVPN = {
+          config = '' config /home/chris/vpn/vpn.ovpn '';
+          autoStart = true;
+          updateResolvConf = true;
+        };
+      };
     };
   };
 
-  # This setups a SSH server. Very important if you're setting up a headless system.
-  # Feel free to remove if you don't need it.
-  services.openssh = {
-    enable = true;
-    # Forbid root login through SSH.
-    permitRootLogin = "no";
-    # Use keys only. Remove if you want to SSH using password (not recommended)
-    passwordAuthentication = false;
+  programs = {
+    zsh = {
+      enable = true;
+    };
+    java = {
+      enable = true;
+      package = pkgs.jdk11;
+    };
+    kdeconnect.enable = true;
+  };
+
+  hardware = {
+    pulseaudio.enable = false;
+    bluetooth.enable = true;
+    opengl = {
+      enable = true;
+      # 32 Bit Libraries for Steam
+      driSupport32Bit = true;
+    };
+  };
+
+  virtualisation.docker.enable = true;
+
+  sound.enable = true;
+
+  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.chris = {
+      isNormalUser = true;
+      description = "chris";
+      openssh.authorizedKeys.keys = [
+        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
+      ];
+      extraGroups = ["networkmanager" "wheel" "docker" "audio"];
+    };
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

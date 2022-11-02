@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "Chris' nix configuration";
 
   inputs = {
     # Nixpkgs
@@ -7,8 +7,10 @@
     hardware.url = "github:nixos/nixos-hardware";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # TODO: Add any other flake you might need
 
@@ -65,7 +67,7 @@
 
       nixosConfigurations = {
         # FIXME replace with your hostname
-        your-hostname = nixpkgs.lib.nixosSystem {
+        nixos = nixpkgs.lib.nixosSystem {
           pkgs = legacyPackages.x86_64-linux;
           specialArgs = { inherit inputs; }; # Pass flake inputs to our config
           modules = (builtins.attrValues nixosModules) ++ [
