@@ -23,12 +23,8 @@
       export BROWSER='firefox'
       export MANPAGER='nvim +Man!'
       export TERM='xterm-256color'
-
-      # temporary paths
-      export PATH=~/repos/neovim-flake/result/bin:$PATH
     ";
     initExtra = "
-      alias vim='nvim'
       alias cat='bat'
       alias startx-dwm='startx ~/.xinitrc dwm'
       alias startx-kde='startx ~/.xinitrc kde'

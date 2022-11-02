@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    chris-neovim.url = "github:siph/neovim-flake";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -23,7 +24,7 @@
     rec {
       overlays = {
         default = import ./overlay {
-          inherit inputs; 
+          inherit inputs;
           pkgs = legacyPackages.x86_64-linux;
         };
       };

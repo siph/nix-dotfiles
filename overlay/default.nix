@@ -16,6 +16,7 @@ let
         sha256 = "0oXZj+mHUPcCCniWk6uwIcvfpRQcKT05CAlk1KsnMAo=";
       };
     });
+    neovim = inputs.chris-neovim.packages.x86_64-linux.default;
   };
 in
 inputs.nixpkgs.lib.composeManyExtensions [ additions modifications ]

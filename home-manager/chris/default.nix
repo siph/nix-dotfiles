@@ -29,6 +29,7 @@
       mpv
       ncdu_2
       neofetch
+      neovim
       nixpkgs-review
       ouch
       procs
