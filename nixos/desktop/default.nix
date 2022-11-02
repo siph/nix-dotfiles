@@ -1,6 +1,3 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-
 { inputs, lib, config, pkgs, ... }: {
 
   imports = [
@@ -14,8 +11,6 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
-
-    # You can also split up your configuration and import pieces of it here.
   ];
 
   nix = {
@@ -35,15 +30,11 @@
     };
   };
 
-  # FIXME: Add the rest of your current configuration
-
-  # TODO: Set your hostname
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
   };
 
-  # TODO: This is just an example, be sure to use whatever bootloader you prefer
   boot = {
     loader.systemd-boot.enable = true;
     kernelParams = [
@@ -145,7 +136,6 @@
 
   sound.enable = true;
 
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users = {
     defaultUserShell = pkgs.zsh;
     users.chris = {
