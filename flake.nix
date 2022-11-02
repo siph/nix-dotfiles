@@ -2,11 +2,8 @@
   description = "Chris' nix configuration";
 
   inputs = {
-    # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    hardware.url = "github:nixos/nixos-hardware";
 
-    # Home manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +22,10 @@
     in
     rec {
       overlays = {
-        default = import ./overlay { inherit inputs; };
+        default = import ./overlay {
+          inherit inputs; 
+          pkgs = legacyPackages.x86_64-linux;
+        };
       };
 
       nixosModules = import ./modules/nixos;

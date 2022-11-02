@@ -1,5 +1,5 @@
 # This file defines two overlays and composes them
-{ inputs, ... }:
+{  inputs, pkgs, ... }:
 let
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs { pkgs = final; };
@@ -9,7 +9,7 @@ let
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: {
     dwm = prev.dwm.overrideAttrs (oldAttrs: rec {
-      src = fetchFromGitLab {
+      src = pkgs.fetchFromGitLab {
         owner = "xsiph";
         repo = "dwm";
         rev = "6d27f8a235150a234b5158908406af294b31cf55";
