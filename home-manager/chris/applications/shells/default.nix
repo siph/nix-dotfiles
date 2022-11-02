@@ -1,7 +1,8 @@
 { lib, pkgs, ... }:
 {
   imports = [
-    ./zsh
     ./bash
+    ./nushell
+    ./zsh
   ];
 }
