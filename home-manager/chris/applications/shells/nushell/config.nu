@@ -6,7 +6,7 @@ let-env config = {
     edit_mode: vi
     footer_mode: always
     quick_completions: true
-    completion_algorithm: fuzzy # fuzzy, prefix
+    completion_algorithm: prefix # fuzzy, prefix
     max_history_size: 10000
     shell_integration: true
     table_index_mode: always
