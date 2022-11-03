@@ -11,7 +11,6 @@
       ardour
       ark
       bluetuith
-      broot
       cargo
       choose
       doctl

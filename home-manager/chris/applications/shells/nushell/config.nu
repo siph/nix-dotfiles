@@ -17,3 +17,4 @@ let-env config = {
 # Alias
 alias ll = ls
 alias cat = bat
+alias tree = broot

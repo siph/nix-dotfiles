@@ -2,6 +2,7 @@
   imports = [
     ./applications/bat
     ./applications/bottom
+    ./applications/broot
     ./applications/firefox
     ./applications/git
     ./applications/ideaVim

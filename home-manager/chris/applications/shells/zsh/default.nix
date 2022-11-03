@@ -28,6 +28,7 @@
       alias cat='bat'
       alias startx-dwm='startx ~/.xinitrc dwm'
       alias startx-kde='startx ~/.xinitrc kde'
+      alias tree='broot'
 
       # Misc
       zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'

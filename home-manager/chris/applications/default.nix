@@ -3,6 +3,7 @@
   imports = [
     ./bat
     ./bottom
+    ./broot
     ./firefox
     ./git
     ./ideaVim
