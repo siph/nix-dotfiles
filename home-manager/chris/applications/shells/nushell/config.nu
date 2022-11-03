@@ -5,13 +5,27 @@ let-env config = {
     show_banner: false
     edit_mode: vi
     footer_mode: always
-    quick_completions: false
+    quick_completions: true
     completion_algorithm: fuzzy # fuzzy, prefix
     max_history_size: 10000
     shell_integration: true
     table_index_mode: always
     case_sensitive_completions: false
-
+    keybindings: [
+        {
+            name: history_completion_vi_normal
+            modifier: none
+            keycode: char_l
+            mode: vi_normal
+            event: {
+                until: [
+                    { send: historyhintcomplete }
+                    { send: menuright }
+                    { send: right }
+                ]
+            }
+        }
+    ]
 }
 
 # Alias
