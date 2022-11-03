@@ -9,7 +9,7 @@ let-env config = {
     completion_algorithm: fuzzy # fuzzy, prefix
     max_history_size: 10000
     shell_integration: true
-    table_index_mode: auto
+    table_index_mode: always
     case_sensitive_completions: false
 
 }
