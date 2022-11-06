@@ -32,3 +32,5 @@ let-env config = {
 alias ll = ls
 alias cat = bat
 alias tree = broot
+alias startx-dwm = startx ~/.xinitrc dwm
+alias startx-kde = startx ~/.xinitrc kde
