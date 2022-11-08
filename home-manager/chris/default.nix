@@ -14,11 +14,13 @@
       cargo
       choose
       doctl
+      du-dust
       duf
       fd
       ffmpeg
       gh
       glow
+      grex
       hoard
       httpie
       jetbrains.idea-ultimate
