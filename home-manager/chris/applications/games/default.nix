@@ -10,6 +10,7 @@
     # These are all broken
     #./freeorion
     #./keeperrl
+    #./veloren
     #./zeroad
   ];
 }

@@ -158,6 +158,22 @@
         "type": "github"
       }
     },
+    "crane": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1661875961,
+        "narHash": "sha256-f1h/2c6Teeu1ofAHWzrS8TwBPcnN+EEu+z1sRVmMQTk=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "d9f394e4e20e97c2a60c3ad82c2b6ef99be19e24",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "crates-nvim": {
       "flake": false,
       "locked": {
@@ -171,6 +187,95 @@
       "original": {
         "owner": "Saecki",
         "repo": "crates.nvim",
+        "type": "github"
+      }
+    },
+    "declarative-cachix": {
+      "locked": {
+        "lastModified": 1665453509,
+        "narHash": "sha256-jCyxhzN5BuUCaaWzO36L6j1ha4BgsCQoOd3O4ahk0G0=",
+        "owner": "jonascarpay",
+        "repo": "declarative-cachix",
+        "rev": "1f5245bc245acabc3ec2c5517f39db3d92bea17b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jonascarpay",
+        "repo": "declarative-cachix",
+        "type": "github"
+      }
+    },
+    "devshell": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1660811669,
+        "narHash": "sha256-V6lmsaLNFz41myppL0yxglta92ijkSvpZ+XVygAh+bU=",
+        "owner": "numtide",
+        "repo": "devshell",
+        "rev": "c2feacb46ee69949124c835419861143c4016fb5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "devshell",
+        "type": "github"
+      }
+    },
+    "dream2nix": {
+      "inputs": {
+        "alejandra": [
+          "veloren",
+          "nci",
+          "nixpkgs"
+        ],
+        "crane": "crane",
+        "devshell": [
+          "veloren",
+          "nci",
+          "devshell"
+        ],
+        "flake-utils-pre-commit": [
+          "veloren",
+          "nci",
+          "nixpkgs"
+        ],
+        "gomod2nix": [
+          "veloren",
+          "nci",
+          "nixpkgs"
+        ],
+        "mach-nix": [
+          "veloren",
+          "nci",
+          "nixpkgs"
+        ],
+        "nixpkgs": [
+          "veloren",
+          "nci",
+          "nixpkgs"
+        ],
+        "poetry2nix": [
+          "veloren",
+          "nci",
+          "nixpkgs"
+        ],
+        "pre-commit-hooks": [
+          "veloren",
+          "nci",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1662507674,
+        "narHash": "sha256-vnXfje4pfTqDEqI837GCT+hNKqzfVwPen++gnLVO9F0=",
+        "owner": "nix-community",
+        "repo": "dream2nix",
+        "rev": "5ba9061857e3e265538c9785bb56bda2bb8f9bca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "dream2nix",
         "type": "github"
       }
     },
@@ -406,6 +511,27 @@
         "type": "github"
       }
     },
+    "nci": {
+      "inputs": {
+        "devshell": "devshell",
+        "dream2nix": "dream2nix",
+        "nixpkgs": "nixpkgs_4",
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1662507702,
+        "narHash": "sha256-Q8zfpLNCJublP7t4oHizr5tgsCS4BHFk7Fc7wzWbrzE=",
+        "owner": "yusdacra",
+        "repo": "nix-cargo-integration",
+        "rev": "97aa58c683ccf628175118052b3306f40ac21ca0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yusdacra",
+        "repo": "nix-cargo-integration",
+        "type": "github"
+      }
+    },
     "neovim-flake": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -497,6 +623,22 @@
       },
       "original": {
         "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1662019588,
+        "narHash": "sha256-oPEjHKGGVbBXqwwL+UjsveJzghWiWV0n9ogo1X6l4cw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2da64a81275b68fdad38af669afeda43d401e94b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -797,8 +939,26 @@
     "root": {
       "inputs": {
         "chris-neovim": "chris-neovim",
+        "declarative-cachix": "declarative-cachix",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_3",
+        "veloren": "veloren"
+      }
+    },
+    "rust-overlay": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1662433378,
+        "narHash": "sha256-DqMtTtIownl+UIPG1O917IH10UF0Hwql636p22vOJfw=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "12aa8ea4381b28b7a3118f96682dc3ffb13fb6b6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "rust-tools": {
@@ -925,6 +1085,24 @@
         "owner": "numtide",
         "repo": "flake-utils",
         "type": "github"
+      }
+    },
+    "veloren": {
+      "inputs": {
+        "nci": "nci"
+      },
+      "locked": {
+        "lastModified": 1668520588,
+        "narHash": "sha256-4U8CwB9Waw3WF/mEPS8KxCVn1HuOVFqq1fR4e6I8Gzg=",
+        "owner": "veloren",
+        "repo": "veloren",
+        "rev": "dfbb8fa1a9b5d779a5bfe3b258e914454d2af1f9",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "veloren",
+        "repo": "veloren",
+        "type": "gitlab"
       }
     },
     "vim-vsnip": {
