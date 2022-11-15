@@ -12,19 +12,6 @@ let-env config = {
     table_index_mode: always
     case_sensitive_completions: false
     keybindings: [
-        {
-            name: history_completion_vi_normal
-            modifier: none
-            keycode: char_l
-            mode: vi_normal
-            event: {
-                until: [
-                    { send: historyhintcomplete }
-                    { send: menuright }
-                    { send: right }
-                ]
-            }
-        }
     ]
 }
 
