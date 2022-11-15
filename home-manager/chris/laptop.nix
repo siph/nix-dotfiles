@@ -1,16 +1,11 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
-    ./applications/bat
-    ./applications/bottom
-    ./applications/broot
-    ./applications/firefox
-    ./applications/git
-    ./applications/ideaVim
-    ./applications/kitty
-    ./applications/lsd
+    ./applications/terminal
     ./applications/shells
-    ./applications/starship
-    ./applications/tmux
+    ./applications/misc/firefox
+    ./applications/misc/git
+    ./applications/misc/ideaVim
+    ./applications/misc/kitty
   ];
 
   home = rec {

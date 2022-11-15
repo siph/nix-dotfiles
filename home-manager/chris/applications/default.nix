@@ -1,18 +1,9 @@
 { lib, pkgs, ... }:
 {
   imports = [
-    ./bat
-    ./bottom
-    ./broot
-    ./dwarf-fortress
-    ./firefox
-    ./git
-    ./ideaVim
-    ./kitty
-    ./lsd
+    ./games
+    ./misc
     ./shells
-    ./starship
-    ./startx
-    ./tmux
+    ./terminal
   ];
 }
