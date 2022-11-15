@@ -1,6 +1,9 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
-    ./applications
+    ./applications/games
+    ./applications/misc
+    ./applications/shells
+    ./applications/terminal
   ];
 
   home = rec {
