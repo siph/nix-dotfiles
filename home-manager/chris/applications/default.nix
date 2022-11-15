@@ -4,6 +4,7 @@
     ./bat
     ./bottom
     ./broot
+    ./dwarf-fortress
     ./firefox
     ./git
     ./ideaVim
