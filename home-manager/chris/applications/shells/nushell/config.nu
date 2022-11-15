@@ -17,6 +17,7 @@ let-env config = {
 
 # Alias
 alias ll = ls
+alias lt = lsd --tree
 alias cat = bat
 alias tree = broot
 alias startx-dwm = startx ~/.xinitrc dwm
