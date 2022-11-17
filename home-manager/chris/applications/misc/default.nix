@@ -5,6 +5,7 @@
     ./git
     ./ideaVim
     ./kitty
+    ./popcorntime
     ./startx
   ];
 }
