@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    veloren.url = "gitlab:veloren/veloren";
+    #veloren.url = "gitlab:veloren/veloren";
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
