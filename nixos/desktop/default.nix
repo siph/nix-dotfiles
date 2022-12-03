@@ -138,7 +138,7 @@
   sound.enable = true;
 
   users = {
-    defaultUserShell = pkgs.nushell;
+    defaultUserShell = pkgs.zsh;
     users.chris = {
       isNormalUser = true;
       description = "chris";
