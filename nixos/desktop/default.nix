@@ -118,7 +118,7 @@
     };
     java = {
       enable = true;
-      package = pkgs.jdk11;
+      package = pkgs.jdk17;
     };
     kdeconnect.enable = true;
   };
