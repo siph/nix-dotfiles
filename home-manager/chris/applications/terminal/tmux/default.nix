@@ -6,6 +6,7 @@
     disableConfirmationPrompt = true;
     keyMode = "vi";
     terminal = "screen-256color";
+    escapeTime = 10;
     plugins = with pkgs; [
       tmuxPlugins.gruvbox
     ];
