@@ -17,19 +17,6 @@ let
       };
     });
     neovim = inputs.chris-neovim.packages.x86_64-linux.default;
-    starship = prev.starship.overrideAttrs (oldAttrs: rec {
-      src = pkgs.fetchFromGitHub {
-        owner = "starship";
-        repo = "starship";
-        rev = "ef83e7a0928231b02650b3554ccd5bf21164aaff";
-        sha256 = "rwnlO6dtRT09+nMxAlqz5X7s5q/uVd5plg2fxvRrI6g=";
-      };
-      cargoDeps = oldAttrs.cargoDeps.overrideAttrs (prev.lib.const {
-        inherit src;
-        name = "starship-ef83e7a0928231b02650b3554ccd5bf21164aaff-vendor.tar.gz";
-        outputHash = "sha256-kBlkyRxGQz76a1IwvXNTAqIEWxMDTMwAhBtJV+beizM=";
-    });
-    });
     #inherit (inputs.veloren.packages."x86_64-linux") veloren-voxygen;
   };
 in
