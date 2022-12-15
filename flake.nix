@@ -2,7 +2,7 @@
   description = "Chris' nix configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
     chris-neovim.url = "github:siph/neovim-flake";
     home-manager = {
       url = "github:nix-community/home-manager";
