@@ -118,7 +118,7 @@
     };
     java = {
       enable = true;
-      package = pkgs.jdk17;
+      package = pkgs.graalvm17-ce;
     };
     kdeconnect.enable = true;
   };
