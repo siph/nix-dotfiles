@@ -4,16 +4,18 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     chris-neovim.url = "github:siph/neovim-flake";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #veloren.url = "gitlab:veloren/veloren";
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixos-generators, ... }@inputs:
     let
       forAllSystems = nixpkgs.lib.genAttrs [
         "aarch64-linux"
@@ -74,6 +76,13 @@
           modules = (builtins.attrValues homeManagerModules) ++ [
             ./home-manager/chris/laptop.nix
           ];
+        };
+      };
+
+      packages.x86_64-linux = {
+        iso = nixos-generators.nixosGenerate {
+          system = "x86_64-linux";
+          format = "iso";
         };
       };
     };
