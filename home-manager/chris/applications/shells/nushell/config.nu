@@ -10,7 +10,7 @@ let-env config = {
     }
     completions: {
         algorithm: prefix # fuzzy, prefix
-        quick: false
+        quick: true
         case_sensitive: false
     }
     history: {
