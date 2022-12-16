@@ -1,18 +1,24 @@
 # Nushell Config
 let-env config = {
-    filesize_metric: true
-    table_mode: rounded
     show_banner: false
     edit_mode: vi
     footer_mode: always
-    quick_completions: true
-    completion_algorithm: prefix # fuzzy, prefix
-    max_history_size: 10000
     shell_integration: true
-    table_index_mode: always
-    case_sensitive_completions: false
-    keybindings: [
-    ]
+    table: {
+        mode: rounded
+        index_mode: always
+    }
+    completions: {
+        algorithm: prefix # fuzzy, prefix
+        quick: false
+        case_sensitive: false
+    }
+    history: {
+        max_size: 10000
+    }
+    filesize: {
+        metric: true
+    }
 }
 
 # Alias
