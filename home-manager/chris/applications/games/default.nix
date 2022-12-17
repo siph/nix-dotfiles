@@ -3,10 +3,11 @@
   imports = [
     ./cataclysm-dda-git
     ./cave-story
-    ./dwarf-fortress
     ./freeciv
     ./openttd
-    ./wesnoth
+    ./steam
+    #./wesnoth
+    #./dwarf-fortress
     # These are all broken
     #./freeorion
     #./keeperrl

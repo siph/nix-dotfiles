@@ -39,7 +39,6 @@
       procs
       ripgrep
       rustc
-      steam
       tdesktop
       tixati
       tldr
