@@ -99,7 +99,7 @@
     openssh = {
       enable = true;
       permitRootLogin = "no";
-      passwordAuthentication = false;
+      passwordAuthentication = true;
     };
     openvpn = {
       servers = {
