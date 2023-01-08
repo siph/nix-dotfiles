@@ -9,5 +9,6 @@
     set number = true             -- show current line number
     set NERDTree                  -- enable vim controls in file tree
     set highlightedyank           -- briefly hightlight copied text
+    set visualbell                -- disable audio bell
   '';
 }
