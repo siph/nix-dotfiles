@@ -4,6 +4,7 @@
     ./firefox
     ./git
     ./ideaVim
+    ./jellyfin
     ./kitty
     ./popcorntime
     ./startx
