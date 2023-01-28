@@ -5,6 +5,7 @@
     ./cave-story
     ./freeciv
     ./openttd
+    ./starsector
     ./steam
     #./wesnoth
     #./dwarf-fortress
