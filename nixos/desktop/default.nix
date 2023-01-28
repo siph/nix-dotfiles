@@ -98,8 +98,10 @@
     };
     openssh = {
       enable = true;
-      permitRootLogin = "no";
-      passwordAuthentication = true;
+      settings = {
+        permitRootLogin = "no";
+        passwordAuthentication = true;
+      };
     };
     openvpn = {
       servers = {
