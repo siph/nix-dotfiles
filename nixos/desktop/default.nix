@@ -112,7 +112,10 @@
         };
       };
     };
+    pcscd.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [ pinentry-curses ];
 
   programs = {
     zsh = {
@@ -123,6 +126,11 @@
       package = pkgs.graalvm17-ce;
     };
     kdeconnect.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+      pinentryFlavor = "curses";
+    };
   };
 
   hardware = {
