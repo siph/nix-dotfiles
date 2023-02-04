@@ -16,22 +16,6 @@ let
         sha256 = "0oXZj+mHUPcCCniWk6uwIcvfpRQcKT05CAlk1KsnMAo=";
       };
     });
-    glow =
-      let
-        version = "19732a63035e316e3079d15030a573e89d7115cf";
-        src = pkgs.fetchFromGitHub {
-          owner = "charmbracelet";
-          repo = "glow";
-          rev = "${version}";
-          sha256 = "sha256-CI0S9XJtJQClpQvI6iSb5rcHafEUwr2V6+Fq560lRfM=";
-        };
-      in
-        (pkgs.callPackage "${pkgs.path}/pkgs/applications/editors/glow" {
-          buildGoModule = args: pkgs.buildGoModule (args // {
-            vendorSha256 = "sha256-2QrHBbhJ04r/vPK2m8J2KZSFrREDCc18tlKd7evghBc=";
-            inherit src version;
-          });
-    });
     neovim = inputs.chris-neovim.packages.x86_64-linux.default;
     #inherit (inputs.veloren.packages."x86_64-linux") veloren-voxygen;
   };
