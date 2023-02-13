@@ -1,5 +1,6 @@
 { lib, pkgs, ... }:
 {
+  home.packages = with pkgs; [ feh xcompmgr dmenu ];
   home.file = {
     ".clock" = {
       text = ''
