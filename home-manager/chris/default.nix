@@ -9,6 +9,7 @@
   home = rec {
     username = "chris";
     homeDirectory = "/home/${username}";
+    sessionPath = [ "/home/${username}/.local/bin" ];
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
       ardour

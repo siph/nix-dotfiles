@@ -3,6 +3,7 @@
   imports = [
     ./firefox
     ./git
+    ./hyprland
     ./ideaVim
     ./jellyfin
     ./kitty

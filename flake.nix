@@ -4,6 +4,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
     chris-neovim.url = "github:siph/neovim-flake";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,7 +19,7 @@
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-generators, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixos-generators, hyprland, ... }@inputs:
     let
       forAllSystems = nixpkgs.lib.genAttrs [
         "aarch64-linux"
@@ -58,6 +62,9 @@
           specialArgs = { inherit inputs; };
           modules = (builtins.attrValues nixosModules) ++ [
             ./nixos/desktop
+            ## Hyprland ##
+            hyprland.nixosModules.default
+            {programs.hyprland.enable = true;}
           ];
         };
       };
