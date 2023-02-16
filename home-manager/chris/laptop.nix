@@ -6,6 +6,7 @@
     ./applications/misc/git
     ./applications/misc/ideaVim
     ./applications/misc/kitty
+    ./application/misc/mpv
   ];
 
   home = rec {
@@ -22,7 +23,6 @@
       httpie
       jetbrains.idea-ultimate
       jq
-      mpv
       ncdu_2
       neofetch
       neovim

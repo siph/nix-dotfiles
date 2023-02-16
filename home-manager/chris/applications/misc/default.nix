@@ -6,6 +6,7 @@
     ./ideaVim
     ./jellyfin
     ./kitty
+    ./mpv
     ./popcorntime
     ./startx
   ];

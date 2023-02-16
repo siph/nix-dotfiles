@@ -30,7 +30,6 @@
       jq
       kubectl
       minikube
-      mpv
       ncdu_2
       neofetch
       neovim
