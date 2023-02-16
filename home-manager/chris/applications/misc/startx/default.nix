@@ -35,7 +35,7 @@
     ".fehbg" = {
       text = ''
         #!/usr/bin/env bash
-        feh --no-fehbg --bg-scale '/home/chris/Pictures/background.png'
+        feh --no-fehbg --bg-scale '/home/chris/Pictures/background.jpg'
       '';
       executable = true;
     };
