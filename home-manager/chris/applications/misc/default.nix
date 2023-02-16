@@ -9,5 +9,6 @@
     ./mpv
     ./popcorntime
     ./startx
+    ./yt-dlp
   ];
 }

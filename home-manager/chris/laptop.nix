@@ -6,7 +6,8 @@
     ./applications/misc/git
     ./applications/misc/ideaVim
     ./applications/misc/kitty
-    ./application/misc/mpv
+    ./applications/misc/mpv
+    ./applications/misc/yt-dlp
   ];
 
   home = rec {
@@ -34,7 +35,6 @@
       tldr
       vlc
       xsel
-      yt-dlp
     ];
   };
 

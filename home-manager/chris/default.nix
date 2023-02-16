@@ -44,7 +44,6 @@
       unzip
       vlc
       xsel
-      yt-dlp
     ];
   };
 

@@ -9,6 +9,7 @@
         osc = false;
         ytdl-format = "bestvideo[height<=?1080]+bestaudio";
         cache = true;
+        force-seekable = true;
         demuxer-max-bytes = "123400KiB";
         demuxer-readahead-secs = 20;
         script-opts = [
