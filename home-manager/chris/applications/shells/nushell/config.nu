@@ -29,3 +29,4 @@ alias cat = bat
 alias tree = broot
 alias startx-dwm = startx ~/.xinitrc dwm
 alias startx-kde = startx ~/.xinitrc kde
+alias start-hyprland = ~/.local/bin/start-hyprland
