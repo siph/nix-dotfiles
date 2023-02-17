@@ -5,7 +5,7 @@
     ./waybar
     ./wofi
   ];
-  home.packages = with pkgs; [ wofi ];
+  home.packages = with pkgs; [ wofi wl-clipboard ];
   xdg.configFile."hypr/hyprland.conf".source = ./hyprland.conf;
   home = {
     file = {
