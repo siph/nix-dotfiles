@@ -131,6 +131,9 @@
       enableSSHSupport = true;
       pinentryFlavor = "curses";
     };
+    hyprland = {
+      enable = true;
+    };
   };
 
   hardware = {

@@ -62,9 +62,7 @@
           specialArgs = { inherit inputs; };
           modules = (builtins.attrValues nixosModules) ++ [
             ./nixos/desktop
-            ## Hyprland ##
             hyprland.nixosModules.default
-            {programs.hyprland.enable = true;}
           ];
         };
       };
