@@ -1,10 +1,10 @@
 {
-    "layer": "bottom",
+    "layer": "top",
     "position": "bottom",
     "height": 10,
     "width": 1908,
     "margin": "3, 0, 2, 0",
-    "modules-left": ["wlr/workspaces", "cpu", "temperature", "memory"],
+    "modules-left": ["wlr/workspaces", "cpu", "memory", "custom/weather"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["tray", "idle_inhibitor", "pulseaudio", "network", "clock"],
 
@@ -19,6 +19,14 @@
             "focused": "",
             "default": ""
         }
+    },
+
+    "custom/weather": {
+        "exec": "$XDG_CONFIG_HOME/waybar/get_weather.sh Colorado%20Springs",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "interval": 1800
     },
 
     "hyprland/window": {
