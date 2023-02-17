@@ -16,6 +16,9 @@ let
         sha256 = "0oXZj+mHUPcCCniWk6uwIcvfpRQcKT05CAlk1KsnMAo=";
       };
     });
+    waybar = prev.waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    });
     neovim = inputs.chris-neovim.packages.x86_64-linux.default;
     #inherit (inputs.veloren.packages."x86_64-linux") veloren-voxygen;
   };
