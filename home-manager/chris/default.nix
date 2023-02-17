@@ -32,7 +32,6 @@
       kubectl
       minikube
       ncdu_2
-      neofetch
       neovim
       nixpkgs-review
       ouch

@@ -5,6 +5,7 @@
     ./bottom
     ./broot
     ./lsd
+    ./neofetch
     ./starship
     ./tmux
   ];

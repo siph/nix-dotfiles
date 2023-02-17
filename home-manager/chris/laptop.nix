@@ -25,7 +25,6 @@
       jetbrains.idea-ultimate
       jq
       ncdu_2
-      neofetch
       neovim
       ouch
       procs
