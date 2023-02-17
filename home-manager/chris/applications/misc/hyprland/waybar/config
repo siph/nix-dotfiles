@@ -1,0 +1,105 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 10,
+    "width": 1908,
+    "margin": "3, 0, 2, 0",
+    "modules-left": ["wlr/workspaces", "cpu", "temperature", "memory"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "idle_inhibitor", "pulseaudio", "network", "clock"],
+
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "♠",
+            "2": "♥",
+            "3": "♦",
+            "4": "♣",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true
+    },
+
+    "clock": {
+        "interval": 1,
+        "timezone": "America/Denver",
+        "locale": "C",
+        "format": "{:%a,%b %d   %I:%M %p}",
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "max-length": 10,
+        "on-click": "kitty -e 'btm'"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": " {used:0.2f}GB",
+
+        "max-length": 10,
+        "tooltip": false,
+        "warning": 70,
+        "critical": 90
+    },
+
+    "temperature": {
+        "hwmon-path-abs": "/sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0/hwmon",
+        "input-filename": "temp1_input"
+    },
+
+    "network": {
+        "format": "{icon}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-wifi": "{icon} ({signalStrength}%)",
+        "format-icons": {
+            "wifi": ["睊", "直" ,""],
+            "ethernet": [""],
+            "disconnected": [""]
+        },
+        "on-click": "kitty nmtui",
+        "tooltip-format": "{ifname}: {ipaddr}",
+    },
+
+    "pulseaudio": {
+      // "scroll-step": 1, // %, can be a float
+      "format": "{icon} {volume}% {format_source}",
+      "format-bluetooth": "{icon} {volume}% {format_source}",
+      "format-bluetooth-muted": " {format_source}",
+      "format-muted": "  {format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": "",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "🎧",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons":{
+            "activated": "",
+            "deactivated": ""
+        },
+        "start-activated": true
+    },
+
+    "tray": {
+        "icon-size": 15
+    }
+}
+
