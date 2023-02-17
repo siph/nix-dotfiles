@@ -1,7 +1,10 @@
 # Nix Config
 
 This is my personalized configuration for nix and nixos systems.
-This is incredibly customized and should only be forked or used as a reference.
+This is incredibly customized and subject to force pushes and
+general chaos and should only be forked or used as a reference.
+
+![screenshot](./doc/ss_2.png)
 
 ## Usage
 
