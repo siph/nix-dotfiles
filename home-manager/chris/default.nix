@@ -15,9 +15,7 @@
       ardour
       ark
       bluetuith
-      cargo
       choose
-      doctl
       du-dust
       duf
       fd
@@ -25,20 +23,15 @@
       gh
       glow
       grex
-      hoard
       httpie
-      jetbrains.idea-ultimate
+      jetbrains.idea-community
       jq
-      kubectl
-      minikube
       ncdu_2
       neovim
       nixpkgs-review
       ouch
       procs
       ripgrep
-      rustc
-      tdesktop
       tixati
       tldr
       unzip

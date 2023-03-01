@@ -22,7 +22,7 @@
       glow
       hoard
       httpie
-      jetbrains.idea-ultimate
+      jetbrains.idea-community
       jq
       ncdu_2
       neovim
