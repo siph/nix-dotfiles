@@ -2,7 +2,7 @@
   description = "Chris' nix configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     chris-neovim.url = "github:siph/neovim-flake";
     hyprland = {
       url = "github:hyprwm/Hyprland";
