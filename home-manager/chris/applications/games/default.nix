@@ -4,6 +4,7 @@
     ./cataclysm-dda-git
     ./cave-story
     ./freeciv
+    ./lutris
     ./openttd
     ./starsector
     ./steam
