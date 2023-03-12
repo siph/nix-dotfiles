@@ -60,6 +60,7 @@
       bind = $mainMod SHIFT, Q, exit, 
       bind = $mainMod, E, exec, dolphin
       bind = $mainMod, F, exec, firefox
+      bind = $mainMod, V, togglefloating, 
       bind = $mainMod, P, exec, wofi --show drun
       bind = $mainMod SHIFT, P, exec, grim -g $(slurp)
 
