@@ -30,7 +30,6 @@
       procs
       ripgrep
       tdesktop
-      tixati
       tldr
       vlc
       xsel

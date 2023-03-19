@@ -32,7 +32,7 @@
       ouch
       procs
       ripgrep
-      tixati
+      stig
       tldr
       unzip
       vlc

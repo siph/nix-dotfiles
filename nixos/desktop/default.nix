@@ -112,6 +112,9 @@
         };
       };
     };
+    transmission = {
+      enable = true;
+    };
     pcscd.enable = true;
   };
 
