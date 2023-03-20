@@ -114,6 +114,11 @@
     };
     transmission = {
       enable = true;
+      settings = {
+        downloadDirPermissions = "770";
+        incomplete-dir-enable = false;
+        umask = 0;
+      };
     };
     pcscd.enable = true;
   };
@@ -161,7 +166,7 @@
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
-      extraGroups = ["networkmanager" "wheel" "docker" "audio"];
+      extraGroups = [ "networkmanager" "wheel" "docker" "audio" "transmission" ];
     };
   };
 
