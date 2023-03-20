@@ -8,6 +8,7 @@
     ./jellyfin
     ./kitty
     ./mpv
+    ./nix-direnv
     ./popcorntime
     ./startx
     ./yt-dlp
