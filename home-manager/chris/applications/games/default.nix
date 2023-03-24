@@ -8,12 +8,12 @@
     ./openttd
     ./starsector
     ./steam
+    ./veloren
     #./wesnoth
     #./dwarf-fortress
     # These are all broken
     #./freeorion
     #./keeperrl
-    #./veloren
     #./zeroad
   ];
 }

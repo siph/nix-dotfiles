@@ -1,3 +1,3 @@
 { pkgs, ... }:{
-  home.packages = with pkgs; [ veloren-voxygen ];
+  home.packages = with pkgs; [ airshipper ];
 }
