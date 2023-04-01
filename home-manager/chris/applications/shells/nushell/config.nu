@@ -38,6 +38,15 @@ def pss [
     ps | string-search $term name
 }
 
+# Nix stuff
+
+# Search nixpkgs and provide output in `record` format.
+def ns [
+    term: string # Search target.
+] {
+    nix search --json nixpkgs $term | from json
+}
+
 # Helper function for filtering data by string. Records are transposed into tables with "key" and "value" columns.
 # > $env | string-search config key
 def string-search [
