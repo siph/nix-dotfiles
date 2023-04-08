@@ -12,5 +12,6 @@
     ./popcorntime
     ./startx
     ./yt-dlp
+    ./xmonad
   ];
 }

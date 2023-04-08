@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [ feh xcompmgr dmenu ];
   home.file = {
@@ -18,16 +18,26 @@
         session=''${1}
 
         case $session in
-          dwm)  "$HOME/.fehbg" &
-                xcompmgr &
-                xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
-                xset -dpms &
-                "$HOME/.clock" &
-                export _JAVA_AWT_WM_NONREPARENTING=1
-                exec dwm ;;
-          kde)  export DESKTOP_SESSION=plasma
-                xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
-                exec startplasma-x11 ;;
+          dwm)     "$HOME/.fehbg" &
+                   xcompmgr &
+                   xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
+                   xset -dpms &
+                   "$HOME/.clock" &
+                   export _JAVA_AWT_WM_NONREPARENTING=1
+                   exec dwm ;;
+          kde)     export DESKTOP_SESSION=plasma
+                   xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
+                   exec startplasma-x11 ;;
+          xmonad)  "$HOME/.fehbg" &
+                   xcompmgr &
+                   export XDG_CURRENT_DESKTOP=xmonad
+                   export XDG_SESSION_TYPE=x11
+                   export XDG_SESSION_DESKTOP=xmonad
+                   export XDG_CONFIG_HOME=/home/chris/.config
+                   export _JAVA_AWT_WM_NONREPARENTING=1
+                   xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
+                   xset -dpms &
+                   exec dbus-launch --exit-with-session xmonad ;;
         esac
       '';
       executable = true;

@@ -11,8 +11,15 @@
   in
   import nixpkgs { inherit system overlays; }
 , ...
-}: pkgs.mkShell {
+}: let
+    devDependencies = with pkgs; [
+      #Haskell
+      ghc
+      haskell-language-server
+    ];
+  in
+  pkgs.mkShell {
   # Enable experimental features without having to specify the argument
   NIX_CONFIG = "experimental-features = nix-command flakes";
-  nativeBuildInputs = with pkgs; [ nix home-manager git ];
+  nativeBuildInputs = with pkgs; [ nix home-manager git ] ++ devDependencies;
 }

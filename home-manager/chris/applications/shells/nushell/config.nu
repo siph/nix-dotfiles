@@ -44,7 +44,7 @@ def pss [
 def ns [
     term: string # Search target.
 ] {
-    nix search --json nixpkgs $term | from json
+    nix search --json nixpkgs $term | from json | transpose package description
 }
 
 # Helper function for filtering data by string. Records are transposed into tables with "key" and "value" columns.
@@ -79,4 +79,5 @@ alias tree = broot
 ## Scripts
 alias startx-dwm = startx ~/.xinitrc dwm
 alias startx-kde = startx ~/.xinitrc kde
+alias startx-xmonad = startx ~/.xinitrc xmonad
 alias start-hyprland = ~/.local/bin/start-hyprland
