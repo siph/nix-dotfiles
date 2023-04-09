@@ -21,6 +21,8 @@
           dwm)     "$HOME/.fehbg" &
                    xcompmgr &
                    xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
+                   xset s off &
+                   xset s 0 0 &
                    xset -dpms &
                    "$HOME/.clock" &
                    export _JAVA_AWT_WM_NONREPARENTING=1
@@ -36,6 +38,8 @@
                    export XDG_CONFIG_HOME=/home/chris/.config
                    export _JAVA_AWT_WM_NONREPARENTING=1
                    xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
+                   xset s off &
+                   xset s 0 0 &
                    xset -dpms &
                    exec dbus-launch --exit-with-session xmonad ;;
         esac
