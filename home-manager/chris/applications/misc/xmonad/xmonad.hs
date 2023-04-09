@@ -73,8 +73,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
 
-    -- launch dmenu
-    , ((modm,               xK_p     ), spawn "dmenu_run")
+    -- launch rofi
+    , ((modm,               xK_p     ), spawn "rofi -show run")
 
     -- launch firefox
     , ((modm,               xK_f     ), spawn "firefox")

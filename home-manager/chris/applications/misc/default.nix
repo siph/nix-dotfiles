@@ -10,8 +10,9 @@
     ./mpv
     ./nix-direnv
     ./popcorntime
+    ./rofi
     ./startx
-    ./yt-dlp
     ./xmonad
+    ./yt-dlp
   ];
 }
