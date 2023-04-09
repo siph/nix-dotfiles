@@ -232,6 +232,7 @@ myManageHook = composeAll
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
+    <+> doF W.swapDown
 
 ------------------------------------------------------------------------
 -- Event handling
