@@ -1,3 +1,7 @@
+let carapace_completer = {|spans|
+    carapace $spans.0 nushell $spans | from json
+}
+
 # Nushell Config
 let-env config = {
     show_banner: false
@@ -12,6 +16,11 @@ let-env config = {
         algorithm: prefix # fuzzy, prefix
         quick: true
         case_sensitive: false
+        external: {
+         enable: true
+         max_results: 50
+         completer: $carapace_completer
+        }
     }
     history: {
         max_size: 10000

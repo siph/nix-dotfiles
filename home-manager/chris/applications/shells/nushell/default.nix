@@ -1,5 +1,6 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [ carapace ];
   programs.nushell = {
     enable = true;
     configFile.source = ./config.nu;
