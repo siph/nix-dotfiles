@@ -9,6 +9,7 @@
     ./kitty
     ./mpv
     ./nix-direnv
+    ./polybar
     ./popcorntime
     ./rofi
     ./startx

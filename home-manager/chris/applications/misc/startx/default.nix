@@ -37,6 +37,7 @@
                    export XDG_SESSION_DESKTOP=xmonad
                    export XDG_CONFIG_HOME=/home/chris/.config
                    export _JAVA_AWT_WM_NONREPARENTING=1
+                   export DISPLAY=:0
                    xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
                    xset s off &
                    xset s 0 0 &

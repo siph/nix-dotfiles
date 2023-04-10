@@ -3,5 +3,6 @@
   home = {
     packages = with pkgs; [ xmobar ];
   };
-  xdg.configFile."xmobar/.xmobarrc".source = ./xmobarrc;
+  xdg.configFile."xmobar/._xmobarrc".source = ./xmobarrc;
+  xdg.configFile."xmobar/.xmobarrc".text = "";
 }
