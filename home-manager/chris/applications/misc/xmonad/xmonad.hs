@@ -85,7 +85,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_f     ), spawn "firefox")
 
     -- launch dolphin
-    , ((modm,               xK_e     ), spawn "dolphin")
+    , ((modm,               xK_d     ), spawn "dolphin")
 
     -- close focused window
     , ((modm,               xK_c     ), kill)
