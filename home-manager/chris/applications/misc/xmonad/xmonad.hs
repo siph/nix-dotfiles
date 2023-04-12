@@ -18,6 +18,7 @@ import XMonad.Hooks.EwmhDesktops
 
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.Magnifier
+import XMonad.Layout.ResizableTile
 
 import Data.Monoid
 import System.Exit
@@ -115,10 +116,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_Return), windows W.swapMaster)
 
     -- Swap the focused window with the next window
-    , ((modm .|. shiftMask, xK_j     ), windows W.swapDown  )
+    , ((modm .|. mod1Mask, xK_j     ), windows W.swapDown  )
 
     -- Swap the focused window with the previous window
-    , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
+    , ((modm .|. mod1Mask, xK_k     ), windows W.swapUp    )
+
+    -- Swap the focused window with the next window
+    , ((modm .|. shiftMask, xK_j     ), sendMessage MirrorShrink  )
+
+    -- Swap the focused window with the previous window
+    , ((modm .|. shiftMask, xK_k     ), sendMessage MirrorExpand    )
 
     -- Shrink the master area
     , ((modm .|. shiftMask, xK_h     ), sendMessage Shrink)
@@ -206,7 +213,7 @@ myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full ||| threeCol)
      threeCol = magnifiercz' 1.3 (ThreeColMid nmaster delta ratio)
 
      -- default tiling algorithm partitions the screen into two panes
-     tiled   = Tall nmaster delta ratio
+     tiled   = ResizableTall nmaster delta ratio []
 
      -- The default number of windows in the master pane
      nmaster = 1
