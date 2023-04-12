@@ -2,7 +2,7 @@
 {
   programs.rofi = {
     enable = true;
-    font = "JetBrains Mono NL ExtraBold Nerd Font Complete";
+    font = "JetBrainsMono Nerd Font 8";
     location = "top";
     terminal = "kitty";
     theme = ./gruvbox-dark-hard.rasi;
