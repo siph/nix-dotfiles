@@ -49,11 +49,22 @@ def pss [
 
 # Nix stuff
 
+# Return a record of system architecture information
+def archinfo [] {
+    sysctl -n kernel.arch kernel.ostype | lines | {arch: ($in.0|str downcase), ostype: ($in.1|str downcase)}
+}
+
 # Search nixpkgs and provide output in `record` format.
 def ns [
     term: string # Search target.
 ] {
-    nix search --json nixpkgs $term | from json | transpose package description
+    let info = (archinfo)
+    nix search --json nixpkgs $term
+        | from json
+        | transpose package description
+        | flatten
+        | select package description version
+        | update package {|row| $row.package | str replace $"legacyPackages.($info.arch)-($info.ostype)." ""}
 }
 
 # Helper function for filtering data by string. Records are transposed into tables with "key" and "value" columns.
