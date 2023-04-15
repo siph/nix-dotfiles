@@ -16,10 +16,14 @@
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    yt-watcher = {
+      url = "github:siph/yt-watcher";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-generators, hyprland, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixos-generators, hyprland, yt-watcher, ... }@inputs:
     let
       forAllSystems = nixpkgs.lib.genAttrs [
         "aarch64-linux"

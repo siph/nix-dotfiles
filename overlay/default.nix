@@ -34,6 +34,7 @@ let
     });
     neovim = inputs.chris-neovim.packages.x86_64-linux.default;
     #inherit (inputs.veloren.packages."x86_64-linux") veloren-voxygen;
+    yt-watcher = inputs.yt-watcher.packages.x86_64-linux.default;
   };
 in
 inputs.nixpkgs.lib.composeManyExtensions [ additions modifications ]

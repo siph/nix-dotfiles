@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./applications/games
     ./applications/misc
@@ -10,6 +10,7 @@
     username = "chris";
     homeDirectory = "/home/${username}";
     sessionPath = [ "/home/${username}/.local/bin" ];
+    stateVersion = "22.05";
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
       ardour
@@ -37,6 +38,7 @@
       unzip
       vlc
       xsel
+      yt-watcher
     ];
   };
 
@@ -45,7 +47,4 @@
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "22.05";
 }
