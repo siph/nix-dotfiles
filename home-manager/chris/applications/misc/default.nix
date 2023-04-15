@@ -1,6 +1,7 @@
-{ lib, pkgs, ... }:
+{ ... }:
 {
   imports = [
+    ./dunst
     ./firefox
     ./git
     ./hyprland
