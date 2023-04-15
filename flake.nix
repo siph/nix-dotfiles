@@ -16,6 +16,10 @@
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mywm = {
+      url = "github:siph/mywm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     yt-watcher = {
       url = "github:siph/yt-watcher";
       inputs.nixpkgs.follows = "nixpkgs";

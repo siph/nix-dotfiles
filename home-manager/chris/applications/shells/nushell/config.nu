@@ -100,4 +100,6 @@ alias tree = broot
 alias startx-dwm = startx ~/.xinitrc dwm
 alias startx-kde = startx ~/.xinitrc kde
 alias startx-xmonad = startx ~/.xinitrc xmonad
+alias startx-mywm = startx ~/.xinitrc mywm
 alias start-hyprland = ~/.local/bin/start-hyprland
+
