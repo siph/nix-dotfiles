@@ -1,5 +1,6 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [ tmuxp ];
   programs.tmux = {
     enable = true;
     customPaneNavigationAndResize = true;
