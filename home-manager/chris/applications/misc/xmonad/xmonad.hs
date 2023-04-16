@@ -42,6 +42,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_f     ), spawn "firefox")
     -- launch dolphin
     , ((modm,               xK_d     ), spawn "dolphin")
+    -- printscreen
+    , ((0,                  xK_Print ), spawn "spectacle")
     -- close focused window
     , ((modm,               xK_c     ), kill)
      -- Rotate through the available layout algorithms
