@@ -10,9 +10,17 @@ template.
 
 ## Screenshots
 
-![screenshot](./doc/ss_2_2.png)
+### Hyprland
 
-![screenshot](./doc/ss_3_2.png)
+![hyperland-1](./doc/ss_2_2.png)
+
+![hyperland-2](./doc/ss_3_2.png)
+
+### Xmonad
+
+![xmonad-1](./doc/xmonad_1.png)
+
+![xmonad-2](./doc/xmonad_2.png)
 
 ## Workflow
 
@@ -63,7 +71,7 @@ There are too many applications to mention but some primary applications are:
 ### Starting Desktop Environments
 
 This config does not use a login-manager and instead uses wrapper scripts to
-launch a DE/WM with it's configurations directly from a tty. There are three
+launch a DE/WM with it's configurations directly from a tty. There are multiple
 desktop environments/window managers. The scripts are built and placed on PATH
 automatically by nix.
 
@@ -76,7 +84,7 @@ startx-kde
 
 #### Hyprland
 
-Launch hyprland with waybar + extras.
+Launch [Hyprland](./home-manager/chris/applications/misc/hyprland/hyprland.conf) with waybar + extras.
 ```shell
 start-hyprland
 ```
@@ -88,5 +96,10 @@ Launch [configured DWM](https://www.gitlab.com/xsiph/dwm) session + extras.
 startx-dwm
 ```
 
+#### Xmonad
 
+Launch [Xmonad](./home-manager/chris/applications/misc/xmonad/xmonad.hs) session, polybar, dunst + extras.
+```shell
+startx-xmonad
+```
 
