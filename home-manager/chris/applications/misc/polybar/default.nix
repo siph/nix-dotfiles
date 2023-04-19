@@ -15,7 +15,7 @@
       name = "clock-script";
       text = (builtins.replaceStrings
         [ "@city@"  "@format@" ]
-        [ "Colorado Springs"  "%c%t ● %h ● %w ● %m"]
+        [ "KCOS"  "%c%t ● %h ● %w ● %m"]
         (builtins.readFile ./weather.nu)
       );
       executable = true;
