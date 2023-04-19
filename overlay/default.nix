@@ -19,19 +19,6 @@ let
     waybar = prev.waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     });
-    starship = prev.starship.overrideAttrs (oldAttrs: rec {
-      src = pkgs.fetchFromGitHub {
-        owner = "starship";
-        repo = "starship";
-        rev = "07d9bb1691cf42c354a4feb3affd977b97e5b937";
-        sha256 = "sha256-jDvtUwPtBuQOXvecE8jPSIT2hsov6DybpeTjk3dH6Bc=";
-      };
-      cargoDeps = oldAttrs.cargoDeps.overrideAttrs (prev.lib.const {
-        inherit src;
-        name = "starship-07d9bb1691cf42c354a4feb3affd977b97e5b937-vendor.tar.gz";
-        outputHash = "sha256-jf+lb9rZTjdqRLpC+hN8M/+DgNMCoLCmb4CyqjYbvtM=";
-      });
-    });
     neovim = inputs.chris-neovim.packages.x86_64-linux.default;
     #inherit (inputs.veloren.packages."x86_64-linux") veloren-voxygen;
     mywm = inputs.mywm.packages.x86_64-linux.default;
