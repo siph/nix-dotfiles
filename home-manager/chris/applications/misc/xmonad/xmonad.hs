@@ -11,6 +11,8 @@ import XMonad.Layout.ThreeColumns
 import XMonad.Layout.Magnifier
 import XMonad.Layout.ResizableTile
 
+import XMonad.Actions.NoBorders
+
 import Data.Monoid
 import System.Exit
 
@@ -21,6 +23,7 @@ import qualified Data.Map        as M
 import qualified Codec.Binary.UTF8.String              as UTF8
 import qualified DBus                                  as D
 import qualified DBus.Client                           as D
+import Text.XHtml (border)
 
 myTerminal      = "kitty"
 myFocusFollowsMouse :: Bool
@@ -74,6 +77,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_h     ), sendMessage Shrink)
     -- Expand the master area
     , ((modm .|. shiftMask, xK_l     ), sendMessage Expand)
+    -- Toggle active window border
+    , ((modm .|. shiftMask, xK_b     ), withFocused toggleBorder)
     -- Push window back into tiling
     , ((modm,               xK_t     ), withFocused $ windows . W.sink)
     -- Increment the number of windows in the master area
