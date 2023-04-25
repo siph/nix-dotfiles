@@ -12,12 +12,8 @@
     };
 
     weather-script = pkgs.writeTextFile {
-      name = "clock-script";
-      text = (builtins.replaceStrings
-        [ "@city@"  "@format@" ]
-        [ "KCOS"  "%c%t ● %h ● %w ● %m"]
-        (builtins.readFile ./weather.nu)
-      );
+      name = "weather-script";
+      text = builtins.readFile ./weather.nu;
       executable = true;
       destination = /bin/weather-script;
     };
