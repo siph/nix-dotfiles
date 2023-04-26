@@ -138,7 +138,7 @@ myManageHook = composeAll
 myEventHook = mempty
 myLogHook = return ()
 myStartupHook = do
-    spawnOnce "polybar example"
+    spawnOnce "polybar xmonad-bar"
     spawnOnce "@kdeconnect@/libexec/kdeconnectd"
 
 -- Polybar
