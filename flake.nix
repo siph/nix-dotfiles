@@ -22,7 +22,6 @@
     };
     yt-watcher = {
       url = "github:siph/yt-watcher";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
