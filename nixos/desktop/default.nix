@@ -107,7 +107,7 @@
       servers = {
         dallasVPN = {
           config = '' config /home/chris/vpn/vpn.ovpn '';
-          autoStart = true;
+          autoStart = false;
           updateResolvConf = true;
         };
       };
