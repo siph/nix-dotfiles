@@ -8,7 +8,7 @@ let
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: {
-    dwm = prev.dwm.overrideAttrs (oldAttrs: rec {
+    dwm = prev.dwm.overrideAttrs (oldAttrs: {
       src = pkgs.fetchFromGitLab {
         owner = "xsiph";
         repo = "dwm";
@@ -19,10 +19,9 @@ let
     waybar = prev.waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     });
-    neovim = inputs.chris-neovim.packages.x86_64-linux.default;
-    #inherit (inputs.veloren.packages."x86_64-linux") veloren-voxygen;
-    mywm = inputs.mywm.packages.x86_64-linux.default;
-    yt-watcher = inputs.yt-watcher.packages.x86_64-linux.default;
+    neovim = inputs.chris-neovim.packages.${pkgs.system}.default;
+    mywm = inputs.mywm.packages.${pkgs.system}.default;
+    yt-watcher = inputs.yt-watcher.packages.${pkgs.system}.default;
   };
 in
 inputs.nixpkgs.lib.composeManyExtensions [ additions modifications ]
