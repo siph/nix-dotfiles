@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ feh xcompmgr dmenu mywm ];
+  home.packages = with pkgs; [ feh dmenu mywm ];
   home.file = {
     ".clock" = {
       text = ''
@@ -19,7 +19,7 @@
 
         case $session in
           dwm)     "$HOME/.fehbg" &
-                   xcompmgr &
+                   picom &
                    xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
                    xset s off &
                    xset s 0 0 &
@@ -31,7 +31,7 @@
                    xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
                    exec startplasma-x11 ;;
           xmonad)  "$HOME/.fehbg" &
-                   xcompmgr &
+                   picom &
                    export XDG_CURRENT_DESKTOP=xmonad
                    export XDG_SESSION_TYPE=x11
                    export XDG_SESSION_DESKTOP=xmonad
@@ -44,7 +44,7 @@
                    xset -dpms &
                    exec dbus-launch --exit-with-session xmonad ;;
           mywm)  "$HOME/.fehbg" &
-                   xcompmgr &
+                   picom &
                    export XDG_CURRENT_DESKTOP=mywm
                    export XDG_SESSION_TYPE=x11
                    export XDG_SESSION_DESKTOP=mywm
