@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./alacritty
     ./dunst
     ./firefox
     ./git
