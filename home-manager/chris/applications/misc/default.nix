@@ -13,6 +13,7 @@
     ./polybar
     ./popcorntime
     ./rofi
+    ./st
     ./startx
     ./xmonad
     ./yt-dlp
