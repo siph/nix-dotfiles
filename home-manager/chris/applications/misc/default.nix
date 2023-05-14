@@ -16,6 +16,7 @@
     ./rofi
     ./st
     ./startx
+    ./wezterm
     ./xmonad
     ./yt-dlp
   ];
