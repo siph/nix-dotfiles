@@ -6,6 +6,7 @@ return {
     use_fancy_tab_bar = false,
     window_background_opacity = 0.85,
     window_close_confirmation = "NeverPrompt",
+    allow_square_glyphs_to_overflow_width = "Always",
     window_padding = {
         left = 2,
         right = 1,
