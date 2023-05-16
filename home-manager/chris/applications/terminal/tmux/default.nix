@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ tmuxp ];
   programs.tmux = {
     enable = true;
     customPaneNavigationAndResize = true;
@@ -11,6 +10,7 @@
     plugins = with pkgs; [
       tmuxPlugins.gruvbox
     ];
+    tmuxp.enable = true;
     extraConfig = "
       # indexing
       set -g renumber-windows on
