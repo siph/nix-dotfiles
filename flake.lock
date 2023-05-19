@@ -107,11 +107,11 @@
         "which-key": "which-key"
       },
       "locked": {
-        "lastModified": 1684028868,
-        "narHash": "sha256-xOIWaJFOWXtR12Hwa2HtkD6Ys4hdqb+IisFXWIdyN+Q=",
+        "lastModified": 1684453384,
+        "narHash": "sha256-tONyds2SXA47u3seLqUgg2tlB73m1ZMg2Pniy8PQamE=",
         "owner": "siph",
         "repo": "neovim-flake",
-        "rev": "1d4d0bc04a7b2a563c0afdc79c4f6a8c2f9af979",
+        "rev": "a257a6c722884f9fca166597e47f1d0480d30129",
         "type": "github"
       },
       "original": {
