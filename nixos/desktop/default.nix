@@ -45,6 +45,7 @@
       "amdgpu.cik_support=1"
     ];
     kernelPackages = pkgs.linuxPackages_latest;
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
 
   time.timeZone = "America/Denver";
