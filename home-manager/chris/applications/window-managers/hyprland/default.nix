@@ -5,7 +5,7 @@
     ./waybar
     ./wofi
   ];
-  home.packages = with pkgs; [ wofi wl-clipboard grim slurp ];
+  home.packages = with pkgs; [ wofi grim slurp ];
   xdg.configFile."hypr/hyprland.conf".source = pkgs.substituteAll {
     name = "hyprland.conf";
     src = ./hyprland.conf;

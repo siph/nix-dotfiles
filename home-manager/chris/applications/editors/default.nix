@@ -1,0 +1,7 @@
+{ ... }:
+{
+  imports = [
+    ./intellij
+    ./neovim
+  ];
+}

@@ -1,9 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    ./applications/games
-    ./applications/misc
-    ./applications/shells
-    ./applications/terminal
+    ./applications
   ];
 
   home = rec {
@@ -13,32 +10,7 @@
     stateVersion = "22.05";
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
-      ardour
-      ark
-      bluetuith
-      choose
-      du-dust
-      duf
-      fd
-      ffmpeg
-      gh
-      glow
-      grex
-      httpie
-      jetbrains.idea-community
-      jq
-      ncdu_2
-      neovim
-      nixpkgs-review
-      ouch
-      procs
-      ripgrep
-      stig
-      tldr
-      unzip
-      vlc
-      xsel
-      yt-watcher
+      #ardour
     ];
   };
 

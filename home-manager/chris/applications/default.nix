@@ -1,9 +1,13 @@
-{ lib, pkgs, ... }:
+{ ... }:
 {
   imports = [
+    ./browsers
+    ./editors
     ./games
-    ./misc
     ./shells
-    ./terminal
+    ./terminal-emulators
+    ./tools
+    ./video
+    ./window-managers
   ];
 }

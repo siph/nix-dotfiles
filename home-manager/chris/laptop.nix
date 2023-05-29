@@ -1,13 +1,11 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
-    ./applications/terminal
+    ./applications/terminal-emulators/kitty
     ./applications/shells
-    ./applications/misc/firefox
-    ./applications/misc/git
-    ./applications/misc/ideaVim
-    ./applications/misc/kitty
-    ./applications/misc/mpv
-    ./applications/misc/yt-dlp
+    ./applications/tools
+    ./applications/browsers
+    ./applications/editors
+    ./applications/video
   ];
 
   home = rec {
@@ -15,24 +13,6 @@
     homeDirectory = "/home/${username}";
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
-      choose
-      duf
-      fd
-      ffmpeg
-      glow
-      hoard
-      httpie
-      jetbrains.idea-community
-      jq
-      ncdu_2
-      neovim
-      ouch
-      procs
-      ripgrep
-      tdesktop
-      tldr
-      vlc
-      xsel
     ];
   };
 
