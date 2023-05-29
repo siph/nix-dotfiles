@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ feh dmenu mywm ];
+  home.packages = with pkgs; [ feh dmenu ];
   home.file = {
     ".clock" = {
       text = ''
@@ -43,20 +43,6 @@
                    xset s 0 0 &
                    xset -dpms &
                    exec dbus-launch --exit-with-session xmonad ;;
-          mywm)  "$HOME/.fehbg" &
-                   picom &
-                   export XDG_CURRENT_DESKTOP=mywm
-                   export XDG_SESSION_TYPE=x11
-                   export XDG_SESSION_DESKTOP=mywm
-                   export XDG_CONFIG_HOME=/home/chris/.config
-                   export _JAVA_AWT_WM_NONREPARENTING=1
-                   export DISPLAY=:0
-                   xinput set-prop 'Logitech G500' 'libinput Accel Speed' -0.65 &
-                   xsetroot -cursor_name left_ptr &
-                   xset s off &
-                   xset s 0 0 &
-                   xset -dpms &
-                   exec ${pkgs.mywm}/bin/mywm &> ~/.penrose.log ;;
         esac
       '';
       executable = true;

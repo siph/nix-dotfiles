@@ -20,7 +20,6 @@ let
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     });
     neovim = inputs.chris-neovim.packages.${system}.default;
-    mywm = inputs.mywm.packages.${system}.default;
     yt-watcher = inputs.yt-watcher.packages.${system}.default;
   };
 in
