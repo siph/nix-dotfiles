@@ -35,14 +35,7 @@
         "aarch64-darwin"
         "x86_64-darwin"
       ];
-    in
-    rec {
-      overlays = {
-        default = import ./overlay {
-          inherit inputs;
-          pkgs = legacyPackages.x86_64-linux;
-        };
-      };
+    in rec {
 
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
@@ -54,12 +47,15 @@
       legacyPackages = forAllSystems (system:
         import inputs.nixpkgs {
           inherit system;
-          overlays = builtins.attrValues overlays;
-
-          # NOTE: Using `nixpkgs.config` in your NixOS config won't work
-          # Instead, you should set nixpkgs configs here
-          # (https://nixos.org/manual/nixpkgs/stable/#idm140737322551056)
-          config.allowUnfree = true;
+          overlays = builtins.attrValues {
+            default = import ./overlay {
+              inherit system;
+              inherit inputs;
+            };
+          };
+          config = {
+            allowUnfree = true;
+          };
         }
       );
 

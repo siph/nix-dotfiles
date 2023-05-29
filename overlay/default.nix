@@ -1,5 +1,5 @@
 # This file defines two overlays and composes them
-{  inputs, pkgs, ... }:
+{  inputs, system, ... }:
 let
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs { pkgs = final; };
@@ -9,7 +9,7 @@ let
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: {
     dwm = prev.dwm.overrideAttrs (oldAttrs: {
-      src = pkgs.fetchFromGitLab {
+      src = inputs.nixpkgs.legacyPackages.${system}.fetchFromGitLab {
         owner = "xsiph";
         repo = "dwm";
         rev = "6d27f8a235150a234b5158908406af294b31cf55";
@@ -19,9 +19,9 @@ let
     waybar = prev.waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     });
-    neovim = inputs.chris-neovim.packages.${pkgs.system}.default;
-    mywm = inputs.mywm.packages.${pkgs.system}.default;
-    yt-watcher = inputs.yt-watcher.packages.${pkgs.system}.default;
+    neovim = inputs.chris-neovim.packages.${system}.default;
+    mywm = inputs.mywm.packages.${system}.default;
+    yt-watcher = inputs.yt-watcher.packages.${system}.default;
   };
 in
 inputs.nixpkgs.lib.composeManyExtensions [ additions modifications ]
