@@ -64,6 +64,14 @@
             hyprland.nixosModules.default
           ];
         };
+        raspberry-pi = nixpkgs.lib.nixosSystem {
+          pkgs = legacyPackages.aarch64-linux;
+          specialArgs = { inherit inputs; };
+          modules = (builtins.attrValues nixosModules) ++ [
+            ./nixos/raspberry-pi
+            hyprland.nixosModules.default
+          ];
+        };
       };
 
       homeConfigurations = {
@@ -81,12 +89,34 @@
             ./home-manager/chris/laptop.nix
           ];
         };
+        "chris@raspberry-pi" = home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages.aarch64-linux;
+          extraSpecialArgs = { inherit inputs; };
+          modules = (builtins.attrValues homeManagerModules) ++ [
+            ./home-manager/chris/raspberry-pi.nix
+          ];
+        };
       };
 
-      packages.x86_64-linux = {
-        iso = nixos-generators.nixosGenerate {
+      packages = {
+        x86_64-linux.iso = nixos-generators.nixosGenerate {
           system = "x86_64-linux";
           format = "iso";
+        };
+        # I have tried at least 5 different way and I cannot get
+        # `nixosGenerate` to use the overlays in `nixpkgs`.
+        aarch64-linux.raspberry-pi = nixos-generators.nixosGenerate {
+          format = "sd-aarch64";
+          pkgs = legacyPackages.aarch64-linux;
+          modules = (builtins.attrValues nixosModules) ++ [
+            ./nixos/raspberry-pi
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.users.chris = {
+                imports = [ ./home-manager/chris/raspberry-pi.nix ];
+              };
+            }
+          ];
         };
       };
     };
