@@ -90,11 +90,14 @@ def get-type [] {
 
 # Alias
 
-# Filesystem
+## Filesystem
 alias ll = ls
 alias lt = lsd --tree
 alias cat = bat
 alias tree = broot
+
+## Vim
+alias vim = nvim
 
 ## Scripts
 alias startx-dwm = startx ~/.xinitrc dwm
