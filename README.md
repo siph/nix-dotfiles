@@ -31,7 +31,7 @@ native nix packaged games and edit audio projects with Ardour.
 
 Development is done in neovim + tmux and Intellij Idea CE. The neovim
 configuration lives in it's own
-[repository](https://www.github.com/siph/neovim-flake) and is complete with
+[repository](https://www.github.com/siph/nixvim-flake) and is complete with
 LSP, syntax highlighting, debugging and more. Hyprland and DWM provide
 mouse-free window management. This combined with editor keybinds/configurations
 means that a majority of things can be accomplished without leaving home-row.
