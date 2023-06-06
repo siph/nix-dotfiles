@@ -8,14 +8,14 @@
       name = "clock-script";
       text = builtins.readFile ./clock.nu;
       executable = true;
-      destination = /bin/clock-script;
+      destination = "/bin/clock-script";
     };
 
     weather-script = pkgs.writeTextFile {
       name = "weather-script";
       text = builtins.readFile ./weather.nu;
       executable = true;
-      destination = /bin/weather-script;
+      destination = "/bin/weather-script";
     };
 
   in (builtins.replaceStrings
