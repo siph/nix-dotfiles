@@ -31,11 +31,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1685823538,
-        "narHash": "sha256-dz8zQjr5pHm+XPH48esGURE5bbH5UXeYdfZ4dD/GS3U=",
+        "lastModified": 1686265122,
+        "narHash": "sha256-6F2LOTDXFRPYGoxGgfj/nFI378b1jDbMPe8JpzTdO4k=",
         "owner": "siph",
         "repo": "nixvim-flake",
-        "rev": "1c8e744ebe02ad8ec3752165c1cca6b1aee1ec7b",
+        "rev": "1112b71cae8c8aa361d9cbcc9f379648cc58072f",
         "type": "github"
       },
       "original": {
@@ -342,11 +342,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1685823188,
-        "narHash": "sha256-EUWIIYmIzw3zYKUblHkHoMhBlAI+m28wjpGSRxZy7HE=",
+        "lastModified": 1686210684,
+        "narHash": "sha256-dlQDXx0P/MmiBOhJ733AyD0+ym7U7Pe080gIBSgFK0E=",
         "owner": "pta2002",
         "repo": "nixvim",
-        "rev": "5b225c1b70f5437b7e0288aaa9d284c3cf494ddd",
+        "rev": "ab8377f319a2d84026244bf81b3b3f8e49c2a518",
         "type": "github"
       },
       "original": {
