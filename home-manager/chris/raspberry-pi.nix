@@ -1,17 +1,13 @@
 { pkgs, ... }: {
   imports = [
-    ./applications/browsers
     ./applications/editors/neovim
     ./applications/shells
-    ./applications/terminal-emulators/kitty
     ./applications/tools/bat
     ./applications/tools/git
     ./applications/tools/tmux
     ./applications/tools/bottom
     ./applications/tools/neofetch
     ./applications/tools/starship
-    ./applications/window-managers/misc
-    ./applications/window-managers/xmonad
   ];
 
   home = rec {
@@ -20,6 +16,7 @@
     stateVersion = "23.05";
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      yt-watcher
     ];
   };
 
