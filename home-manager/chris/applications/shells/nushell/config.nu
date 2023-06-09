@@ -40,6 +40,11 @@ def lls [
     ls | string-search $term name
 }
 
+# Filter directory by file name.
+def llm [] {
+    ls | sort-by modified
+}
+
 # Filter process list by process name.
 def pss [
     term: string # Search target.
