@@ -5,7 +5,8 @@
     ./editors
     ./games
     ./shells
-    ./terminal-emulators
+    ./terminal-emulators/kitty
+    ./terminal-emulators/wezterm
     ./tools
     ./video
     ./window-managers
