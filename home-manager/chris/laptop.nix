@@ -11,6 +11,7 @@
   home = rec {
     username = "chris";
     homeDirectory = "/home/${username}";
+    stateVersion = "23.05";
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
     ];
@@ -22,6 +23,4 @@
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "22.05";
 }

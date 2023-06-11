@@ -7,7 +7,7 @@
     username = "chris";
     homeDirectory = "/home/${username}";
     sessionPath = [ "/home/${username}/.local/bin" ];
-    stateVersion = "22.05";
+    stateVersion = "23.05";
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
       #ardour
