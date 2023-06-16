@@ -31,11 +31,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1686780976,
-        "narHash": "sha256-2Au5EddhC12uJmOgE9Xk7LuVg/07Oz/4YBPxk7YUiEk=",
+        "lastModified": 1686957205,
+        "narHash": "sha256-5qcfeXSQGfIv0gqCZ6yOP9wXbK2J85e4kDSzeI10XKU=",
         "owner": "siph",
         "repo": "nixvim-flake",
-        "rev": "af265f8b731e7cc6069d5ec7a4ef942729a0cb58",
+        "rev": "2928ddc73c4dabe75d64375beda75ed970d862c3",
         "type": "github"
       },
       "original": {
