@@ -42,6 +42,7 @@
                    xset s off &
                    xset s 0 0 &
                    xset -dpms &
+                   lxpolkit &
                    exec dbus-launch --exit-with-session xmonad ;;
         esac
       '';

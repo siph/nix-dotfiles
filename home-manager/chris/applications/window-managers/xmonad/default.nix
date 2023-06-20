@@ -3,7 +3,11 @@
   imports = [
     ./xmobar
   ];
-  home.packages = with pkgs; [ xmonad-log picom ];
+  home.packages = with pkgs; [
+    xmonad-log
+    picom
+    lxsession
+  ];
   xsession = {
     enable = true;
     windowManager.xmonad = {
