@@ -1,11 +1,11 @@
 { pkgs, ... }: {
   imports = [
-    ./applications/terminal-emulators/kitty
-    ./applications/shells
-    ./applications/tools
-    ./applications/browsers
-    ./applications/editors
-    ./applications/video
+    ../applications/terminal-emulators/kitty
+    ../applications/shells
+    ../applications/tools
+    ../applications/browsers
+    ../applications/editors
+    ../applications/video
   ];
 
   home = rec {

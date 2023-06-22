@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    ./applications
+    ../applications
   ];
 
   home = rec {

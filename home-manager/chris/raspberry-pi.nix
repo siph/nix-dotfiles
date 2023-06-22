@@ -1,13 +1,13 @@
 { pkgs, ... }: {
   imports = [
-    ./applications/editors/neovim
-    ./applications/shells
-    ./applications/tools/bat
-    ./applications/tools/git
-    ./applications/tools/tmux
-    ./applications/tools/bottom
-    ./applications/tools/neofetch
-    ./applications/tools/starship
+    ../applications/editors/neovim
+    ../applications/shells
+    ../applications/tools/bat
+    ../applications/tools/git
+    ../applications/tools/tmux
+    ../applications/tools/bottom
+    ../applications/tools/neofetch
+    ../applications/tools/starship
   ];
 
   home = rec {
@@ -16,7 +16,6 @@
     stateVersion = "23.05";
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
-      yt-watcher
     ];
   };
 
