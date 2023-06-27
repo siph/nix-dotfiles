@@ -4,10 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     chris-neovim.url = "github:siph/nixvim-flake";
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +18,7 @@
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-generators, hyprland, yt-watcher, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixos-generators, yt-watcher, ... }@inputs:
     let
       forAllSystems = nixpkgs.lib.genAttrs [
         "aarch64-linux"
@@ -61,7 +57,6 @@
           specialArgs = { inherit inputs; };
           modules = (builtins.attrValues nixosModules) ++ [
             ./nixos/desktop
-            hyprland.nixosModules.default
           ];
         };
         raspberry-pi = nixpkgs.lib.nixosSystem {
@@ -69,7 +64,6 @@
           specialArgs = { inherit inputs; };
           modules = (builtins.attrValues nixosModules) ++ [
             ./nixos/raspberry-pi
-            hyprland.nixosModules.default
           ];
         };
       };
