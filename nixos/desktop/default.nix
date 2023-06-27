@@ -114,7 +114,7 @@
       };
     };
     transmission = {
-      enable = true;
+      enable = false;
       settings = {
         downloadDirPermissions = "770";
         incomplete-dir-enable = false;
