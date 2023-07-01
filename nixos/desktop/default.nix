@@ -44,7 +44,7 @@
       "radeon.cik_support=0"
       "amdgpu.cik_support=1"
     ];
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages-rt_latest;
     binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
 
@@ -76,6 +76,10 @@
       powerline-fonts
     ];
     font = "ter-powerline-v14b";
+  };
+
+  musnix = {
+    enable = true;
   };
 
   services = {

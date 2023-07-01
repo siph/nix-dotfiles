@@ -15,6 +15,10 @@
     yt-watcher = {
       url = "github:siph/yt-watcher";
     };
+    musnix = {
+      url = "github:musnix/musnix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
@@ -57,6 +61,7 @@
           specialArgs = { inherit inputs; };
           modules = (builtins.attrValues nixosModules) ++ [
             ./nixos/desktop
+            inputs.musnix.nixosModules.musnix
           ];
         };
         raspberry-pi = nixpkgs.lib.nixosSystem {
