@@ -1,6 +1,6 @@
-{ ... }:
 {
   imports = [
+    ./audio
     ./browsers
     ./editors
     ./games
