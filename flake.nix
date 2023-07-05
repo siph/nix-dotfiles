@@ -22,7 +22,7 @@
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-generators, yt-watcher, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixos-generators, ... }@inputs:
     let
       forAllSystems = nixpkgs.lib.genAttrs [
         "aarch64-linux"

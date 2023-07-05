@@ -1,4 +1,3 @@
-{ lib, pkgs, ... }:
 {
   programs.lsd = {
     enable = true;

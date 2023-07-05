@@ -1,4 +1,4 @@
-{  inputs, ... }: {
+{ inputs, ... }: {
   imports = [
     inputs.declarative-cachix.nixosModules.declarative-cachix
   ];
