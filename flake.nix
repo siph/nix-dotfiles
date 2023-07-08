@@ -19,29 +19,23 @@
       url = "github:musnix/musnix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-parts.url = "github:hercules-ci/flake-parts";
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-generators, ... }@inputs:
-    let
-      forAllSystems = nixpkgs.lib.genAttrs [
+  outputs = { nixpkgs, home-manager, nixos-generators, flake-parts, ... }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } ({ withSystem, ... }: {
+
+      systems = [
         "aarch64-linux"
-        "i686-linux"
         "x86_64-linux"
         "aarch64-darwin"
         "x86_64-darwin"
       ];
-    in rec {
 
-      nixosModules = import ./modules/nixos;
-      homeManagerModules = import ./modules/home-manager;
+      perSystem = { system, pkgs, ... }: {
 
-      devShells = forAllSystems (system: {
-        default = nixpkgs.legacyPackages.${system}.callPackage ./shell.nix { };
-      });
-
-      legacyPackages = forAllSystems (system:
-        import inputs.nixpkgs {
+        _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
           overlays = builtins.attrValues {
             default = import ./overlay {
@@ -52,71 +46,87 @@
           config = {
             allowUnfree = true;
           };
-        }
-      );
-
-      nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          pkgs = legacyPackages.x86_64-linux;
-          specialArgs = { inherit inputs; };
-          modules = (builtins.attrValues nixosModules) ++ [
-            ./nixos/desktop
-            inputs.musnix.nixosModules.musnix
-          ];
         };
-        raspberry-pi = nixpkgs.lib.nixosSystem {
-          pkgs = legacyPackages.aarch64-linux;
-          specialArgs = { inherit inputs; };
-          modules = (builtins.attrValues nixosModules) ++ [
-            ./nixos/raspberry-pi
-          ];
+
+        devShells = {
+          default = nixpkgs.legacyPackages.${system}.callPackage ./shell.nix { };
         };
       };
 
-      homeConfigurations = {
-        "chris@nixos" = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs; };
-          modules = (builtins.attrValues homeManagerModules) ++ [
-            ./home-manager/chris
-          ];
-        };
-        "chris@kubuntu-laptop" = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs; };
-          modules = (builtins.attrValues homeManagerModules) ++ [
-            ./home-manager/chris/laptop.nix
-          ];
-        };
-        "chris@raspberry-pi" = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages.aarch64-linux;
-          extraSpecialArgs = { inherit inputs; };
-          modules = (builtins.attrValues homeManagerModules) ++ [
-            ./home-manager/chris/raspberry-pi.nix
-          ];
-        };
-      };
+      flake = rec {
+        nixosModules = import ./modules/nixos;
+        homeManagerModules = import ./modules/home-manager;
 
-      packages = {
-        x86_64-linux.iso = nixos-generators.nixosGenerate {
-          system = "x86_64-linux";
-          format = "iso";
+        nixosConfigurations = {
+          nixos = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = { inherit inputs; };
+            modules = (builtins.attrValues nixosModules) ++ [
+              ./nixos/desktop
+              inputs.musnix.nixosModules.musnix
+            ];
+          };
+
+          raspberry-pi = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = { inherit inputs; };
+            modules = (builtins.attrValues nixosModules) ++ [
+              ./nixos/raspberry-pi
+            ];
+          };
         };
-        # I have tried at least 5 different way and I cannot get
-        # `nixosGenerate` to use the overlays in `nixpkgs`.
-        aarch64-linux.raspberry-pi = nixos-generators.nixosGenerate {
-          format = "sd-aarch64";
-          pkgs = legacyPackages.aarch64-linux;
-          modules = (builtins.attrValues nixosModules) ++ [
-            ./nixos/raspberry-pi
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.users.chris = {
-                imports = [ ./home-manager/chris/raspberry-pi.nix ];
-              };
-            }
-          ];
+
+        homeConfigurations = {
+          "chris@nixos" =  withSystem "x86_64-linux" ({ pkgs, ... }:
+            home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
+              extraSpecialArgs = { inherit inputs; };
+              modules = (builtins.attrValues homeManagerModules) ++ [
+                ./home-manager/chris
+              ];
+          });
+
+          "chris@kubuntu-laptop" =  withSystem "x86_64-linux" ({ pkgs, ... }:
+            home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
+              extraSpecialArgs = { inherit inputs; };
+              modules = (builtins.attrValues homeManagerModules) ++ [
+                ./home-manager/chris/laptop.nix
+              ];
+          });
+
+          "chris@raspberry-pi" =  withSystem "aarch64-linux" ({ pkgs, ... }:
+            home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
+              extraSpecialArgs = { inherit inputs; };
+              modules = (builtins.attrValues homeManagerModules) ++ [
+                ./home-manager/chris/raspberry-pi.nix
+              ];
+          });
         };
       };
-    };
+    });
+
+    #   packages = {
+    #     x86_64-linux.iso = nixos-generators.nixosGenerate {
+    #       system = "x86_64-linux";
+    #       format = "iso";
+    #     };
+    #     # I have tried at least 5 different way and I cannot get
+    #     # `nixosGenerate` to use the overlays in `nixpkgs`.
+    #     aarch64-linux.raspberry-pi = nixos-generators.nixosGenerate {
+    #       format = "sd-aarch64";
+    #       pkgs = legacyPackages.aarch64-linux;
+    #       modules = (builtins.attrValues nixosModules) ++ [
+    #         ./nixos/raspberry-pi
+    #         home-manager.nixosModules.home-manager
+    #         {
+    #           home-manager.users.chris = {
+    #             imports = [ ./home-manager/chris/raspberry-pi.nix ];
+    #           };
+    #         }
+    #       ];
+    #     };
+    #   };
+    # };
 }
