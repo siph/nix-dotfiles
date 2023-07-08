@@ -1,5 +1,5 @@
 # This file defines two overlays and composes them
-{  inputs, system, ... }:
+{ inputs, system, ... }:
 let
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs { pkgs = final; };

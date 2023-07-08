@@ -9,7 +9,7 @@
     sessionPath = [ "/home/${username}/.local/bin" ];
     stateVersion = "23.05";
     packages = with pkgs; [
-      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       #ardour
     ];
   };

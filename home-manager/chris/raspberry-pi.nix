@@ -15,7 +15,7 @@
     homeDirectory = "/home/${username}";
     stateVersion = "23.05";
     packages = with pkgs; [
-      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
   };
 

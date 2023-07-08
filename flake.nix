@@ -80,32 +80,32 @@
         };
 
         homeConfigurations = {
-          "chris@nixos" =  withSystem "x86_64-linux" ({ pkgs, ... }:
+          "chris@nixos" = withSystem "x86_64-linux" ({ pkgs, ... }:
             home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
               extraSpecialArgs = { inherit inputs; };
               modules = (builtins.attrValues homeManagerModules) ++ [
                 ./home-manager/chris
               ];
-          });
+            });
 
-          "chris@kubuntu-laptop" =  withSystem "x86_64-linux" ({ pkgs, ... }:
+          "chris@kubuntu-laptop" = withSystem "x86_64-linux" ({ pkgs, ... }:
             home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
               extraSpecialArgs = { inherit inputs; };
               modules = (builtins.attrValues homeManagerModules) ++ [
                 ./home-manager/chris/laptop.nix
               ];
-          });
+            });
 
-          "chris@raspberry-pi" =  withSystem "aarch64-linux" ({ pkgs, ... }:
+          "chris@raspberry-pi" = withSystem "aarch64-linux" ({ pkgs, ... }:
             home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
               extraSpecialArgs = { inherit inputs; };
               modules = (builtins.attrValues homeManagerModules) ++ [
                 ./home-manager/chris/raspberry-pi.nix
               ];
-          });
+            });
         };
       };
     });

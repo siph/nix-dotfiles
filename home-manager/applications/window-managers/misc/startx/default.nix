@@ -11,7 +11,7 @@
         done
       '';
       executable = true;
-      };
+    };
     ".xinitrc" = {
       text = ''
         #!/usr/bin/env bash
