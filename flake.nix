@@ -35,6 +35,7 @@
 
       perSystem = { system, pkgs, ... }: {
 
+        # Flake-wide `pkgs` with overlays and custom packages.
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
           overlays = builtins.attrValues {
@@ -47,6 +48,8 @@
             allowUnfree = true;
           };
         };
+
+        formatter = pkgs.nixpkgs-fmt;
 
         devShells = {
           default = nixpkgs.legacyPackages.${system}.callPackage ./shell.nix { };
