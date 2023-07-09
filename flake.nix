@@ -19,12 +19,16 @@
       url = "github:musnix/musnix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-parts.url = "github:hercules-ci/flake-parts";
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
   outputs = { nixpkgs, home-manager, nixos-generators, flake-parts, ... }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } ({ withSystem, ... }: {
+    flake-parts.lib.mkFlake { inherit inputs; } ({ withSystem, ... }: rec {
 
       systems = [
         "aarch64-linux"
@@ -33,7 +37,7 @@
         "x86_64-darwin"
       ];
 
-      perSystem = { system, pkgs, ... }: {
+      perSystem = { system, pkgs, self', ... }: {
 
         # Flake-wide `pkgs` with overlays and custom packages.
         _module.args.pkgs = import inputs.nixpkgs {
@@ -49,10 +53,25 @@
           };
         };
 
+        devShells = {
+          default = with pkgs; mkShell {
+            inherit (self'.checks.pre-commit-check) shellHook;
+            NIX_CONFIG = "experimental-features = nix-command flakes";
+            nativeBuildInputs = [ nix git statix ];
+            programs = [ home-manager ];
+          };
+        };
+
         formatter = pkgs.nixpkgs-fmt;
 
-        devShells = {
-          default = nixpkgs.legacyPackages.${system}.callPackage ./shell.nix { };
+        checks = {
+          pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
+            src = ./.;
+            hooks = {
+              nixpkgs-fmt.enable = true;
+              statix.enable = true;
+            };
+          };
         };
       };
 
