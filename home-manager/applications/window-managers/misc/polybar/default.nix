@@ -20,11 +20,10 @@
       };
 
     in
-    (builtins.replaceStrings
+    builtins.replaceStrings
       [ "@xmonad-log@" "@clock-script@" "@weather-script@" ]
       [ "${pkgs.xmonad-log}" "${clock-script}" "${weather-script}" ]
-      (builtins.readFile ./config.ini)
-    );
+      (builtins.readFile ./config.ini);
   xdg.configFile."polybar/_config.ini".source = pkgs.substituteAll {
     name = "config.ini";
     src = ./config.ini;
