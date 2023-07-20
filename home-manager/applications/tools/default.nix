@@ -7,7 +7,7 @@
     ./git
     ./lsd
     ./neofetch
-    ./nix-direnv
+    ./nix-stuff
     ./starship
     ./tmux
     ./yt-dlp
