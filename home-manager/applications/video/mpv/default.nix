@@ -18,7 +18,7 @@
       };
     };
     scripts = with pkgs.mpvScripts; [
-      youtube-quality
+      quality-menu
       thumbnail
       sponsorblock
     ];
