@@ -3,7 +3,7 @@ let carapace_completer = {|spans|
 }
 
 # Nushell Config
-let-env config = {
+$env.config = {
     show_banner: false
     edit_mode: vi
     footer_mode: always
