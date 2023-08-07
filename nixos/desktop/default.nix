@@ -44,7 +44,8 @@
       "radeon.cik_support=0"
       "amdgpu.cik_support=1"
     ];
-    kernelPackages = pkgs.linuxPackages-rt_latest;
+    # kernelPackages = pkgs.linuxPackages-rt_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
 
