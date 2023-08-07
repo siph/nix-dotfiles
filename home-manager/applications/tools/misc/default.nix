@@ -7,7 +7,6 @@
     fd
     gh
     glow
-    nixpkgs-review
     ouch
     ripgrep
     repgrep
