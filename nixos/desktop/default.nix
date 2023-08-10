@@ -129,7 +129,7 @@
     pcscd.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [ pinentry-curses ];
+  environment.systemPackages = with pkgs; [ pinentry-curses wget ];
 
   programs = {
     zsh = {
