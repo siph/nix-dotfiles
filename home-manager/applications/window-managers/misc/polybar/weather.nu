@@ -5,5 +5,10 @@ def main [
     --location: string, # Can be city name or ICAO code.
     --format: string = "%c%t ● %h ● %w ● %m"; # Optional output string display format. Default: `%c%t ● %h ● %w ● %m`.
 ] {
-    http get $"https://wttr.in/($location)?format=($format)"
+    try {
+        let display = (http get $"https://wttr.in/($location)?format=($format)")
+        if not ($display | str contains "Unknown") {
+            $display
+        }
+    }
 }
