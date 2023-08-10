@@ -19,10 +19,35 @@
         destination = "/bin/weather-script";
       };
 
+      gh-inbox = pkgs.stdenv.mkDerivation rec {
+        name = "gh-inbox";
+        src = ./.;
+        buildInputs = with pkgs; [ gh makeBinaryWrapper nushell ];
+        installPhase = ''
+          mkdir -p $out/nushell
+          mkdir -p $out/bin
+
+          cp ./gh-inbox.nu $out/nushell
+
+          makeBinaryWrapper ${pkgs.nushell}/bin/nu $out/bin/${name} \
+            --add-flags $out/nushell/${name}.nu
+        '';
+      };
+
     in
     builtins.replaceStrings
-      [ "@xmonad-log@" "@clock-script@" "@weather-script@" ]
-      [ "${pkgs.xmonad-log}" "${clock-script}" "${weather-script}" ]
+      [
+        "@xmonad-log@"
+        "@clock-script@"
+        "@weather-script@"
+        "@gh-inbox@"
+      ]
+      [
+        "${pkgs.xmonad-log}"
+        "${clock-script}"
+        "${weather-script}"
+        "${gh-inbox}"
+      ]
       (builtins.readFile ./config.ini);
   xdg.configFile."polybar/_config.ini".source = pkgs.substituteAll {
     name = "config.ini";
