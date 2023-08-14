@@ -93,17 +93,6 @@ def get-type [] {
     describe | split row '<' | get 0
 }
 
-# Alias
-
-## Filesystem
-alias ll = ls
-alias lt = lsd --tree
-alias cat = bat
-alias tree = broot
-
-## Vim
-alias vim = nvim
-
 ## Scripts
 alias startx-dwm = startx ~/.xinitrc dwm
 alias startx-kde = startx ~/.xinitrc kde
