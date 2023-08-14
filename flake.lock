@@ -532,6 +532,22 @@
         "type": "github"
       }
     },
+    "nu-scripts": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1691843095,
+        "narHash": "sha256-bqUllFTJWTzl2z0Qg2nvUkumI6LRz0A7AIA5xC6GSBk=",
+        "owner": "nushell",
+        "repo": "nu_scripts",
+        "rev": "e60d20733e86b3fde6b7a596bab4ee6c14d4e3dc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nushell",
+        "repo": "nu_scripts",
+        "type": "github"
+      }
+    },
     "poetry2nix": {
       "inputs": {
         "flake-utils": [
@@ -645,6 +661,7 @@
         "musnix": "musnix",
         "nixos-generators": "nixos-generators",
         "nixpkgs": "nixpkgs_2",
+        "nu-scripts": "nu-scripts",
         "pre-commit-hooks": "pre-commit-hooks_3",
         "yt-watcher": "yt-watcher"
       }

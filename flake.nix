@@ -23,6 +23,10 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nu-scripts = {
+      url = "github:nushell/nu_scripts";
+      flake = false;
+    };
     flake-parts.url = "github:hercules-ci/flake-parts";
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
