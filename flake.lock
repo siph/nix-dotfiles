@@ -32,11 +32,11 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1691516943,
-        "narHash": "sha256-YpMTkTLhARjNmAlmOdiTISwHq+X/6tMi0ajg7petC2c=",
+        "lastModified": 1692053716,
+        "narHash": "sha256-8sf3aIsuVrbFFOw4391cWvoNRCdgZxv6DqIZoTX4R9k=",
         "owner": "siph",
         "repo": "nixvim-flake",
-        "rev": "70a074e6751790b375dc06146f88b05cd4e9a76d",
+        "rev": "4e3d8a82ae1897e2411050e09124cef20a31ca33",
         "type": "github"
       },
       "original": {
