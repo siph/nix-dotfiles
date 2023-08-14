@@ -26,7 +26,6 @@
     ";
     initExtra = "
       alias cat='bat'
-      alias startx-dwm='startx ~/.xinitrc dwm'
       alias startx-kde='startx ~/.xinitrc kde'
       alias startx-xmonad='startx ~/.xinitrc xmonad'
       alias tree='broot'

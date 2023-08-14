@@ -32,7 +32,7 @@ native nix packaged games and edit audio projects with Ardour.
 Development is done in neovim + tmux and Intellij Idea CE. The neovim
 configuration lives in it's own
 [repository](https://www.github.com/siph/nixvim-flake) and is complete with
-LSP, syntax highlighting, debugging and more. Hyprland and DWM provide
+LSP, syntax highlighting, debugging and more. Hyprland and Xmonad provide
 mouse-free window management. This combined with editor keybinds/configurations
 means that a majority of things can be accomplished without leaving home-row.
 
@@ -54,7 +54,6 @@ There are too many applications to mention but some primary applications are:
 - **Desktop Environments**
     - KDE Plasma
     - Hyprland
-    - DWM
 
 ## Usage
 
@@ -87,13 +86,6 @@ startx-kde
 Launch [Hyprland](./home-manager/chris/applications/misc/hyprland/hyprland.conf) with waybar + extras.
 ```shell
 start-hyprland
-```
-
-#### DWM
-
-Launch [configured DWM](https://www.gitlab.com/xsiph/dwm) session + extras.
-```shell
-startx-dwm
 ```
 
 #### Xmonad

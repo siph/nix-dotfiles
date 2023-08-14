@@ -94,7 +94,6 @@ def get-type [] {
 }
 
 ## Scripts
-alias startx-dwm = startx ~/.xinitrc dwm
 alias startx-kde = startx ~/.xinitrc kde
 alias startx-xmonad = startx ~/.xinitrc xmonad
 alias start-hyprland = ~/.local/bin/start-hyprland

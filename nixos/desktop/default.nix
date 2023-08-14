@@ -92,7 +92,6 @@
         startx.enable = true;
       };
       desktopManager.plasma5.enable = true;
-      windowManager.dwm.enable = true;
     };
     pipewire = {
       enable = true;
