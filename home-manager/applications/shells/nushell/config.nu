@@ -93,8 +93,3 @@ def get-type [] {
     describe | split row '<' | get 0
 }
 
-## Scripts
-alias startx-kde = startx ~/.xinitrc kde
-alias startx-xmonad = startx ~/.xinitrc xmonad
-alias start-hyprland = ~/.local/bin/start-hyprland
-

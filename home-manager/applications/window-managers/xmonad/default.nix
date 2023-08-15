@@ -1,9 +1,15 @@
 { pkgs, ... }:
 {
   imports = [
+    ./xinit
     ./xmobar
   ];
-  home.packages = with pkgs; [ xmonad-log ];
+  home.packages = with pkgs; [
+    feh
+    lxsession
+    picom
+    xmonad-log
+  ];
   xsession = {
     enable = true;
     windowManager.xmonad = {

@@ -3,6 +3,5 @@
     ./dunst
     ./polybar
     ./rofi
-    ./startx
   ];
 }
