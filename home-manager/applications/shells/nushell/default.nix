@@ -13,6 +13,7 @@
       vim = "nvim";
     };
     extraConfig = ''
+      source ${inputs.nu-scripts}/modules/nix/nix.nu
       source ${inputs.nu-scripts}/modules/git/git-v2.nu
       source ${inputs.nu-scripts}/modules/kubernetes/kubernetes.nu
     '';
