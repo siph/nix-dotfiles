@@ -61,8 +61,7 @@
           default = with pkgs; mkShell {
             inherit (self'.checks.pre-commit-check) shellHook;
             NIX_CONFIG = "experimental-features = nix-command flakes";
-            nativeBuildInputs = [ nix git statix ];
-            programs = [ home-manager ];
+            nativeBuildInputs = [ nix git statix pkgs.home-manager ];
           };
         };
 
