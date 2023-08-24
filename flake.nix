@@ -84,22 +84,24 @@
         homeManagerModules = import ./modules/home-manager;
 
         nixosConfigurations = {
-          nixos = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            specialArgs = { inherit inputs; };
-            modules = (builtins.attrValues nixosModules) ++ [
-              ./nixos/desktop
-              inputs.musnix.nixosModules.musnix
-            ];
-          };
+          nixos = withSystem "x86_64-linux" ({ pkgs, ... }:
+            inputs.nixpkgs.lib.nixosSystem {
+              inherit pkgs;
+              specialArgs = { inherit inputs; };
+              modules = (builtins.attrValues nixosModules) ++ [
+                ./nixos/desktop
+                inputs.musnix.nixosModules.musnix
+              ];
+            });
 
-          raspberry-pi = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            specialArgs = { inherit inputs; };
-            modules = (builtins.attrValues nixosModules) ++ [
-              ./nixos/raspberry-pi
-            ];
-          };
+          raspberry-pi = withSystem "aarch64-linux" ({ pkgs, ... }:
+            inputs.nixpkgs.lib.nixosSystem {
+              inherit pkgs;
+              specialArgs = { inherit inputs; };
+              modules = (builtins.attrValues nixosModules) ++ [
+                ./nixos/raspberry-pi
+              ];
+            });
         };
 
         homeConfigurations = {
