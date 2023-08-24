@@ -11,6 +11,8 @@ $env.config = {
     table: {
         mode: rounded
         index_mode: always
+        header_on_separator: true
+        padding: { left: 2, right: 1}
     }
     completions: {
         algorithm: prefix # fuzzy, prefix
