@@ -41,7 +41,7 @@
         "x86_64-darwin"
       ];
 
-      perSystem = { system, pkgs, self', ... }: {
+      perSystem = { system, pkgs, lib, self', ... }: {
 
         # Flake-wide `pkgs` with overlays and custom packages.
         _module.args.pkgs = import inputs.nixpkgs {
@@ -53,7 +53,12 @@
             };
           };
           config = {
-            allowUnfree = true;
+            allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+              "steam"
+              "steam-original"
+              "starsector"
+              "nxengine-evo"
+            ];
             permittedInsecurePackages = [
               "openssl-1.1.1v"
             ];
