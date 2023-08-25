@@ -5,6 +5,7 @@
     ./editors
     ./games
     ./instant-messengers
+    ./office
     ./shells
     ./terminal-emulators/kitty
     ./terminal-emulators/wezterm
