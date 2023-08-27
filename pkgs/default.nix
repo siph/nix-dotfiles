@@ -1,7 +1,9 @@
-# When you add custom packages, list them here
-# These are similar to nixpkgs packages
 { pkgs }: {
-  # example = pkgs.callPackage ./example { };
+
+  bar-clock = pkgs.callPackage ./bar/bar-clock { };
+  bar-weather = pkgs.callPackage ./bar/bar-weather { };
+  bar-gh-inbox = pkgs.callPackage ./bar/bar-gh-inbox { };
+
   startx-xmonad = pkgs.callPackage ./start-scripts/xmonad { };
   startx-kde = pkgs.callPackage ./start-scripts/kde { };
   start-hyprland = pkgs.callPackage ./start-scripts/hyprland { };

@@ -8,7 +8,6 @@
     feh
     lxsession
     picom
-    xmonad-log
   ];
   xsession = {
     enable = true;
