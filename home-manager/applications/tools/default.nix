@@ -4,6 +4,7 @@
     ./bottom
     ./broot
     ./git
+    ./gobang
     ./lsd
     ./misc
     ./neofetch
