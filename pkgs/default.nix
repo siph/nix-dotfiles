@@ -4,6 +4,8 @@
   bar-weather = pkgs.callPackage ./bar/bar-weather { };
   bar-gh-inbox = pkgs.callPackage ./bar/bar-gh-inbox { };
 
+  kdeconnectd = pkgs.callPackage ./bar/kdeconnectd { };
+
   startx-xmonad = pkgs.callPackage ./start-scripts/xmonad { };
   startx-kde = pkgs.callPackage ./start-scripts/kde { };
   start-hyprland = pkgs.callPackage ./start-scripts/hyprland { };

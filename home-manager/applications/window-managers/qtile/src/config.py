@@ -1,4 +1,4 @@
-import subprocess
+import subprocess, os
 
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
@@ -55,6 +55,13 @@ for i in groups:
                 desc="move focused window to group {}".format(i.name)),
         ]
     )
+
+from libqtile import hook
+
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart.sh'])
 
 # Gruvbox
 from enum import Enum
