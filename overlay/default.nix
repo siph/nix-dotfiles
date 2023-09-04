@@ -13,6 +13,8 @@ let
     });
     neovim = inputs.chris-neovim.packages.${system}.default;
     yt-watcher = inputs.yt-watcher.packages.${system}.default;
+    # nest a stable `nixpkgs` release inside of unstable
+    nixpkgs-stable = inputs.nixpkgs-stable.legacyPackages.${prev.system};
   };
 in
 inputs.nixpkgs.lib.composeManyExtensions [ additions modifications ]
