@@ -3,6 +3,7 @@
     ./hyprland
     ./kde
     ./misc
+    ./qtile
     ./xmonad
   ];
 }

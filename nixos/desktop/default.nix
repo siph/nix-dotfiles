@@ -91,6 +91,10 @@
       displayManager = {
         startx.enable = true;
       };
+      windowManager.qtile = {
+        enable = true;
+        package = pkgs.nixpkgs-stable.qtile;
+      };
       desktopManager.plasma5.enable = true;
     };
     pipewire = {
