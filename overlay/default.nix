@@ -1,18 +1,13 @@
-# This file defines two overlays and composes them
-{ inputs, system, ... }:
+{ inputs, ... }:
 let
-  # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs { pkgs = final; };
 
-  # This one contains whatever you want to overlay
-  # You can change versions, add patches, set compilation flags, anything really.
-  # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: {
     waybar = prev.waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     });
-    neovim = inputs.chris-neovim.packages.${system}.default;
-    yt-watcher = inputs.yt-watcher.packages.${system}.default;
+    neovim = inputs.chris-neovim.packages.${prev.system}.default;
+    yt-watcher = inputs.yt-watcher.packages.${prev.system}.default;
     # nest a stable `nixpkgs` release inside of unstable
     nixpkgs-stable = inputs.nixpkgs-stable.legacyPackages.${prev.system};
   };

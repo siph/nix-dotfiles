@@ -33,7 +33,7 @@
   };
 
   outputs = { nixpkgs, home-manager, nixos-generators, flake-parts, ... }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } ({ withSystem, ... }: rec {
+    flake-parts.lib.mkFlake { inherit inputs; } ({ withSystem, ... }: {
 
       systems = [
         "aarch64-linux"
@@ -49,7 +49,6 @@
           inherit system;
           overlays = builtins.attrValues {
             default = import ./overlay {
-              inherit system;
               inherit inputs;
             };
           };
