@@ -8,6 +8,7 @@ let
     });
     neovim = inputs.chris-neovim.packages.${prev.system}.default;
     yt-watcher = inputs.yt-watcher.packages.${prev.system}.default;
+    wt-fetch = inputs.wt-fetch.packages.${prev.system}.default;
     # nest a stable `nixpkgs` release inside of unstable
     nixpkgs-stable = inputs.nixpkgs-stable.legacyPackages.${prev.system};
   };

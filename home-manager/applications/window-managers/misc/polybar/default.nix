@@ -5,6 +5,7 @@
     bar-clock
     bar-weather
     bar-gh-inbox
+    wt-fetch
     xmonad-log
   ];
 
