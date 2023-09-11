@@ -7,7 +7,7 @@ def main [
 ] {
 
     let cache = (if ($cache == null) {
-        $"/tmp/"
+        $"($env.HOME)/.cache"
     } else { $cache })
 
     let purple = "#9058c7"

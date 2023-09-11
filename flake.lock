@@ -849,11 +849,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1694138342,
-        "narHash": "sha256-tkx+/L0RxcbEeOS4cxv6Z+ZKlmlZ35+FZDsUfcD0R/Y=",
+        "lastModified": 1694443251,
+        "narHash": "sha256-axaFHxnxoXNAOWw/P482ZfJgyrhRsQIXO704TC+Ot80=",
         "owner": "siph",
         "repo": "wt-fetch",
-        "rev": "6c9feae5a407cbd1001a04ce570c41ebec25faf8",
+        "rev": "dcd39827f28b5248e10674e0cba78db1772e97e9",
         "type": "github"
       },
       "original": {
