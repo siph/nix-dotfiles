@@ -4,11 +4,13 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
+  boot = {
 
-  boot.initrd.availableKernelModules = [ "usbhid" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
-  boot.extraModulePackages = [ ];
+    initrd.availableKernelModules = [ "usbhid" ];
+    initrd.kernelModules = [ ];
+    kernelModules = [ ];
+    extraModulePackages = [ ];
+  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/NIXOS_SD";
