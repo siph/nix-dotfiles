@@ -6,6 +6,7 @@
     disableConfirmationPrompt = true;
     keyMode = "vi";
     terminal = "screen-256color";
+    mouse = true;
     escapeTime = 10;
     plugins = with pkgs; [
       tmuxPlugins.gruvbox
@@ -15,8 +16,8 @@
       # indexing
       set -g renumber-windows on
 
-      # mouse controls
-      set -g mouse on
+      # vim error
+      set-option -sa terminal-features 'xterm-kitty:RGB'
     ";
   };
 }
