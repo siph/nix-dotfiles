@@ -3,6 +3,7 @@
     ./bat
     ./bottom
     ./broot
+    ./fx
     ./git
     ./gobang
     ./lsd
