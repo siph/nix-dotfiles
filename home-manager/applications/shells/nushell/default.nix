@@ -11,6 +11,7 @@
       cat = "bat";
       tree = "broot";
       vim = "nvim";
+      cp = "ucp";
     };
     extraConfig = ''
       source ${inputs.nu-scripts}/modules/nix/nix.nu
