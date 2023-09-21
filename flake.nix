@@ -7,7 +7,9 @@
     chris-neovim.url = "github:siph/nixvim-flake";
     wt-fetch.url = "github:siph/wt-fetch";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      # TODO: change when pr is merged
+      # url = "github:nix-community/home-manager";
+      url = "github:siph/home-manager/nushell-syntax";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-generators = {

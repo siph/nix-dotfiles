@@ -326,15 +326,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1695224363,
-        "narHash": "sha256-+hfjJLUMck5G92RVFDZA7LWkR3kOxs5zQ7RPW9t3eM8=",
-        "owner": "nix-community",
+        "lastModified": 1695262196,
+        "narHash": "sha256-rYouls/ZFPswDfgKvxLKikV9DDZNcgSRYDecyEQA1X8=",
+        "owner": "siph",
         "repo": "home-manager",
-        "rev": "408ba13188ff9ce309fa2bdd2f81287d79773b00",
+        "rev": "26e203a17101a70f5785915a8a581cc66b3a4bab",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "siph",
+        "ref": "nushell-syntax",
         "repo": "home-manager",
         "type": "github"
       }
