@@ -4,8 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
-    chris-neovim.url = "github:siph/nixvim-flake";
-    wt-fetch.url = "github:siph/wt-fetch";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,9 +12,7 @@
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    yt-watcher = {
-      url = "github:siph/yt-watcher";
-    };
+    flake-parts.url = "github:hercules-ci/flake-parts";
     musnix = {
       url = "github:musnix/musnix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,12 +21,14 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    declarative-cachix.url = "github:jonascarpay/declarative-cachix";
     nu-scripts = {
       url = "github:nushell/nu_scripts";
       flake = false;
     };
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    declarative-cachix.url = "github:jonascarpay/declarative-cachix";
+    chris-neovim.url = "github:siph/nixvim-flake";
+    wt-fetch.url = "github:siph/wt-fetch";
+    yt-watcher.url = "github:siph/yt-watcher";
   };
 
   outputs = { nixpkgs, home-manager, nixos-generators, flake-parts, ... }@inputs:
