@@ -148,7 +148,7 @@
       pinentryFlavor = "curses";
     };
     hyprland = {
-      enable = true;
+      enable = false;
     };
   };
 

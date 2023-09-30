@@ -1,6 +1,6 @@
 {
   imports = [
-    ./hyprland
+    # ./hyprland
     ./kde
     ./misc
     ./qtile
