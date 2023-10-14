@@ -137,10 +137,6 @@
     zsh = {
       enable = true;
     };
-    java = {
-      enable = true;
-      package = pkgs.graalvm17-ce;
-    };
     kdeconnect.enable = true;
     gnupg.agent = {
       enable = true;
