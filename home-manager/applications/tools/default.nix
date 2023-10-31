@@ -3,6 +3,7 @@
     ./bat
     ./bottom
     ./broot
+    ./distrobox
     ./fx
     ./git
     ./gobang
