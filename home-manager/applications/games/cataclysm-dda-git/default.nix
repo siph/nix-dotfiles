@@ -1,3 +1,5 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [ cataclysm-dda-git ];
+  home.packages = with pkgs; [
+    cataclysm-dda
+  ];
 }
