@@ -128,6 +128,14 @@
         umask = 0;
       };
     };
+    i2pd = {
+      enable = true;
+      proto = {
+        http.enable = true;
+        httpProxy.enable = true;
+        sam.enable = true;
+      };
+    };
     pcscd.enable = true;
   };
 
