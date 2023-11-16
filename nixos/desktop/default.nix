@@ -93,7 +93,7 @@
       };
       windowManager.qtile = {
         enable = true;
-        package = pkgs.nixpkgs-stable.qtile;
+        package = pkgs.qtile;
       };
       desktopManager.plasma5.enable = true;
     };
