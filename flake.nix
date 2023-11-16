@@ -31,7 +31,18 @@
     yt-watcher.url = "github:siph/yt-watcher";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-generators, flake-parts, ... }@inputs:
+  outputs =
+    { chris-neovim
+    , flake-parts
+    , home-manager
+    , nixos-generators
+    , nixpkgs
+    , nixpkgs-stable
+    , pre-commit-hooks
+    , wt-fetch
+    , yt-watcher
+    , ...
+    }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } ({ withSystem, ... }: {
 
       systems = [
@@ -44,11 +55,11 @@
       perSystem = { system, pkgs, lib, self', ... }: {
 
         # Flake-wide `pkgs` with overlays and custom packages.
-        _module.args.pkgs = import inputs.nixpkgs {
+        _module.args.pkgs = import nixpkgs {
           inherit system;
           overlays = builtins.attrValues {
             default = import ./overlay {
-              inherit inputs;
+              inherit lib chris-neovim yt-watcher wt-fetch nixpkgs-stable;
             };
           };
           config = {
@@ -75,7 +86,7 @@
         formatter = pkgs.nixpkgs-fmt;
 
         checks = {
-          pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
+          pre-commit-check = pre-commit-hooks.lib.${system}.run {
             src = ./.;
             hooks = {
               nixpkgs-fmt.enable = true;
