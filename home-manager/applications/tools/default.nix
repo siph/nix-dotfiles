@@ -12,6 +12,7 @@
     ./neofetch
     ./nix-stuff
     ./starship
+    ./systemctl-tui
     ./tmux
     ./yt-dlp
   ];
