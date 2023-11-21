@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [ carapace ];
   programs.nushell = {
@@ -13,9 +13,9 @@
       vim = "nvim";
     };
     extraConfig = ''
-      source ${inputs.nu-scripts}/modules/nix/nix.nu
-      source ${inputs.nu-scripts}/modules/git/git-v2.nu
-      source ${inputs.nu-scripts}/modules/kubernetes/kubernetes.nu
+      source ${pkgs.nu_scripts}/share/nu_scripts/modules/nix/nix.nu
+      source ${pkgs.nu_scripts}/share/nu_scripts/modules/git/git-v2.nu
+      source ${pkgs.nu_scripts}/share/nu_scripts/modules/kubernetes/kubernetes.nu
     '';
   };
 }

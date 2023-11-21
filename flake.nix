@@ -22,10 +22,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
-    nu-scripts = {
-      url = "github:nushell/nu_scripts";
-      flake = false;
-    };
     chris-neovim.url = "github:siph/nixvim-flake";
     wt-fetch.url = "github:siph/wt-fetch";
     yt-watcher.url = "github:siph/yt-watcher";

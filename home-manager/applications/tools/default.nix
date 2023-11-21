@@ -6,7 +6,8 @@
     ./distrobox
     ./fx
     ./git
-    ./gobang
+    # TODO: broken
+    #./gobang
     ./lsd
     ./misc
     ./neofetch
