@@ -10,10 +10,10 @@
         ytdl-format = "bestvideo[height<=?1080]+bestaudio";
         cache = true;
         force-seekable = true;
-        demuxer-max-bytes = "123400KiB";
-        demuxer-readahead-secs = 20;
         script-opts = [
           "ytdl_hook-ytdl_path=${pkgs.yt-dlp}/bin/yt-dlp"
+          # Thumbnails (Press `T` to generate)
+          "mpv_thumbnail_script-autogenerate=no"
         ];
       };
     };
