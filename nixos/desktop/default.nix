@@ -139,6 +139,9 @@
         sam.enable = true;
       };
     };
+    invidious = {
+      enable = true;
+    };
     pcscd.enable = true;
   };
 
