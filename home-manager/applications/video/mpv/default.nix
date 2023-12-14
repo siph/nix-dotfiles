@@ -8,7 +8,6 @@
         ontop = true;
         osc = false;
         ao = "pulse";
-        ytdl-format = "bestvideo[height<=?1080]+bestaudio";
         cache = true;
         force-seekable = true;
         script-opts = [
