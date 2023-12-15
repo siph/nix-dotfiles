@@ -62,6 +62,7 @@
             allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
               "steam"
               "steam-original"
+              "steam-run"
               "starsector"
               "nxengine-evo"
             ];
