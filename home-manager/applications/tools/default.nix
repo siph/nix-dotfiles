@@ -1,6 +1,7 @@
 {
   imports = [
     ./bat
+    ./bottles
     ./bottom
     ./broot
     ./distrobox
