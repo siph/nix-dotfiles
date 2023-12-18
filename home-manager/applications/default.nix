@@ -4,6 +4,7 @@
     ./browsers
     ./editors
     ./games
+    ./graphics
     ./instant-messengers
     ./office
     ./shells
