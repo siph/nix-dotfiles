@@ -34,6 +34,7 @@
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
+    firewall.allowedTCPPorts = [ 3000 ];
   };
 
   boot = {
