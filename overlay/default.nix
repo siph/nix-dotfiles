@@ -1,10 +1,16 @@
-{ lib, chris-neovim, yt-watcher, wt-fetch, nixpkgs-stable, ... }:
-let
-  additions = final: _prev: import ../pkgs { pkgs = final; };
+{
+  lib,
+  chris-neovim,
+  yt-watcher,
+  wt-fetch,
+  nixpkgs-stable,
+  ...
+}: let
+  additions = final: _prev: import ../pkgs {pkgs = final;};
 
   modifications = final: prev: {
     waybar = prev.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
     });
 
     neovim = chris-neovim.packages.${prev.system}.default;
@@ -28,4 +34,4 @@ let
     nixpkgs-stable = nixpkgs-stable.legacyPackages.${prev.system};
   };
 in
-lib.composeManyExtensions [ additions modifications ]
+  lib.composeManyExtensions [additions modifications]

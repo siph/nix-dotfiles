@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [ wofi ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [wofi];
 }
-

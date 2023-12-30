@@ -1,3 +1,3 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ zeroadPackages.zeroad-unwrapped ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [zeroadPackages.zeroad-unwrapped];
 }

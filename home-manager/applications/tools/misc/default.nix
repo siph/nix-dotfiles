@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # too lazy to deal with this
   home.packages = with pkgs; [
     bluetuith
@@ -11,4 +10,3 @@
     tldr
   ];
 }
-

@@ -1,8 +1,7 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.mpv = {
     enable = true;
-    defaultProfiles = [ "corner" ];
+    defaultProfiles = ["corner"];
     profiles = {
       corner = {
         ontop = true;

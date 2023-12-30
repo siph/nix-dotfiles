@@ -1,5 +1,10 @@
-{ inputs, lib, config, pkgs, ... }: {
-
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     # If you want to use modules from other flakes (such as nixos-hardware), use something like:
     # inputs.hardware.nixosModules.common-cpu-amd
@@ -17,7 +22,7 @@
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
+    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
 
     # This will additionally add your inputs to the system's legacy channels
     # Making legacy nix commands consistent as well, awesome!
@@ -34,7 +39,7 @@
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [ 3000 ];
+    firewall.allowedTCPPorts = [3000];
   };
 
   boot = {
@@ -47,7 +52,7 @@
     ];
     # kernelPackages = pkgs.linuxPackages-rt_latest;
     kernelPackages = pkgs.linuxPackages_latest;
-    binfmt.emulatedSystems = [ "aarch64-linux" ];
+    binfmt.emulatedSystems = ["aarch64-linux"];
   };
 
   time.timeZone = "America/Denver";
@@ -118,7 +123,7 @@
     openvpn = {
       servers = {
         dallasVPN = {
-          config = '' config /home/chris/vpn/vpn.ovpn '';
+          config = ''config /home/chris/vpn/vpn.ovpn '';
           autoStart = false;
           updateResolvConf = true;
         };
@@ -146,7 +151,7 @@
     pcscd.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [ pinentry-curses wget ];
+  environment.systemPackages = with pkgs; [pinentry-curses wget];
 
   programs = {
     zsh = {
@@ -186,7 +191,7 @@
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
-      extraGroups = [ "networkmanager" "wheel" "docker" "audio" "transmission" ];
+      extraGroups = ["networkmanager" "wheel" "docker" "audio" "transmission"];
     };
   };
 

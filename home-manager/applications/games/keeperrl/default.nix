@@ -1,3 +1,3 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ keeperrl ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [keeperrl];
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     neovim # Use custom neovim build from overlay.
     ripgrep
@@ -6,5 +6,4 @@
     wl-clipboard
     xsel
   ];
-
 }

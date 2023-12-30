@@ -1,3 +1,3 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ lutris ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [lutris];
 }

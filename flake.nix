@@ -28,21 +28,20 @@
     yt-watcher.url = "github:siph/yt-watcher";
   };
 
-  outputs =
-    { chris-neovim
-    , flake-parts
-    , home-manager
-    , nixos-generators
-    , nixpkgs
-    , nixpkgs-stable
-    , pre-commit-hooks
-    , treefmt-nix
-    , wt-fetch
-    , yt-watcher
-    , ...
-    }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } ({ withSystem, ... }: {
-
+  outputs = {
+    chris-neovim,
+    flake-parts,
+    home-manager,
+    nixos-generators,
+    nixpkgs,
+    nixpkgs-stable,
+    pre-commit-hooks,
+    treefmt-nix,
+    wt-fetch,
+    yt-watcher,
+    ...
+  } @ inputs:
+    flake-parts.lib.mkFlake {inherit inputs;} ({withSystem, ...}: {
       systems = [
         "aarch64-linux"
         "x86_64-linux"
@@ -54,7 +53,14 @@
         treefmt-nix.flakeModule
       ];
 
-      perSystem = { system, config, pkgs, lib, self', ... }: let
+      perSystem = {
+        system,
+        config,
+        pkgs,
+        lib,
+        self',
+        ...
+      }: let
         treefmtWrapper = config.treefmt.build.wrapper;
       in {
         # Flake-wide `pkgs` with overlays and custom packages.
@@ -66,13 +72,14 @@
             };
           };
           config = {
-            allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-              "steam"
-              "steam-original"
-              "steam-run"
-              "starsector"
-              "nxengine-evo"
-            ];
+            allowUnfreePredicate = pkg:
+              builtins.elem (lib.getName pkg) [
+                "steam"
+                "steam-original"
+                "steam-run"
+                "starsector"
+                "nxengine-evo"
+              ];
             permittedInsecurePackages = [
               "openssl-1.1.1v"
             ];
@@ -80,14 +87,15 @@
         };
 
         devShells = {
-          default = with pkgs; mkShell {
-            inherit (self'.checks.pre-commit-check) shellHook;
-            NIX_CONFIG = "experimental-features = nix-command flakes";
-            # WARNING: Please! Stop deleting the `pkgs` from `home-manager` and
-            # then being confused about the devshell breaking. `home-manager`
-            # is shadowed by the input.
-            nativeBuildInputs = [ nix git statix pkgs.home-manager treefmtWrapper ];
-          };
+          default = with pkgs;
+            mkShell {
+              inherit (self'.checks.pre-commit-check) shellHook;
+              NIX_CONFIG = "experimental-features = nix-command flakes";
+              # WARNING: Please! Stop deleting the `pkgs` from `home-manager` and
+              # then being confused about the devshell breaking. `home-manager`
+              # is shadowed by the input.
+              nativeBuildInputs = [nix git statix pkgs.home-manager treefmtWrapper];
+            };
         };
 
         treefmt = {
@@ -115,52 +123,62 @@
         homeManagerModules = import ./modules/home-manager;
 
         nixosConfigurations = {
-          nixos = withSystem "x86_64-linux" ({ pkgs, ... }:
+          nixos = withSystem "x86_64-linux" ({pkgs, ...}:
             inputs.nixpkgs.lib.nixosSystem {
               inherit pkgs;
-              specialArgs = { inherit inputs; };
-              modules = (builtins.attrValues nixosModules) ++ [
-                ./nixos/desktop
-                inputs.musnix.nixosModules.musnix
-              ];
+              specialArgs = {inherit inputs;};
+              modules =
+                (builtins.attrValues nixosModules)
+                ++ [
+                  ./nixos/desktop
+                  inputs.musnix.nixosModules.musnix
+                ];
             });
 
-          raspberry-pi = withSystem "aarch64-linux" ({ pkgs, ... }:
+          raspberry-pi = withSystem "aarch64-linux" ({pkgs, ...}:
             inputs.nixpkgs.lib.nixosSystem {
               inherit pkgs;
-              specialArgs = { inherit inputs; };
-              modules = (builtins.attrValues nixosModules) ++ [
-                ./nixos/raspberry-pi
-              ];
+              specialArgs = {inherit inputs;};
+              modules =
+                (builtins.attrValues nixosModules)
+                ++ [
+                  ./nixos/raspberry-pi
+                ];
             });
         };
 
         homeConfigurations = {
-          "chris@nixos" = withSystem "x86_64-linux" ({ pkgs, ... }:
+          "chris@nixos" = withSystem "x86_64-linux" ({pkgs, ...}:
             home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
-              extraSpecialArgs = { inherit inputs; };
-              modules = (builtins.attrValues homeManagerModules) ++ [
-                ./home-manager/chris
-              ];
+              extraSpecialArgs = {inherit inputs;};
+              modules =
+                (builtins.attrValues homeManagerModules)
+                ++ [
+                  ./home-manager/chris
+                ];
             });
 
-          "chris@kubuntu-laptop" = withSystem "x86_64-linux" ({ pkgs, ... }:
+          "chris@kubuntu-laptop" = withSystem "x86_64-linux" ({pkgs, ...}:
             home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
-              extraSpecialArgs = { inherit inputs; };
-              modules = (builtins.attrValues homeManagerModules) ++ [
-                ./home-manager/chris/laptop.nix
-              ];
+              extraSpecialArgs = {inherit inputs;};
+              modules =
+                (builtins.attrValues homeManagerModules)
+                ++ [
+                  ./home-manager/chris/laptop.nix
+                ];
             });
 
-          "chris@raspberry-pi" = withSystem "aarch64-linux" ({ pkgs, ... }:
+          "chris@raspberry-pi" = withSystem "aarch64-linux" ({pkgs, ...}:
             home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
-              extraSpecialArgs = { inherit inputs; };
-              modules = (builtins.attrValues homeManagerModules) ++ [
-                ./home-manager/chris/raspberry-pi.nix
-              ];
+              extraSpecialArgs = {inherit inputs;};
+              modules =
+                (builtins.attrValues homeManagerModules)
+                ++ [
+                  ./home-manager/chris/raspberry-pi.nix
+                ];
             });
         };
       };

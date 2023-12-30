@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [ hyprpaper ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [hyprpaper];
   xdg.configFile = {
     "hypr/hyprpaper.conf" = {
       enable = true;
@@ -8,4 +7,3 @@
     };
   };
 }
-

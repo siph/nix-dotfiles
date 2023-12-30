@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{pkgs, ...}:
 pkgs.writeTextFile {
   name = "bar-clock";
   text = builtins.readFile ./clock.nu;

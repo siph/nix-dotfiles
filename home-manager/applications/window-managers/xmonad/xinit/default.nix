@@ -1,4 +1,3 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [ startx-xmonad ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [startx-xmonad];
 }

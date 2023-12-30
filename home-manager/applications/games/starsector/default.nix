@@ -1,3 +1,3 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ starsector ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [starsector];
 }

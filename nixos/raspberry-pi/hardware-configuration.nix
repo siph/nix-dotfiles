@@ -1,15 +1,16 @@
-{ lib, modulesPath, ... }:
-
 {
+  lib,
+  modulesPath,
+  ...
+}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
   boot = {
-
-    initrd.availableKernelModules = [ "usbhid" ];
-    initrd.kernelModules = [ ];
-    kernelModules = [ ];
-    extraModulePackages = [ ];
+    initrd.availableKernelModules = ["usbhid"];
+    initrd.kernelModules = [];
+    kernelModules = [];
+    extraModulePackages = [];
   };
 
   fileSystems."/" = {
@@ -17,10 +18,12 @@
     fsType = "ext4";
   };
 
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 2 * 1024;
-  }];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 2 * 1024;
+    }
+  ];
 
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enu1u1.useDHCP = lib.mkDefault true;

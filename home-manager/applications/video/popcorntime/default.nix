@@ -1,3 +1,3 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ popcorntime ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [popcorntime];
 }

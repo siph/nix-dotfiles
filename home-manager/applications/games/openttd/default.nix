@@ -1,3 +1,3 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ openttd ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [openttd];
 }

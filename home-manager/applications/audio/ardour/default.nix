@@ -1,4 +1,3 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [ ardour ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [ardour];
 }

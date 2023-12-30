@@ -1,4 +1,3 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [ systemctl-tui ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [systemctl-tui];
 }

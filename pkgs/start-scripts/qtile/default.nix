@@ -1,8 +1,8 @@
-{ pkgs }:
+{pkgs}:
 pkgs.stdenv.mkDerivation rec {
   name = "startx-qtile";
   src = ../../../home-manager/applications/window-managers/qtile/xinit;
-  buildInputs = with pkgs; [ makeWrapper xorg.xinit ];
+  buildInputs = with pkgs; [makeWrapper xorg.xinit];
   installPhase = ''
     mkdir -p $out/bin
     mkdir -p $out/xinit

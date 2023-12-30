@@ -1,3 +1,3 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ freeciv ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [freeciv];
 }

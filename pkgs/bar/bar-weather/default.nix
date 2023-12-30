@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{pkgs, ...}:
 pkgs.stdenvNoCC.mkDerivation rec {
   name = "bar-weather";
   src = ./.;
-  buildInputs = with pkgs; [ nushell makeBinaryWrapper ];
+  buildInputs = with pkgs; [nushell makeBinaryWrapper];
   installPhase = ''
     mkdir -p $out/nushell
     mkdir -p $out/bin
@@ -13,4 +13,3 @@ pkgs.stdenvNoCC.mkDerivation rec {
       --add-flags $out/nushell/${name}.nu
   '';
 }
-

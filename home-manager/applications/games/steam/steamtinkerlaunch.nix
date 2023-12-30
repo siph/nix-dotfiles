@@ -1,3 +1,3 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ steamtinkerlaunch ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [steamtinkerlaunch];
 }

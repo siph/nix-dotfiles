@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-{
-  imports = [ ./xinit ];
+{pkgs, ...}: {
+  imports = [./xinit];
 
   home.packages = with pkgs; [
     bar-weather

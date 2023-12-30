@@ -1,3 +1,3 @@
 {
-  imports = [ ./appflowy ];
+  imports = [./appflowy];
 }

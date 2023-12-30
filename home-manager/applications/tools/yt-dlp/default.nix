@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [ ffmpeg yt-watcher ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [ffmpeg yt-watcher];
   programs.yt-dlp = {
     enable = true;
     settings = {

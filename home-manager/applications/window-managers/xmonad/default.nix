@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ./xinit
     ./xmobar
@@ -27,4 +26,3 @@
     };
   };
 }
-

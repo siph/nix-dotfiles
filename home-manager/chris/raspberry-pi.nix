@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   imports = [
     ../applications/editors/neovim
     ../applications/shells
@@ -15,7 +15,7 @@
     homeDirectory = "/home/${username}";
     stateVersion = "23.05";
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      (nerdfonts.override {fonts = ["JetBrainsMono"];})
     ];
   };
 

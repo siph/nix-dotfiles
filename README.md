@@ -1,4 +1,5 @@
 ![flake check](https://github.com/siph/nix-dotfiles/actions/workflows/check.yaml/badge.svg)
+
 # Nix Config
 
 This is my personalized configuration for nix and nixos systems. This is
@@ -41,19 +42,19 @@ means that a majority of things can be accomplished without leaving home-row.
 There are too many applications to mention but some primary applications are:
 
 - **Terminal**
-    - kitty
+  - kitty
 - **Shells**
-    - nushell
-    - zsh
-    - bash
+  - nushell
+  - zsh
+  - bash
 - **Editors**
-    - neovim
-    - Idea CE
+  - neovim
+  - Idea CE
 - **Browser**
-    - Firefox
+  - Firefox
 - **Desktop Environments**
-    - KDE Plasma
-    - Hyprland
+  - KDE Plasma
+  - Hyprland
 
 ## Usage
 
@@ -62,8 +63,8 @@ There are too many applications to mention but some primary applications are:
 - Use `nix develop` to create a bootstrap shell.
 - Run `sudo nixos-rebuild switch --flake .#hostname` to apply your system
   configuration.
-    - If you're still on a live installation medium, run `nixos-install --flake
-      .#hostname` instead, and reboot.
+  - If you're still on a live installation medium, run `nixos-install --flake
+.#hostname` instead, and reboot.
 - Run `home-manager switch --flake .#username@hostname` to apply your home
   configuration.
 
@@ -77,6 +78,7 @@ automatically by nix.
 #### KDE
 
 Launch xsession KDE5 session.
+
 ```shell
 startx-kde
 ```
@@ -84,6 +86,7 @@ startx-kde
 #### Hyprland
 
 Launch [Hyprland](./home-manager/chris/applications/misc/hyprland/hyprland.conf) with waybar + extras.
+
 ```shell
 start-hyprland
 ```
@@ -91,7 +94,7 @@ start-hyprland
 #### Xmonad
 
 Launch [Xmonad](./home-manager/chris/applications/misc/xmonad/xmonad.hs) session, polybar, dunst + extras.
+
 ```shell
 startx-xmonad
 ```
-

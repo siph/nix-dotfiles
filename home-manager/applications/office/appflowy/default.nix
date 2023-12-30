@@ -1,4 +1,3 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [ appflowy ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [appflowy];
 }

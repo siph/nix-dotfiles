@@ -1,4 +1,3 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [ startx-kde ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [startx-kde];
 }

@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{pkgs, ...}:
 pkgs.stdenv.mkDerivation rec {
   name = "bar-gh-inbox";
   src = ./.;
-  buildInputs = with pkgs; [ gh makeBinaryWrapper nushell ];
+  buildInputs = with pkgs; [gh makeBinaryWrapper nushell];
   installPhase = ''
     mkdir -p $out/nushell
     mkdir -p $out/bin
@@ -13,4 +13,3 @@ pkgs.stdenv.mkDerivation rec {
       --add-flags $out/nushell/${name}.nu
   '';
 }
-

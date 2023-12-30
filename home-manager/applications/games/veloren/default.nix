@@ -1,3 +1,3 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ airshipper ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [airshipper];
 }
