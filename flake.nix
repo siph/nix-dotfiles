@@ -21,6 +21,7 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    treefmt-nix.url = "github:numtide/treefmt-nix";
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
     chris-neovim.url = "github:siph/nixvim-flake";
     wt-fetch.url = "github:siph/wt-fetch";
@@ -35,6 +36,7 @@
     , nixpkgs
     , nixpkgs-stable
     , pre-commit-hooks
+    , treefmt-nix
     , wt-fetch
     , yt-watcher
     , ...
@@ -48,8 +50,13 @@
         "x86_64-darwin"
       ];
 
-      perSystem = { system, pkgs, lib, self', ... }: {
+      imports = [
+        treefmt-nix.flakeModule
+      ];
 
+      perSystem = { system, config, pkgs, lib, self', ... }: let
+        treefmtWrapper = config.treefmt.build.wrapper;
+      in {
         # Flake-wide `pkgs` with overlays and custom packages.
         _module.args.pkgs = import nixpkgs {
           inherit system;
@@ -76,19 +83,29 @@
           default = with pkgs; mkShell {
             inherit (self'.checks.pre-commit-check) shellHook;
             NIX_CONFIG = "experimental-features = nix-command flakes";
-            nativeBuildInputs = [ nix git statix pkgs.home-manager ];
+            # WARNING: Please! Stop deleting the `pkgs` from `home-manager` and
+            # then being confused about the devshell breaking. `home-manager`
+            # is shadowed by the input.
+            nativeBuildInputs = [ nix git statix pkgs.home-manager treefmtWrapper ];
           };
         };
 
-        formatter = pkgs.nixpkgs-fmt;
+        treefmt = {
+          projectRootFile = "flake.nix";
+          programs = {
+            alejandra.enable = true;
+            black.enable = true;
+            prettier.enable = true;
+            # shellcheck.enable = true;
+            # stylish-haskell.enable = true;
+          };
+        };
 
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
             src = ./.;
-            hooks = {
-              nixpkgs-fmt.enable = true;
-              statix.enable = true;
-            };
+            hooks.treefmt.enable = true;
+            settings.treefmt.package = treefmtWrapper;
           };
         };
       };
