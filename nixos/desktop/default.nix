@@ -50,8 +50,10 @@
       "radeon.cik_support=0"
       "amdgpu.cik_support=1"
     ];
-    # kernelPackages = pkgs.linuxPackages-rt_latest;
-    kernelPackages = pkgs.linuxPackages_latest;
+    # I could do this with `musnix` and get a better, patched kernel but
+    # building the kernel has little appeal especially when nixos already takes
+    # so long to update.
+    kernelPackages = pkgs.linuxPackages-rt_latest;
     binfmt.emulatedSystems = ["aarch64-linux"];
   };
 
@@ -83,10 +85,6 @@
       powerline-fonts
     ];
     font = "ter-powerline-v14b";
-  };
-
-  musnix = {
-    enable = true;
   };
 
   services = {
