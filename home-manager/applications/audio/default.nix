@@ -1,5 +1,6 @@
 {
   imports = [
     ./ardour
+    ./qjackctl
   ];
 }

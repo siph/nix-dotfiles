@@ -20,7 +20,6 @@
     kapitonov-plugins-pack
     lsp-plugins
     mda_lv2
-    ninjas2
     samplv1
     swh_lv2
     tunefish
