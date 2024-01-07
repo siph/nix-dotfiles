@@ -17,6 +17,10 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    musnix = {
+      url = "github:musnix/musnix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     treefmt-nix.url = "github:numtide/treefmt-nix";
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
     chris-neovim.url = "github:siph/nixvim-flake";
@@ -28,6 +32,7 @@
     chris-neovim,
     flake-parts,
     home-manager,
+    musnix,
     nixos-generators,
     nixpkgs,
     nixpkgs-stable,
@@ -127,6 +132,7 @@
                 (builtins.attrValues nixosModules)
                 ++ [
                   ./nixos/desktop
+                  musnix.nixosModules.musnix
                 ];
             });
 
