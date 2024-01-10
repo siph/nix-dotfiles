@@ -12,9 +12,9 @@
       vim = "nvim";
     };
     extraConfig = ''
-      source ${pkgs.nu_scripts}/share/nu_scripts/modules/nix/nix.nu
-      source ${pkgs.nu_scripts}/share/nu_scripts/modules/git/git-v2.nu
-      source ${pkgs.nu_scripts}/share/nu_scripts/modules/kubernetes/kubernetes.nu
+      source ~/repos/nu_scripts/modules/nix/nix.nu
+      source ~/repos/nu_scripts/modules/git/git-v2.nu
+      source ~/repos/nu_scripts/modules/kubernetes/kubernetes.nu
     '';
   };
 }
