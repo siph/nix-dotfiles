@@ -149,6 +149,7 @@
     };
     invidious = {
       enable = true;
+      settings.db.user = "invidious";
     };
     pcscd.enable = true;
   };
