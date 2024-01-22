@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   programs.kodi = {
-    enable = true;
+    enable = false;
     package = pkgs.kodi.withPackages (exts:
       with exts; [
         jellyfin
