@@ -1,13 +1,13 @@
 {
   imports = [
-    ./cataclysm-dda-git
-    ./cave-story
-    ./freeciv
     ./lutris
-    ./openttd
     ./starsector
     ./steam
     ./veloren
+    # ./openttd
+    # ./cataclysm-dda-git
+    # ./cave-story
+    # ./freeciv
     #./wesnoth
     #./dwarf-fortress
     # These are all broken
