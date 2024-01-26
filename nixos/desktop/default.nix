@@ -48,12 +48,6 @@
 
   boot = {
     loader.systemd-boot.enable = true;
-    kernelParams = [
-      "radeon.si_support=0"
-      "amdgpu.si_support=1"
-      "radeon.cik_support=0"
-      "amdgpu.cik_support=1"
-    ];
     # I could do this with `musnix` and get a better, patched kernel but
     # building the kernel has little appeal especially when nixos already takes
     # so long to update.
