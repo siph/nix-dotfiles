@@ -17,7 +17,7 @@ $env.config = {
         external: {
          enable: true
          max_results: 50
-         completer: { |spans| carapace $spans.0 nushell $spans | from json }
+         completer: { |spans| carapace $spans.0 nushell ...$spans | from json }
         }
     }
     history: {
