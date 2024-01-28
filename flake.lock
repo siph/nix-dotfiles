@@ -9,11 +9,11 @@
         "tree-sitter-nu": "tree-sitter-nu"
       },
       "locked": {
-        "lastModified": 1705959496,
-        "narHash": "sha256-P888twXgTGbmYh5lvARWWELuUcsgcfRGgLYgvvCXqX4=",
+        "lastModified": 1706213747,
+        "narHash": "sha256-HMGQUz/15UyQRhbG2iHyvUhvY6ItaoEvrtB1nlqnDM8=",
         "owner": "siph",
         "repo": "nixvim-flake",
-        "rev": "2cb8304a92cd01cda5fc0d7069b52c24db32845e",
+        "rev": "3b2eefc77a6271d0feba09a425904f1c276c9f2d",
         "type": "github"
       },
       "original": {
@@ -990,11 +990,11 @@
     "tree-sitter-nu": {
       "flake": false,
       "locked": {
-        "lastModified": 1705842868,
-        "narHash": "sha256-cLBG8NSJjg93JH54grC1A1FsgXbIrXuA7BmH2Z7XB5c=",
+        "lastModified": 1706189909,
+        "narHash": "sha256-A0Lpsx0VFRYUWetgX3Bn5osCsLQrZzg90unGg9kTnVg=",
         "owner": "nushell",
         "repo": "tree-sitter-nu",
-        "rev": "ed0a3633b57584f4823ef8574c46d7cb75c61a24",
+        "rev": "2d0dd587dbfc3363d2af4e4141833e718647a67e",
         "type": "github"
       },
       "original": {
