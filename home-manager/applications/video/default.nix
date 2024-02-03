@@ -5,6 +5,6 @@
     ./kdenlive
     ./kodi
     ./mpv
-    ./popcorntime
+    # ./popcorntime
   ];
 }

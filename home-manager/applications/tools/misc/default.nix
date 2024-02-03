@@ -7,6 +7,5 @@
     glow
     ouch
     repgrep
-    tldr
   ];
 }

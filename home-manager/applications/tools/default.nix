@@ -12,7 +12,7 @@
     ./lsd
     ./misc
     ./neofetch
-    ./nix-stuff
+    ./nix-direnv
     ./starship
     ./systemctl-tui
     ./tmux
