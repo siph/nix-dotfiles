@@ -22,7 +22,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     treefmt-nix.url = "github:numtide/treefmt-nix";
-    declarative-cachix.url = "github:jonascarpay/declarative-cachix";
     chris-neovim.url = "github:siph/nixvim-flake";
     wt-fetch.url = "github:siph/wt-fetch";
     yt-watcher.url = "github:siph/yt-watcher";
