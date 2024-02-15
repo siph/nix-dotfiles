@@ -49,7 +49,7 @@
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [3000];
+    firewall.allowedTCPPorts = [3000 8000 8080 1313];
   };
 
   boot = {
