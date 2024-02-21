@@ -25,6 +25,7 @@
     chris-neovim.url = "github:siph/nixvim-flake";
     wt-fetch.url = "github:siph/wt-fetch";
     yt-watcher.url = "github:siph/yt-watcher";
+    ollama-flake.url = "github:abysssol/ollama-flake";
   };
 
   outputs = {
@@ -35,6 +36,7 @@
     nixos-generators,
     nixpkgs,
     nixpkgs-stable,
+    ollama-flake,
     pre-commit-hooks,
     treefmt-nix,
     wt-fetch,
@@ -68,7 +70,7 @@
           inherit system;
           overlays = builtins.attrValues {
             default = import ./overlay {
-              inherit lib chris-neovim yt-watcher wt-fetch nixpkgs-stable;
+              inherit chris-neovim lib nixpkgs-stable ollama-flake wt-fetch yt-watcher;
             };
           };
           config = {

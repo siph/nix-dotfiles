@@ -1,5 +1,6 @@
 {
   imports = [
+    ./ai
     ./audio
     ./browsers
     ./editors
