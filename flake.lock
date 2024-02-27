@@ -6,14 +6,15 @@
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "pre-commit-hooks": "pre-commit-hooks_2",
-        "tree-sitter-nu": "tree-sitter-nu"
+        "tree-sitter-nu": "tree-sitter-nu",
+        "tree-sitter-surrealdb": "tree-sitter-surrealdb"
       },
       "locked": {
-        "lastModified": 1707614334,
-        "narHash": "sha256-w0S8w/o/2AYTkpIwTon8Sov23xIzGwISBRNWgHAQX9Y=",
+        "lastModified": 1708994812,
+        "narHash": "sha256-7168hXxEj1ICUuX7Q9gzHUxReiQOdN645HU988ptOLY=",
         "owner": "siph",
         "repo": "nixvim-flake",
-        "rev": "5c85ae800b1b3904811fdf96000bf3a2e5729e91",
+        "rev": "131a992add0c408f7f8b8b6e3b7e520f5605dbc3",
         "type": "github"
       },
       "original": {
@@ -998,6 +999,22 @@
       "original": {
         "owner": "nushell",
         "repo": "tree-sitter-nu",
+        "type": "github"
+      }
+    },
+    "tree-sitter-surrealdb": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1708450003,
+        "narHash": "sha256-/xX5lEQKFuLQl6YxUA2WLKGX5P2GBugtYj42WCtA0xU=",
+        "owner": "dariuscorvus",
+        "repo": "tree-sitter-surrealdb",
+        "rev": "17a7ed4481bdaaa35a1372f3a94bc851d634a19e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dariuscorvus",
+        "repo": "tree-sitter-surrealdb",
         "type": "github"
       }
     },
