@@ -25,7 +25,9 @@
     chris-neovim.url = "github:siph/nixvim-flake";
     wt-fetch.url = "github:siph/wt-fetch";
     yt-watcher.url = "github:siph/yt-watcher";
-    ollama-flake.url = "github:abysssol/ollama-flake";
+    # As far as I can tell this is the most recent version compatible with an
+    # RX 580 (ollama `0.1.24`)
+    ollama-flake.url = "github:abysssol/ollama-flake/b333d64636fc9180b525f300a079cce0d2cff7b7";
   };
 
   outputs = {

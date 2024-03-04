@@ -44,7 +44,7 @@
     sonobus
     sorcer
     stochas
-    surge-XT
+    # surge-XT
     swh_lv2
     tap-plugins
     tunefish
