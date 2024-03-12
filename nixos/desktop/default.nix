@@ -103,7 +103,7 @@
         enable = true;
         package = pkgs.qtile;
       };
-      desktopManager.plasma5.enable = true;
+      desktopManager.plasma6.enable = true;
     };
     pipewire = {
       enable = true;
