@@ -48,8 +48,6 @@
 
   services = {
     xserver = {
-      layout = "us";
-      xkbVariant = "";
       enable = true;
       displayManager.startx.enable = true;
     };

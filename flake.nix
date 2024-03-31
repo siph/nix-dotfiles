@@ -116,8 +116,10 @@
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
             src = ./.;
-            hooks.treefmt.enable = true;
-            settings.treefmt.package = treefmtWrapper;
+            hooks = {
+              treefmt.enable = true;
+              treefmt.package = treefmtWrapper;
+            };
           };
         };
       };
