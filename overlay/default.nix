@@ -20,6 +20,16 @@
 
     ollama = ollama-flake.packages.${prev.system}.rocm;
 
+    invidious = prev.invidious.overrideAttrs (_oldAttrs: {
+      src = prev.fetchFromGitHub {
+        owner = "iv-org";
+        repo = "invidious";
+        fetchSubmodules = true;
+        rev = "08390acd0c17875fddb84cabba54197a5b5740e4";
+        sha256 = "sha256-75C/ImX/PYikVdSO4rZM/aYyEgx6pU90BHNeRFfcsDM=";
+      };
+    });
+
     # https://github.com/nushell/nu_scripts/pull/669
     # This PR broke my config. I'll figure it out and fix it later™.
     nu_scripts = prev.nu_scripts.overrideAttrs (finalAttrs: previousAttrs: rec {
