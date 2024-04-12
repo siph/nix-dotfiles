@@ -22,11 +22,12 @@
 
     invidious = prev.invidious.overrideAttrs (_oldAttrs: {
       src = prev.fetchFromGitHub {
-        owner = "iv-org";
+        # ChunkyProgrammer:add-support-for-comment-format
+        owner = "ChunkyProgrammer";
         repo = "invidious";
         fetchSubmodules = true;
-        rev = "08390acd0c17875fddb84cabba54197a5b5740e4";
-        sha256 = "sha256-75C/ImX/PYikVdSO4rZM/aYyEgx6pU90BHNeRFfcsDM=";
+        rev = "c27bb90e4d8286665658e2805a26ad8881472618";
+        sha256 = "sha256-i48BEZRfrW5qw3zNhjEPJPVsaT9hQq2aq5cwNZ5Tdvk=";
       };
     });
 
