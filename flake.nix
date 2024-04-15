@@ -82,6 +82,7 @@
                 "steam-original"
                 "steam-run"
                 "starsector"
+                "surrealdb"
                 "nxengine-evo"
               ];
             permittedInsecurePackages = [
