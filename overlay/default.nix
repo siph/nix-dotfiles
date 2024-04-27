@@ -26,8 +26,8 @@
         owner = "ChunkyProgrammer";
         repo = "invidious";
         fetchSubmodules = true;
-        rev = "c27bb90e4d8286665658e2805a26ad8881472618";
-        sha256 = "sha256-i48BEZRfrW5qw3zNhjEPJPVsaT9hQq2aq5cwNZ5Tdvk=";
+        rev = "eda7444ca46dbc3941205316baba8030fe0b2989";
+        sha256 = "sha256-YZ+uhn1ESuRTZxAMoxKCpxEaUfeCUqOrSr3LkdbrTkU=";
       };
     });
 
