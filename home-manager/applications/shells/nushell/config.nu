@@ -50,3 +50,10 @@ def pss [
     ps | where { |it| ($it.name | str contains $term ) }
 }
 
+# Watch youtube video
+def wy [
+    video_id: string # video id
+] {
+    mpv $"https://youtube.com/watch?v=($video_id)"
+}
+
