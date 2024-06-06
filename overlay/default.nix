@@ -2,7 +2,6 @@
   chris-neovim,
   lib,
   nixpkgs-stable,
-  ollama-flake,
   wt-fetch,
   yt-watcher,
   ...
@@ -17,8 +16,6 @@
     neovim = chris-neovim.packages.${prev.system}.default;
     yt-watcher = yt-watcher.packages.${prev.system}.default;
     wt-fetch = wt-fetch.packages.${prev.system}.default;
-
-    ollama = ollama-flake.packages.${prev.system}.rocm;
 
     invidious = prev.invidious.overrideAttrs (_oldAttrs: {
       src = prev.fetchFromGitHub {
