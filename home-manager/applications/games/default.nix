@@ -1,5 +1,6 @@
 {
   imports = [
+    ./endless-sky
     ./lutris
     ./starsector
     ./steam
