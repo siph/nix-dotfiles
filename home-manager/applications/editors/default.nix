@@ -1,6 +1,5 @@
 {
   imports = [
-    ./intellij
     ./neovim
   ];
 }
