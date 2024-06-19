@@ -3,7 +3,6 @@ $env.config = {
     show_banner: false
     edit_mode: vi
     footer_mode: always
-    shell_integration: true
     table: {
         mode: rounded
         index_mode: always
