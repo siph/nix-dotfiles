@@ -178,16 +178,14 @@
   hardware = {
     pulseaudio.enable = false;
     bluetooth.enable = true;
-    opengl = {
+    graphics = {
       enable = true;
       # 32 Bit Libraries for Steam
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
   };
 
   virtualisation.docker.enable = true;
-
-  sound.enable = true;
 
   users = {
     defaultUserShell = pkgs.nushell;
