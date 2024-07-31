@@ -1,10 +1,9 @@
 {pkgs, ...}: {
   programs.mpv = {
     enable = true;
-    defaultProfiles = ["corner"];
+    defaultProfiles = ["default"];
     profiles = {
-      corner = {
-        ontop = true;
+      default = {
         osc = false;
         ao = "pulse";
         cache = true;
@@ -18,7 +17,6 @@
       };
     };
     scripts = with pkgs.mpvScripts; [
-      quality-menu
       thumbnail
       sponsorblock
     ];
