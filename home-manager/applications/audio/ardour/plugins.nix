@@ -27,14 +27,14 @@
     drumkv1
     fire
     fluidsynth
-    fmsynth
+    # fmsynth
     fomp
     geonkick
     gxplugins-lv2
     helm
     infamousPlugins
     kapitonov-plugins-pack
-    lsp-plugins
+    # lsp-plugins
     mda_lv2
     noise-repellent
     odin2
