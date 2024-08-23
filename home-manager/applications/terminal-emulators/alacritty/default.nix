@@ -10,11 +10,19 @@
         history = 20000;
         multiplier = 3;
       };
-      font = {
-        normal = {
+      font = let
+        fc = {
           family = "JetBrainsMono Nerd Font";
           style = "ExtraBold";
         };
+      in rec {
+        normal = fc;
+        bold = fc;
+        italic = {
+          inherit (fc) family;
+          style = "ExtraBold Italic";
+        };
+        bold_italic = italic;
         size = 9;
       };
       colors = {

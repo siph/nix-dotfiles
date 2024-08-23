@@ -9,8 +9,7 @@
     ./instant-messengers
     ./office
     ./shells
-    ./terminal-emulators/kitty
-    ./terminal-emulators/wezterm
+    ./terminal-emulators
     ./tools
     ./video
     ./window-managers

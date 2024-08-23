@@ -25,7 +25,7 @@ import qualified DBus                                  as D
 import qualified DBus.Client                           as D
 import Text.XHtml (border)
 
-myTerminal      = "kitty"
+myTerminal      = "alacritty"
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
 myClickJustFocuses :: Bool

@@ -2,7 +2,7 @@
   imports = [
     ./alacritty
     ./kitty
-    ./st
+    # ./st
     ./wezterm
   ];
 }
