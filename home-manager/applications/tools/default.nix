@@ -4,7 +4,7 @@
     ./bottles
     ./bottom
     ./broot
-    ./databases
+    # ./databases
     ./distrobox
     ./fx
     ./git

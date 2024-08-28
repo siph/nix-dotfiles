@@ -131,7 +131,7 @@
     };
     ollama.enable = true;
     open-webui = {
-      enable = false;
+      enable = true;
       port = 8082;
     };
     transmission = {
