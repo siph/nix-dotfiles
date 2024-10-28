@@ -1,11 +1,12 @@
 import subprocess, os
+import json
 
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
 mod = "mod4"
-terminal = "kitty"
+terminal = "alacritty"
 browser = "firefox"
 runner = "rofi -show run"
 
@@ -122,18 +123,18 @@ layout_defaults = dict(
 
 layouts = [
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    # layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
     layout.MonadTall(**layout_defaults),
     layout.MonadWide(**layout_defaults),
+    layout.Max(),
+    layout.Zoomy(),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
-    # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
@@ -170,7 +171,15 @@ screens = [
                         "utf-8"
                     ),
                 ),
-                widget.Wttr(location={"KCOS": ""}, format="%c%t ● %h ● %w ● %m"),
+                widget.GenPollText(
+                    update_interval=600,
+                    func=lambda: json.loads(
+                        subprocess.check_output(
+                            ["wt-fetch", "KCOS", "/home/chris/.cache/", "--all"]
+                        ).decode("utf-8")
+                    ),
+                ),
+                # widget.Wttr(location={"KCOS": ""}, format="%c%t ● %h ● %w ● %m"),
                 widget.Clock(format="%a"),
                 widget.TextBox("●", fontsize=14, foreground=Color.FADED_PURPLE.value),
                 widget.Clock(format="%m/%d/%Y"),
