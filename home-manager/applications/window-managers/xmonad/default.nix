@@ -21,7 +21,7 @@
       config = pkgs.substituteAll {
         name = "xmonad.hs";
         src = ./xmonad.hs;
-        kdeconnect = "${pkgs.kdeconnect}";
+        kdeconnect = "${pkgs.kdePackages.kdeconnect-kde}";
       };
     };
   };

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 feh --no-fehbg --bg-scale '/home/chris/Pictures/background.jpg' &
-picom &
+picom --backend glx &
 export XDG_CURRENT_DESKTOP=qtile
 export XDG_SESSION_TYPE=x11
 export XDG_SESSION_DESKTOP=qtile

@@ -138,7 +138,7 @@ myEventHook = mempty
 myLogHook = return ()
 myStartupHook = do
     spawnOnce "polybar xmonad-bar"
-    spawnOnce "@kdeconnect@/libexec/kdeconnectd"
+    spawnOnce "@kdeconnect@/bin/kdeconnectd"
 
 -- Polybar
 mkDbusClient :: IO D.Client

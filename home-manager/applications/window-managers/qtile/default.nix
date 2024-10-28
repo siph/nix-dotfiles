@@ -5,7 +5,7 @@
     bar-weather
     bar-clock
     bar-gh-inbox
-    kdeconnectd
+    kdePackages.kdeconnect-kde
   ];
 
   xdg.configFile = {

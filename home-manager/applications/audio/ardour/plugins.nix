@@ -47,7 +47,7 @@
     # surge-XT
     swh_lv2
     tap-plugins
-    tunefish
+    # tunefish
     wolf-shaper
     x42-avldrums
     x42-gmsynth

@@ -49,7 +49,7 @@
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [3000 8000 8080 1313];
+    firewall.allowedTCPPorts = [3000 8000 8081 8080 1313];
   };
 
   boot = {
@@ -131,7 +131,7 @@
     };
     ollama.enable = true;
     open-webui = {
-      enable = true;
+      enable = false;
       port = 8082;
     };
     transmission = {

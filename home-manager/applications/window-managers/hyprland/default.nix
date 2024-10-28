@@ -10,6 +10,6 @@
   xdg.configFile."hypr/hyprland.conf".source = pkgs.substituteAll {
     name = "hyprland.conf";
     src = ./hyprland.conf;
-    kdeconnect = "${pkgs.kdeconnect}";
+    kdeconnect = "${pkgs.kdePackages.kdeconnect-kde}";
   };
 }

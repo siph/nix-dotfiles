@@ -77,6 +77,7 @@
                 "steam"
                 "steam-original"
                 "steam-run"
+                "steam-unwrapped"
                 "starsector"
                 "surrealdb"
                 "nxengine-evo"
