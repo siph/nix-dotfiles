@@ -21,6 +21,7 @@
       url = "github:musnix/musnix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty-flake.url = "github:ghostty-org/ghostty";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     chris-neovim.url = "github:siph/nixvim-flake";
     wt-fetch.url = "github:siph/wt-fetch";
@@ -30,6 +31,7 @@
   outputs = {
     chris-neovim,
     flake-parts,
+    ghostty-flake,
     home-manager,
     musnix,
     nixos-generators,
@@ -68,7 +70,7 @@
           inherit system;
           overlays = builtins.attrValues {
             default = import ./overlay {
-              inherit chris-neovim lib nixpkgs-stable wt-fetch yt-watcher;
+              inherit chris-neovim ghostty-flake lib nixpkgs-stable wt-fetch yt-watcher;
             };
           };
           config = {

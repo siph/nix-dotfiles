@@ -1,5 +1,6 @@
 {
   chris-neovim,
+  ghostty-flake,
   lib,
   nixpkgs-stable,
   wt-fetch,
@@ -16,6 +17,8 @@
     neovim = chris-neovim.packages.${prev.system}.default;
     yt-watcher = yt-watcher.packages.${prev.system}.default;
     wt-fetch = wt-fetch.packages.${prev.system}.default;
+
+    ghostty = ghostty-flake.packages.${prev.system}.default;
 
     # https://github.com/nushell/nu_scripts/pull/669
     # This PR broke my config. I'll figure it out and fix it later™.
