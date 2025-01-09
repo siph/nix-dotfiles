@@ -1,0 +1,16 @@
+font-family = JetBrainsMono NF ExtraBold
+font-family-bold = JetBrainsMono NF ExtraBold
+font-family-italic = JetBrainsMono NF ExtraBold Italic
+font-family-bold-italic = JetBrainsMono NF ExtraBold Italic
+
+font-size = 9
+
+theme = GruvboxDark
+
+background-opacity = .85
+
+window-decoration = false
+
+confirm-close-surface = false
+
+mouse-hide-while-typing = true
