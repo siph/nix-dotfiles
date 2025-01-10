@@ -8,6 +8,7 @@
     terminal = "screen-256color";
     mouse = true;
     escapeTime = 10;
+    focusEvents = true;
 
     plugins = with pkgs; [
       tmuxPlugins.gruvbox
@@ -17,6 +18,8 @@
       # indexing
       set -g renumber-windows on
       set-option -sa terminal-overrides ",alacritty*:Tc"
+
+      bind-key b last-window
     '';
   };
 }
