@@ -1,5 +1,6 @@
 {
   chris-neovim,
+  firefox-minima,
   ghostty-flake,
   lib,
   nixpkgs-stable,
@@ -7,7 +8,11 @@
   yt-watcher,
   ...
 }: let
-  additions = final: _prev: import ../pkgs {pkgs = final;};
+  additions = final: _prev:
+    import ../pkgs {
+      pkgs = final;
+      ff-minima = firefox-minima;
+    };
 
   modifications = final: prev: {
     waybar = prev.waybar.overrideAttrs (oldAttrs: {

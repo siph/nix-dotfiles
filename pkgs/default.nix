@@ -1,12 +1,18 @@
-{pkgs}: {
-  bar-clock = pkgs.callPackage ./bar/bar-clock {};
-  bar-weather = pkgs.callPackage ./bar/bar-weather {};
-  bar-gh-inbox = pkgs.callPackage ./bar/bar-gh-inbox {};
+{
+  pkgs,
+  ff-minima,
+}:
+with pkgs; {
+  bar-clock = callPackage ./bar/bar-clock {};
+  bar-weather = callPackage ./bar/bar-weather {};
+  bar-gh-inbox = callPackage ./bar/bar-gh-inbox {};
 
   # kdeconnectd = pkgs.callPackage ./bar/kdeconnectd {};
 
-  startx-xmonad = pkgs.callPackage ./start-scripts/xmonad {};
-  startx-kde = pkgs.callPackage ./start-scripts/kde {};
-  start-hyprland = pkgs.callPackage ./start-scripts/hyprland {};
-  startx-qtile = pkgs.callPackage ./start-scripts/qtile {};
+  startx-xmonad = callPackage ./start-scripts/xmonad {};
+  startx-kde = callPackage ./start-scripts/kde {};
+  start-hyprland = callPackage ./start-scripts/hyprland {};
+  startx-qtile = callPackage ./start-scripts/qtile {};
+
+  firefox-minima = callPackage ./themes/firefox-minima.nix {inherit ff-minima;};
 }

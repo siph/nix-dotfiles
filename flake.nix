@@ -17,6 +17,10 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox-minima = {
+      url = "github:rockofox/firefox-minima";
+      flake = false;
+    };
     musnix = {
       url = "github:musnix/musnix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,6 +34,7 @@
 
   outputs = {
     chris-neovim,
+    firefox-minima,
     flake-parts,
     ghostty-flake,
     home-manager,
@@ -70,7 +75,7 @@
           inherit system;
           overlays = builtins.attrValues {
             default = import ./overlay {
-              inherit chris-neovim ghostty-flake lib nixpkgs-stable wt-fetch yt-watcher;
+              inherit chris-neovim firefox-minima ghostty-flake lib nixpkgs-stable wt-fetch yt-watcher;
             };
           };
           config = {
