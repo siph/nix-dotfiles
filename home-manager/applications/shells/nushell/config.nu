@@ -23,9 +23,6 @@ $env.config = {
         max_size: 10000
         file_format: sqlite
     }
-    filesize: {
-        metric: true
-    }
 }
 
 # Helper functions
