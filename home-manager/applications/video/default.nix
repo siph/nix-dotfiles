@@ -3,7 +3,6 @@
   imports = [
     ./freetube
     ./jellyfin
-    ./kdenlive
     ./kodi
     ./mpv
     # ./popcorntime

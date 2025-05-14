@@ -41,11 +41,13 @@
         "https://nix-community.cachix.org"
         "https://surrealdb.cachix.org"
         "https://ghostty.cachix.org"
+        "https://cosmic.cachix.org"
       ];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "surrealdb.cachix.org-1:rbm7Qs+s36pxbfk9jhIa5HRld6gZ63koZz1h/9sSxaA="
         "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
+        "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
       ];
     };
   };
@@ -159,6 +161,9 @@
       settings.db.user = "invidious";
     };
     pcscd.enable = true;
+
+    desktopManager.cosmic.enable = true;
+    displayManager.cosmic-greeter.enable = false;
   };
 
   environment.systemPackages = with pkgs; [pinentry-curses wget];
