@@ -6,15 +6,6 @@
   ...
 }: {
   imports = [
-    # If you want to use modules from other flakes (such as nixos-hardware), use something like:
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
-
-    # It's strongly recommended you take a look at
-    # https://github.com/nixos/nixos-hardware
-    # and import modules relevant to your hardware.
-
-    # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
   ];
 
@@ -34,6 +25,7 @@
     settings = {
       # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
+
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
 
@@ -43,6 +35,7 @@
         "https://ghostty.cachix.org"
         "https://cosmic.cachix.org"
       ];
+
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "surrealdb.cachix.org-1:rbm7Qs+s36pxbfk9jhIa5HRld6gZ63koZz1h/9sSxaA="
@@ -60,9 +53,6 @@
 
   boot = {
     loader.systemd-boot.enable = true;
-    # I could do this with `musnix` and get a better, patched kernel but
-    # building the kernel has little appeal especially when nixos already takes
-    # so long to update.
     kernelPackages = pkgs.linuxPackages_latest;
     binfmt.emulatedSystems = ["aarch64-linux"];
   };
@@ -72,6 +62,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
     earlySetup = true;
+
     colors = [
       "1d2021" # Background
       "d3869b" # Bright Purple
@@ -90,15 +81,18 @@
       "928374" # Grey
       "f9f5d7" # White
     ];
+
     packages = with pkgs; [
       terminus_font
       powerline-fonts
     ];
+
     font = "ter-powerline-v14b";
   };
 
   services = {
     gnome.gnome-keyring.enable = true;
+
     xserver = {
       enable = true;
       displayManager = {
@@ -110,6 +104,7 @@
       };
       desktopManager.plasma5.enable = true;
     };
+
     pipewire = {
       enable = true;
       alsa = {
@@ -120,12 +115,14 @@
       jack.enable = true;
       wireplumber.enable = true;
     };
+
     openssh = {
       enable = true;
       settings = {
         PasswordAuthentication = true;
       };
     };
+
     openvpn = {
       servers = {
         dallasVPN = {
@@ -135,11 +132,14 @@
         };
       };
     };
+
     ollama.enable = true;
+
     open-webui = {
       enable = false;
       port = 8082;
     };
+
     transmission = {
       enable = false;
       settings = {
@@ -148,6 +148,7 @@
         umask = 0;
       };
     };
+
     i2pd = {
       enable = true;
       proto = {
@@ -156,10 +157,12 @@
         sam.enable = true;
       };
     };
+
     invidious = {
       enable = true;
       settings.db.user = "invidious";
     };
+
     pcscd.enable = true;
 
     desktopManager.cosmic.enable = true;
@@ -170,17 +173,21 @@
 
   programs = {
     kdeconnect.enable = true;
+
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
       pinentryPackage = pkgs.pinentry-curses;
     };
+
     dconf.enable = true;
   };
 
   hardware = {
     pulseaudio.enable = false;
+
     bluetooth.enable = true;
+
     graphics = {
       enable = true;
       # 32 Bit Libraries for Steam
@@ -192,12 +199,10 @@
 
   users = {
     defaultUserShell = pkgs.nushell;
+
     users.chris = {
       isNormalUser = true;
       description = "chris";
-      openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-      ];
       extraGroups = ["networkmanager" "wheel" "docker" "audio" "transmission"];
     };
   };
