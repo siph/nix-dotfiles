@@ -60,12 +60,6 @@
     };
   };
 
-  programs = {
-    zsh = {
-      enable = true;
-    };
-  };
-
   users = {
     defaultUserShell = pkgs.nushell;
     users.chris = {

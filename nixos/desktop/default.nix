@@ -169,9 +169,6 @@
   environment.systemPackages = with pkgs; [pinentry-curses wget];
 
   programs = {
-    zsh = {
-      enable = true;
-    };
     kdeconnect.enable = true;
     gnupg.agent = {
       enable = true;
