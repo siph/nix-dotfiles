@@ -9,6 +9,7 @@
         cache = true;
         force-seekable = true;
         loop = true;
+        gpu-api = "opengl";
         script-opts = [
           "ytdl_hook-ytdl_path=${pkgs.yt-dlp}/bin/yt-dlp"
           # Thumbnails (Press `T` to generate)
