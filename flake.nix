@@ -148,17 +148,6 @@
                   nixos-cosmic.nixosModules.default
                 ];
             });
-
-          raspberry-pi = withSystem "aarch64-linux" ({pkgs, ...}:
-            inputs.nixpkgs.lib.nixosSystem {
-              inherit pkgs;
-              specialArgs = {inherit inputs;};
-              modules =
-                (builtins.attrValues nixosModules)
-                ++ [
-                  ./nixos/raspberry-pi
-                ];
-            });
         };
 
         homeConfigurations = {
@@ -181,17 +170,6 @@
                 (builtins.attrValues homeManagerModules)
                 ++ [
                   ./home-manager/chris/laptop.nix
-                ];
-            });
-
-          "chris@raspberry-pi" = withSystem "aarch64-linux" ({pkgs, ...}:
-            home-manager.lib.homeManagerConfiguration {
-              inherit pkgs;
-              extraSpecialArgs = {inherit inputs;};
-              modules =
-                (builtins.attrValues homeManagerModules)
-                ++ [
-                  ./home-manager/chris/raspberry-pi.nix
                 ];
             });
         };
