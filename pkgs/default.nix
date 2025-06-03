@@ -11,7 +11,6 @@ with pkgs; {
 
   startx-xmonad = callPackage ./start-scripts/xmonad {};
   startx-kde = callPackage ./start-scripts/kde {};
-  start-hyprland = callPackage ./start-scripts/hyprland {};
   startx-qtile = callPackage ./start-scripts/qtile {};
 
   firefox-minima = callPackage ./themes/firefox-minima.nix {inherit ff-minima;};

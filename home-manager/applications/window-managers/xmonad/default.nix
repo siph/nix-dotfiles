@@ -18,7 +18,7 @@
         hp.monad-logger
         hp.xmonad-contrib
       ];
-      config = pkgs.substituteAll {
+      config = pkgs.replaceVars {
         name = "xmonad.hs";
         src = ./xmonad.hs;
         kdeconnect = "${pkgs.kdePackages.kdeconnect-kde}";

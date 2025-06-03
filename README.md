@@ -50,14 +50,6 @@ Launch xsession KDE5 session.
 startx-kde
 ```
 
-#### Hyprland
-
-Launch [Hyprland](./home-manager/applications/window-managers/hyprland/hyprland.conf) with waybar + extras.
-
-```shell
-start-hyprland
-```
-
 #### Xmonad
 
 Launch [Xmonad](./home-manager/applications/window-managers/xmonad/xmonad.hs) session, polybar, dunst + extras.

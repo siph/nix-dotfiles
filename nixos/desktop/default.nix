@@ -179,9 +179,6 @@
       pinentryPackage = pkgs.pinentry-curses;
     };
     dconf.enable = true;
-    hyprland = {
-      enable = false;
-    };
   };
 
   hardware = {
