@@ -100,7 +100,7 @@
       };
       windowManager.qtile = {
         enable = true;
-        package = pkgs.qtile;
+        package = pkgs.qtile-unwrapped;
       };
       desktopManager.plasma5.enable = true;
     };
@@ -165,7 +165,7 @@
 
     pcscd.enable = true;
 
-    desktopManager.cosmic.enable = true;
+    desktopManager.cosmic.enable = false;
     displayManager.cosmic-greeter.enable = false;
   };
 
