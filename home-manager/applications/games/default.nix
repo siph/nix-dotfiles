@@ -2,12 +2,12 @@
   imports = [
     ./endless-sky
     ./lutris
+    ./openttd
     ./starsector
     ./steam
     ./unciv
     ./veloren
     ./wesnoth
-    # ./openttd
     # ./cataclysm-dda-git
     # ./cave-story
     # ./freeciv
