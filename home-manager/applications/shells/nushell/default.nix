@@ -11,10 +11,17 @@
       tree = "broot";
       vim = "nvim";
     };
-    extraConfig = ''
-      source ~/repos/nu_scripts/modules/nix/nix.nu
-      source ~/repos/nu_scripts/modules/git/git-v2.nu
-      source ~/repos/nu_scripts/modules/kubernetes/kubernetes.nu
+    extraConfig = with pkgs;
+    with builtins; let
+      gitv2 = writeTextFile {
+        name = "gitv2.nu";
+        text =
+          replaceStrings ["use argx"] ["use ${nu_scripts}/share/nu_scripts/modules/argx/mod.nu"]
+          (readFile "${nu_scripts}/share/nu_scripts/modules/gitv2/mod.nu");
+      };
+    in ''
+      source ${nu_scripts}/share/nu_scripts/modules/nix/nix.nu
+      source ${gitv2}
     '';
   };
 }
