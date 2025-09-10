@@ -102,7 +102,6 @@
         enable = true;
         package = pkgs.qtile-unwrapped;
       };
-      desktopManager.plasma5.enable = true;
     };
 
     pipewire = {
