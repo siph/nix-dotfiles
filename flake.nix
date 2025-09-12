@@ -92,7 +92,7 @@
                 "nxengine-evo"
               ];
             permittedInsecurePackages = [
-              "openssl-1.1.1v"
+              "qtwebengine-5.15.19"
             ];
           };
         };
