@@ -26,7 +26,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ghostty-flake.url = "github:ghostty-org/ghostty";
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     chris-neovim.url = "github:siph/nixvim-flake";
     wt-fetch.url = "github:siph/wt-fetch";
@@ -40,7 +39,6 @@
     ghostty-flake,
     home-manager,
     musnix,
-    nixos-cosmic,
     nixos-generators,
     nixpkgs,
     nixpkgs-stable,
@@ -145,7 +143,6 @@
                 ++ [
                   ./nixos/desktop
                   musnix.nixosModules.musnix
-                  nixos-cosmic.nixosModules.default
                 ];
             });
         };
