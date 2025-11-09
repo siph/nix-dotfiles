@@ -185,6 +185,8 @@
 
     bluetooth.enable = true;
 
+    steam-hardware.enable = true;
+
     graphics = {
       enable = true;
       # 32 Bit Libraries for Steam
