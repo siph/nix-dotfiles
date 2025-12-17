@@ -91,6 +91,8 @@
   services = {
     gnome.gnome-keyring.enable = true;
 
+    pulseaudio.enable = false;
+
     xserver = {
       enable = true;
       displayManager = {
@@ -156,7 +158,7 @@
     };
 
     invidious = {
-      enable = true;
+      enable = false;
       settings.db.user = "invidious";
     };
 
@@ -181,8 +183,6 @@
   };
 
   hardware = {
-    pulseaudio.enable = false;
-
     bluetooth.enable = true;
 
     steam-hardware.enable = true;
