@@ -98,7 +98,7 @@
       };
       windowManager.qtile = {
         enable = true;
-        package = pkgs.qtile-unwrapped;
+        package = pkgs.python3.pkgs.qtile;
       };
     };
 
