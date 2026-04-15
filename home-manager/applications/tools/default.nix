@@ -12,7 +12,6 @@
     #./gobang
     ./lsd
     ./misc
-    ./neofetch
     ./nix-direnv
     ./starship
     ./systemctl-tui

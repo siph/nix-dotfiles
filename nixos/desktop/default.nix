@@ -93,6 +93,19 @@
 
     pulseaudio.enable = false;
 
+    postgresql = {
+      enable = true;
+      ensureUsers = [
+        {
+          name = "root";
+          ensureClauses = {
+            superuser = true;
+            createrole = true;
+          };
+        }
+      ];
+    };
+
     xserver = {
       enable = true;
       displayManager = {
@@ -164,11 +177,12 @@
 
     pcscd.enable = true;
 
+    desktopManager.plasma6.enable = false;
     desktopManager.cosmic.enable = false;
     displayManager.cosmic-greeter.enable = false;
   };
 
-  environment.systemPackages = with pkgs; [pinentry-curses wget];
+  environment.systemPackages = with pkgs; [bashmount pinentry-curses wget];
 
   programs = {
     kdeconnect.enable = true;
