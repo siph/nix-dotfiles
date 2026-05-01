@@ -27,11 +27,11 @@
         "tree-sitter-surrealdb": "tree-sitter-surrealdb"
       },
       "locked": {
-        "lastModified": 1761117655,
-        "narHash": "sha256-8YvtZg3J6y787ozj9OfGNiXmZbRS17a/EJburlxJxUY=",
+        "lastModified": 1777631409,
+        "narHash": "sha256-2Tm8hD376uIEqk0jKZHvcEpEjIUBs0Zxrqdd0iGFfDs=",
         "owner": "siph",
         "repo": "nixvim-flake",
-        "rev": "b6622a943c9262edb1f3d880af4ad0367e4b010b",
+        "rev": "0f1d0a45e518b22d5c7b2138f72ca4260af24631",
         "type": "github"
       },
       "original": {
