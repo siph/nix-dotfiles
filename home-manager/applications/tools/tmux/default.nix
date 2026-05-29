@@ -9,6 +9,7 @@
     mouse = true;
     escapeTime = 10;
     focusEvents = true;
+    shell = "${pkgs.nushell}/bin/nu";
 
     plugins = with pkgs; [
       tmuxPlugins.gruvbox
