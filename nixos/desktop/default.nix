@@ -51,7 +51,6 @@
 
   boot = {
     loader.systemd-boot.enable = true;
-    kernelPackages = pkgs.linuxPackages_latest;
     binfmt.emulatedSystems = ["aarch64-linux"];
   };
 
