@@ -1,6 +1,7 @@
 {
   imports = [
     ./endless-sky
+    ./heroic
     ./lutris
     ./openttd
     ./starsector
