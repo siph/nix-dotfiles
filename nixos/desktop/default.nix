@@ -167,8 +167,8 @@
 
     pcscd.enable = true;
 
-    desktopManager.plasma6.enable = true;
-    desktopManager.cosmic.enable = false;
+    desktopManager.plasma6.enable = false;
+    desktopManager.cosmic.enable = true;
     displayManager.cosmic-greeter.enable = false;
   };
 
