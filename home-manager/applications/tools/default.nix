@@ -1,7 +1,7 @@
 {
   imports = [
     ./bat
-    ./bottles
+    # ./bottles
     ./bottom
     ./broot
     # ./databases
